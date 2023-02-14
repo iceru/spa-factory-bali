@@ -1,9 +1,9 @@
-<nav>
-    <div class="container mx-auto flex justify-between items-center">
+<nav class="nav__wrapper nav__{{ $type }} py-6 z-10 relative">
+    <div class="container flex justify-between items-center">
         <div class="nav__logo">
-            <img src="/images/logo-white.png" alt="Spa Factory Bali">
+            <img src="/images/logo-white.png" class="h-20 object-contain" alt="Spa Factory Bali">
         </div>
-        <ul class="nav__menu-list flex items-center">
+        <ul class="nav__menu-list flex items-center text-white">
             <li>
                 <a href="/">Home</a>
             </li>

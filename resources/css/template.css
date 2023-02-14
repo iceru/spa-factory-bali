@@ -1,5 +1,14 @@
 .nav__menu-list {
     li {
         margin-right: 2rem;
+        font-size: 18px;
     }
+}
+
+.nav__transparent {
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 88%);
+}
+
+.footer__section li {
+    margin-bottom: 1rem;
 }

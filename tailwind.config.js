@@ -9,11 +9,28 @@ module.exports = {
     ],
 
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        container: {
+            center: true,
+            screens: {
+                sm: '567px',
+                md: '768px',
+                lg: '992px',
+                xl: '1200px',
+                '2xl': '1400px',
             },
         },
+        extend: {
+            fontFamily: {
+                sans: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
+                serif: ['Arima Madurai', ...defaultTheme.fontFamily.serif]
+            },
+        },
+        colors: {
+            'primary': '#588157',
+            white: '#FFF',
+            black: '#000',
+            transparent: 'transparent',
+        }
     },
 
     plugins: [require('@tailwindcss/forms')],

@@ -1,0 +1,24 @@
+.home__header {
+    background: url("../../public/images/bg-header.jpg");
+    background-size: cover;
+    position: relative;
+    margin-top: -128px;
+    padding-top: calc(128px + 18px);
+    z-index: 2;
+
+    .home__cta {
+        z-index: 3;
+        position: relative;
+    }
+    &::after {
+        content: "";
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 0;
+    }
+}
