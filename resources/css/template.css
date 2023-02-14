@@ -1,7 +1,10 @@
 .nav__menu-list {
     li {
         margin-right: 2rem;
-        font-size: 18px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
 

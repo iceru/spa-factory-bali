@@ -1,7 +1,7 @@
 <footer class="bg-primary py-12">
     <div class="container grid mx-auto grid-cols-4 text-white">
         <div class="footer__logo ">
-            <img src="/images/logo-white.png" class="h-28 object-contain" alt="Spa Factory Bali">
+            <img src="/images/logo-white.png" class="h-28 w-auto object-contain" alt="Spa Factory Bali">
         </div>
         <div class="footer__section">
             <ul>

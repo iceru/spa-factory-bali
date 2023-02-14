@@ -24,13 +24,16 @@ module.exports = {
                 sans: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
                 serif: ['Arima Madurai', ...defaultTheme.fontFamily.serif]
             },
+            colors: {
+                'primary': '#588157',
+                white: '#FFF',
+                black: '#000',
+                transparent: 'transparent',
+            },
+            backgroundImage: {
+                'header': "url('../../public/images/bg-header.jpg')",
+            }
         },
-        colors: {
-            'primary': '#588157',
-            white: '#FFF',
-            black: '#000',
-            transparent: 'transparent',
-        }
     },
 
     plugins: [require('@tailwindcss/forms')],

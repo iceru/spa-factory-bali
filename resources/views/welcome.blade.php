@@ -8,7 +8,9 @@
                 <div class="text-xl mb-4">
                     Pioneering in Bali contract manufacture
                 </div>
-                <x-button-link link="/contact-us" text="Contact Us" />
+                <x-button-link link="/contact-us">
+                    Contact Us
+                </x-button-link>
             </div>
             <div class="home__cta-img w-3/5">
                 <img src="/images/sfb-gedung.jpg" alt="Gedung Spa Factory Bali">
