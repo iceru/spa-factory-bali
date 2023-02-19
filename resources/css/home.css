@@ -22,3 +22,7 @@
         z-index: 0;
     }
 }
+
+.home__section {
+    padding: 64px 0;
+}

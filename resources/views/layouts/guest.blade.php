@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
 
