@@ -26,6 +26,7 @@ module.exports = {
             },
             colors: {
                 'primary': '#588157',
+                'secondary': '#3A5A40',
                 white: '#FFF',
                 black: '#000',
                 transparent: 'transparent',
@@ -33,6 +34,7 @@ module.exports = {
             },
             backgroundImage: {
                 'header': "url('../../public/images/bg-header.jpg')",
+                'quote': "url('../../public/images/bg-quote-2.png')",
                 'radial': "radial-gradient(78.57% 1211.34% at 35.59% 68.86%, #3A5A40 0%, #588157 96.37%)"
             },
         },

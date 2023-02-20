@@ -94,8 +94,8 @@
     </div>
 
     <div class="home__section container">
-        <div class="grid grid-cols-2 items-center">
-            <div class="pr-12">
+        <div class="flex items-center justify-between">
+            <div class="pr-12 w-3/5">
                 <div class="text-primary font-serif text-3xl mb-4">
                     Certifications
                 </div>
@@ -104,7 +104,56 @@
                     BPOM (Indonesian Agency of Drug & Food Control) and ISO 9001:2015 for quality assurance.
                 </div>
             </div>
-            <img src="/images/SERT.png" alt="mutu certification international" />
+            <div>
+                <img src="/images/SERT.png" class="w-full" alt="mutu certification international" />
+            </div>
+        </div>
+    </div>
+
+    <div class="home__section text-white bg-quote">
+        <div class="container grid grid-flow-col items-center">
+            <div class="mr-8 ">
+                <img src="/images/home-quote-2.png" class="w-24" alt="Nature">
+            </div>
+            <div class="text-justify font-serif text-2xl">
+                Our ultimate resource combined with esteemed development team works collaboratively with our clients to
+                manufacture existing formulations or to create new products that satisfy their customer and advance
+                their competitive edge.
+            </div>
+        </div>
+    </div>
+
+    <div class="home__section container grid grid-cols-2 gap-9">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-secondary flex justify-center items-center">
+                <img src="/images/ritz-carlton.png" alt="">
+            </div>
+            <div class="bg-primary flex justify-center items-center">
+                <img src="/images/ritz-carlton.png" alt="">
+            </div>
+            <div class="bg-primary flex justify-center items-center">
+                <img src="/images/ritz-carlton.png" alt="">
+            </div>
+            <div class="bg-secondary flex justify-center items-center">
+                <img src="/images/ritz-carlton.png" alt="">
+            </div>
+        </div>
+        <div>
+            <div class="font-serif text-primary text-2xl mb-4">
+                Partner with Brands in Creating Premium Natural Product / Cosmetics
+            </div>
+            <div class="text-justify text-body">
+                Integrating local wisdom & utilizing Indonesian active ingredients are our main focus thus creating
+                brilliant, natural synergies in every product that we created.
+                <br />
+                <br />
+
+                We partner with brands and create natural cosmetics that are clean, safe, and effective especially for
+                eco and wellness minded consumer. From our roots in spa products, we’re here to help you build your own,
+                proprietary formulas. Rest assured as our more than 20 years of manufacturing experience and knowledge
+                are at your disposal. Simply bring your ideas and talk to us, and we’ll bring the chemistry know-how,
+                resources, and manufacturing process to bring your ideas to fruition.
+            </div>
         </div>
     </div>
 </x-guest-layout>
