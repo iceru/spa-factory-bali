@@ -1,9 +1,9 @@
-<footer class="bg-primary py-12">
-    <div class="container grid mx-auto grid-cols-4 text-white">
-        <div class="footer__logo ">
+<footer class="bg-primary py-12 px-4 lg:px-0">
+    <div class="container lg:grid lg:grid-cols-4 flex flex-wrap text-white">
+        <div class="footer__logo w-full mb-6 lg:mb-0">
             <img src="/images/logo-white.png" class="h-28 w-auto object-contain" alt="Spa Factory Bali">
         </div>
-        <div class="footer__section">
+        <div class="footer__section w-1/2 mb-6 lg:mb-0">
             <ul>
                 <li class="text-xl font-bold">
                     Company
@@ -36,7 +36,7 @@
             </ul>
         </div>
 
-        <div class="footer__section">
+        <div class="footer__section w-1/2 mb-6 lg:mb-0">
             <ul>
                 <li class="text-xl font-bold">
                     Sites
@@ -54,16 +54,6 @@
                 <li>
                     <a href="/privacy-policy">
                         Privacy Policy
-                    </a>
-                </li>
-                <li>
-                    <a href="/e-library">
-                        E-Library
-                    </a>
-                </li>
-                <li>
-                    <a href="/contact-us">
-                        Contact Us
                     </a>
                 </li>
             </ul>

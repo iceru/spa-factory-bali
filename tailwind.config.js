@@ -16,7 +16,7 @@ module.exports = {
                 md: '768px',
                 lg: '992px',
                 xl: '1200px',
-                '2xl': '1400px',
+                '2xl': '1200px',
             },
         },
         extend: {
@@ -35,7 +35,9 @@ module.exports = {
             backgroundImage: {
                 'header': "url('../../public/images/bg-header.jpg')",
                 'quote': "url('../../public/images/bg-quote-2.png')",
-                'radial': "radial-gradient(78.57% 1211.34% at 35.59% 68.86%, #3A5A40 0%, #588157 96.37%)"
+                'about': "url('../../public/images/bg-about.png')",
+                'radial': "radial-gradient(78.57% 1211.34% at 35.59% 68.86%, #3A5A40 0%, #588157 96.37%)",
+                'diamond': "radial-gradient(277.9% 1549.5% at 35.59% 68.86%, #3A5A40 0%, #588157 96.37%)"
             },
         },
     },
