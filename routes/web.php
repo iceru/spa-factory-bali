@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SustainabilityController;
@@ -26,6 +27,8 @@ Route::get('/about-us', function () {
 Route::get('/sustainability', [SustainabilityController::class, 'index'])->name('sustain.index');
 
 Route::get('/clientele', [ClientController::class, 'index'])->name('client.index');
+
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 
 
 Route::get('/dashboard', function () {

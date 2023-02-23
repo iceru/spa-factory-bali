@@ -12,11 +12,10 @@
 .nav__index {
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 88%);
     background-color: transparent !important;
-}
 
-.nav__about .nav__menu-list,
-.nav__index .nav__menu-list {
-    color: white !important;
+    .nav__menu-list {
+        color: white !important;
+    }
 }
 
 .footer__section li {
