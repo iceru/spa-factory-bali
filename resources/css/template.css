@@ -22,3 +22,12 @@
 .footer__section li {
     margin-bottom: 1rem;
 }
+
+.sidebar__menu {
+    ul {
+        li {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
