@@ -14,7 +14,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('clientele');
+        $clients = Client::all();
+        return view('clientele', compact('clients'));
     }
 
     /**
@@ -24,7 +25,12 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        $clients = Client::all();
+        $options = collect([
+            ['name' => 'Tidak', 'value' => 'no'],
+            ['name' => 'Ya', 'value' => 'yes'],
+        ]);
+        return view('admin.client.create', compact('clients', 'options'));
     }
 
     /**
@@ -35,7 +41,36 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'logo' => 'required|image',
+            'images' => 'required',
+            'images.*' => 'required|image',
+            'featured' => 'required'
+        ]);
+
+        $client = new Client;
+        $imageFiles = [];
+
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+                $imageName = time() . '_' . $request->name . '.' . $image->extension();
+                $image->storeAs('public/client-images', $imageName);
+
+                $imageFiles[] = $imageName;
+            }
+        }
+
+        $request->file('logo')->store('public/client-logo');
+
+        $client->name = $request->name;
+        $client->logo = $request->logo;
+        $client->images = json_encode($imageFiles);
+        $client->featured = $request->featured;
+
+        $client->save();
     }
 
     /**

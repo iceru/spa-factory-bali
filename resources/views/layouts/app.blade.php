@@ -9,7 +9,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Scripts -->
@@ -22,8 +23,23 @@
         <main class="flex">
             <x-sidebar />
 
-            <div class="w-3/4">
-                {{ $slot }}
+            <div class="w-3/4 py-12">
+                <div class="sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 text-gray-900">
+                            {{ $slot }}
+                        </div>
+                    </div>
+                </div>
+                @if (isset($table))
+                    <div class="sm:px-6 lg:px-8 mt-6">
+                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                            <div class="p-6 text-gray-900">
+                                {{ $table }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </main>
     </div>

@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/clients">
+                <a href="/admin/client">
                     Clients
                 </a>
             </li>

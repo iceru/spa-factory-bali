@@ -24,7 +24,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $products = Products::all();
+        return view('admin.products.create', compact('products'));
     }
 
     /**
@@ -35,7 +36,23 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'logo' => 'required|image',
+            'images' => 'required',
+            'images.*' => 'required|image',
+            'featured' => 'required'
+        ]);
+
+        $products = new Products;
+        $imageFiles = [];
+
+        $products->name = $request->name;
+        $products->logo = $request->logo;
+        $products->images = json_encode($imageFiles);
+        $products->featured = $request->featured;
+
+        $products->save();
     }
 
     /**
