@@ -3,39 +3,55 @@
         Input Clients Data
     </div>
     <div class="my-6 w-full border-b border-gray-200"></div>
-    <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('client.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex items-center mb-6">
             <x-input-label for="name" :value="__('Name')" class="mr-4 w-1/5 text-lg" />
 
-            <x-text-input id="name" class="block w-3/5" type="name" name="name" required
-                autocomplete="current-name" />
+            <div class="w-3/5">
+                <x-text-input id="name" class="block w-full" type="name" name="name" required
+                    autocomplete="current-name" />
 
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
         </div>
 
         <div class="flex items-center mb-6">
-            <x-input-label for="image" :value="__('Image')" class="mr-4 w-1/5 text-lg" />
-
-            <input type="file" name="image" id="image">
-
-            <x-input-error :messages="$errors->get('image')" class="mt-2" />
+            <x-input-label for="logo" :value="__('Logo')" class="mr-4 w-1/5 text-lg" />
+            <div class="w-3/5">
+                <input type="file" name="logo" id="logo">
+                <x-input-error :messages="$errors->get('logo')" class="mt-2" />
+            </div>
         </div>
 
         <div class="flex items-center mb-6">
             <x-input-label for="images" :value="__('Images')" class="mr-4 w-1/5 text-lg" />
 
-            <input type="file" name="images[]" id="images" multiple>
+            <div class="w-3/5">
+                <input type="file" name="images[]" id="images" multiple>
 
-            <x-input-error :messages="$errors->get('images')" class="mt-2" />
+                <x-input-error :messages="$errors->get('images')" class="mt-2" />
+            </div>
         </div>
 
         <div class="flex items-center mb-6">
             <x-input-label for="featured" :value="__('Featured')" class="mr-4 w-1/5 text-lg" />
 
-            <x-input-select name="featured" :options="$options" />
-            <x-input-error :messages="$errors->get('featured')" class="mt-2" />
+            <div class="w-3/5">
+                <x-input-select name="featured" :options="$options" nameOption="name" valueOption="value" />
+                <x-input-error :messages="$errors->get('featured')" class="mt-2" />
+            </div>
         </div>
+
+        <div class="flex items-center mb-6">
+            <x-input-label for="products" :value="__('Product')" class="mr-4 w-1/5 text-lg" />
+
+            <div class="w-3/5">
+                <x-input-select name="products" :options="$products" nameOption="title" valueOption="id" />
+                <x-input-error :messages="$errors->get('products')" class="mt-2" />
+            </div>
+        </div>
+
 
         <div>
             <x-primary-button type="submit">
@@ -56,6 +72,8 @@
                     <th class="p-3 border">Logo</th>
                     <th class="p-3 border">Images</th>
                     <th class="p-3 border">Featured</th>
+                    <th class="p-3 border">Product</th>
+                    <th class="p-3 border">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,6 +83,7 @@
                         <td class="p-3 border">{{ $client->logo }}</td>
                         <td class="p-3 border">{{ $client->images }}</td>
                         <td class="p-3 border">{{ Str::ucfirst($client->featured) }}</td>
+                        <td class="p-3 border">{{ $client->products->title }}</td>
                     </tr>
                 @endforeach
             </tbody>

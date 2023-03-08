@@ -25,8 +25,8 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/e-library">
-                    E-Library
+                <a href="/admin/products">
+                    Products
                 </a>
             </li>
             <li>
@@ -34,6 +34,12 @@
                     Clients
                 </a>
             </li>
+            <li>
+                <a href="/admin/e-library">
+                    E-Library
+                </a>
+            </li>
+
             <li>
                 <a href="/admin/sustainability">
                     Sustainability

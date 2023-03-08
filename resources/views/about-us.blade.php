@@ -19,13 +19,12 @@
                     About Spa Factory Bali
                 </div>
                 <p class="text-gray-300 text-justify">
-                    Started out as a cottage industry in 2002, within a small house with the kitchen as the production
-                    area, a desk that served as an office and 5 staff. Back then we only made simple products like scrub
-                    powder, massage oil and bath salt. We now consciously choose to produce handcrafted cosmetics to
-                    open work opportunities and utilizing local talents, employ more than 40 staff which includes sales
-                    for domestic and overseas, 2 chemists, a design team, production, administration and in-house R&D
-                    team with cosmetic competency and a formulator consultant in Netherland, (in order to, striving, as
-                    our focus in) following European cosmetics safety guidance.
+                    We started out as a cottage industry within a small house in 2002 targeted for tourist attraction.
+                    Back then, we only made simple products like scrub powder, massage oil and bath salt. We expanded
+                    into a more advanced and innovated cosmetic manufacturer as we relocated to our new factory to
+                    comply with Good Manufacture Practice standards and stay relevant to the industrial trend in 2015.
+                    Currently, we choose to produce handcrafted natural cosmetics to open job opportunities and to
+                    utilise local talents, employing more than 35 staff, the majority of which are women.
                 </p>
             </div>
         </div>
@@ -37,15 +36,10 @@
                     Empowering Women
                 </div>
                 <p class="text-justify text-body ">
-                    Spa Factory Bali is a company run by women who determine to make a difference by empowering women
-                    and supporting the local economy. That is the reason why we are employing many mothers with children
-                    who need the income to support the family from the surrounding area. We support their determination
-                    to make a living thus we encourage them to bring the toddlers with them to work.
-                    <br><br>
-                    Aiming to always proactively achieve incremental improvements to our everyday manufacturing process,
-                    we proudly adapt Kaizen philosophy. We believe that it is important to create a culture of
-                    continuous improvement where all employees are actively engaged in improving the company and stick
-                    with its tremendous long-term value
+                    Spa Factory Bali is a company run by women who are determined to make a difference by empowering
+                    women and supporting the local economy. Thus, we are employing many mothers with children who need
+                    the income to support the family from the surrounding area. We support their determination to make a
+                    living, hence, we facilitate them to bring their child with them to work.
                 </p>
             </div>
             <div class="p-0 lg:p-6 lg:pr-0 order-1 lg:order-2">
@@ -58,17 +52,15 @@
             <div class="p-0 lg:p-6 lg:pl-0">
                 <img src="/images/about/about-3.jpg" alt="About Spa Factory Bali" />
             </div>
-            <div class="bg-about text-white flex flex-col justify-center p-8 ">
+            <div class="bg-diamond text-white flex flex-col justify-center p-8 ">
                 <div class="font-serif text-2xl mb-3">
-                    Transparent and Traceable Production Process
+                    Learning Organisation
                 </div>
                 <p class="text-gray-300 text-justify">
-                    In line with the trend of ‘Farm to Beauty’, Spa Factory Bali Provide transparency – traceability of
-                    production process and supply chain to ensure the purity and quality of active ingredients used.
-                    <br><br>
-                    We used only natural ingredients and naturally derivative chemicals. No toxic, harmful chemicals and
-                    animal derivative ingredients. We provide opportunities to locally-available ingredients and
-                    formulations for important societal benefits.
+                    Aiming to always proactively achieve incremental improvements to our everyday manufacturing process,
+                    we proudly adapt Kaizen philosophy. We believe that it is important to create a culture of
+                    continuous improvement where all employees are actively engaged in improving the company and stick
+                    with its tremendous long-term value
                 </p>
             </div>
         </div>
@@ -86,7 +78,7 @@
                 </p>
             </div>
             <div class="p-0 lg:p-6 lg:pr-0 order-1 lg:order-2">
-                <img src="/images/about/about-4.jpg" class="w-full" alt="Following European Cosmetic Safety Guidance" />
+                <img src="/images/about/about-4.png" class="w-full" alt="Following European Cosmetic Safety Guidance" />
             </div>
         </div>
     </div>

@@ -37,22 +37,23 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'logo' => 'required|image',
-            'images' => 'required',
-            'images.*' => 'required|image',
-            'featured' => 'required'
+            'title' => 'required',
+            'image' => 'required|image',
+            'description' => 'required'
         ]);
 
-        $products = new Products;
-        $imageFiles = [];
 
-        $products->name = $request->name;
-        $products->logo = $request->logo;
-        $products->images = json_encode($imageFiles);
-        $products->featured = $request->featured;
+        $products = new Products;
+
+        $path = $request->file('image')->store('public/products-image');
+
+        $products->title = $request->title;
+        $products->image = $path;
+        $products->description = $request->description;
 
         $products->save();
+
+        return redirect()->route('products.create')->with('success', 'Product crated successfully');
     }
 
     /**
@@ -72,9 +73,10 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(Products $products)
+    public function edit(Request $request)
     {
-        //
+        $product = Products::where('id', $request->product)->firstOrFail();
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -84,9 +86,29 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'image' => 'nullable|image',
+            'description' => 'required'
+        ]);
+
+
+        $products = Products::where('id', $request->product)->first();
+
+        if ($request->file('image')) {
+
+            $path = $request->file('image')->store('public/products-image');
+            $products->image = $path;
+        }
+
+        $products->title = $request->title;
+        $products->description = $request->description;
+
+        $products->save();
+
+        return redirect()->route('products.create')->with('success', 'Product updated successfully');
     }
 
     /**

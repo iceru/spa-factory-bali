@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -21,7 +22,7 @@ class ClientController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \IlluminateHttp\Response
      */
     public function create()
     {
@@ -30,7 +31,8 @@ class ClientController extends Controller
             ['name' => 'Tidak', 'value' => 'no'],
             ['name' => 'Ya', 'value' => 'yes'],
         ]);
-        return view('admin.client.create', compact('clients', 'options'));
+        $products = Products::all();
+        return view('admin.client.create', compact('clients', 'options', 'products'));
     }
 
     /**
@@ -46,7 +48,8 @@ class ClientController extends Controller
             'logo' => 'required|image',
             'images' => 'required',
             'images.*' => 'required|image',
-            'featured' => 'required'
+            'featured' => 'required',
+            'product' => 'required',
         ]);
 
         $client = new Client;
@@ -63,12 +66,13 @@ class ClientController extends Controller
             }
         }
 
-        $request->file('logo')->store('public/client-logo');
+        $path = $request->file('logo')->store('public/client-logo');
 
         $client->name = $request->name;
-        $client->logo = $request->logo;
+        $client->logo = $path;
         $client->images = json_encode($imageFiles);
         $client->featured = $request->featured;
+        $client->product_id = $request->products;
 
         $client->save();
     }

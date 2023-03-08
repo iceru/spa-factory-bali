@@ -14,7 +14,8 @@ class Client extends Model
         'name',
         'logo',
         'images',
-        'featured'
+        'featured',
+        'product_id'
     ];
 
     public function products()
