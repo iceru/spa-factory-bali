@@ -2,6 +2,9 @@
     <div class="font-bold text-2xl text-secondary">
         Input Clients Data
     </div>
+    @if ($errors->any())
+        {!! implode('', $errors->all('<div>:message</div>')) !!}
+    @endif
     <div class="my-6 w-full border-b border-gray-200"></div>
     <form action="{{ route('client.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -80,10 +83,20 @@
                 @foreach ($clients as $client)
                     <tr>
                         <td class="p-3 border">{{ $client->name }}</td>
-                        <td class="p-3 border">{{ $client->logo }}</td>
-                        <td class="p-3 border">{{ $client->images }}</td>
+                        <td class="p-3 border">
+                            <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}">
+                        </td>
+                        <td class="p-3 border">
+                            @foreach (json_decode($client->images) as $image)
+                                <img src="{{ Storage::url('/client-images/' . $image) }}" alt="{{ $client->name }}">
+                            @endforeach
+                        </td>
                         <td class="p-3 border">{{ Str::ucfirst($client->featured) }}</td>
-                        <td class="p-3 border">{{ $client->products->title }}</td>
+                        <td class="p-3 border">{{ $client->product->title }}</td>
+                        <td class="p-3"> <a href="{{ route('client.edit', $client->id) }}">
+                                <x-primary-button class="text-sm mb-3">Edit</x-primary-button>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

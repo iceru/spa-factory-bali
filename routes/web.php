@@ -44,9 +44,9 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/client', [ClientController::class, 'create'])->name('client.create');
         Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
-        Route::get('/client/edit', [ClientController::class, 'edit'])->name('client.edit');
-        Route::patch('/client/update', [ClientController::class, 'update'])->name('client.update');
-        Route::delete('/client/delete', [ClientController::class, 'delete'])->name('client.delete');
+        Route::get('/client/edit/{client}', [ClientController::class, 'edit'])->name('client.edit');
+        Route::patch('/client/update/{client}', [ClientController::class, 'update'])->name('client.update');
+        Route::delete('/client/delete/{client}', [ClientController::class, 'delete'])->name('client.delete');
 
         Route::get('/products', [ProductsController::class, 'create'])->name('products.create');
         Route::post('/products/store', [ProductsController::class, 'store'])->name('products.store');

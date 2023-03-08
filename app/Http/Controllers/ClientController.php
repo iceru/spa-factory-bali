@@ -26,7 +26,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        $clients = Client::all();
+        $clients = Client::with('product')->get();
         $options = collect([
             ['name' => 'Tidak', 'value' => 'no'],
             ['name' => 'Ya', 'value' => 'yes'],
@@ -47,9 +47,9 @@ class ClientController extends Controller
             'name' => 'required',
             'logo' => 'required|image',
             'images' => 'required',
-            'images.*' => 'required|image',
+            'images.*' => 'required',
             'featured' => 'required',
-            'product' => 'required',
+            'products' => 'required',
         ]);
 
         $client = new Client;
@@ -75,6 +75,8 @@ class ClientController extends Controller
         $client->product_id = $request->products;
 
         $client->save();
+
+        return redirect()->route('client.create')->with('success', 'Client created successfully');
     }
 
     /**
@@ -94,9 +96,15 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit(Request $request)
     {
-        //
+        $client = Client::where('id', $request->client)->with('product')->firstOrFail();
+        $options = collect([
+            ['name' => 'Tidak', 'value' => 'no'],
+            ['name' => 'Ya', 'value' => 'yes'],
+        ]);
+        $products = Products::all();
+        return view('admin.client.edit', compact('client', 'products', 'options'));
     }
 
     /**
@@ -106,9 +114,44 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'logo' => 'nullable|image',
+            'images' => 'nullable',
+            'images.*' => 'required',
+            'featured' => 'required',
+            'products' => 'required',
+        ]);
+
+        $client = Client::where('id', $request->client)->first();
+        $imageFiles = [];
+
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+                $imageName = time() . '_' . $request->name . '.' . $image->extension();
+                $image->storeAs('public/client-images', $imageName);
+
+                $imageFiles[] = $imageName;
+            }
+            $client->images = json_encode($imageFiles);
+        }
+
+        if ($request->hasFile('logo')) {
+            $path = $request->file('logo')->store('public/client-logo');
+            $client->logo = $path;
+        }
+
+        $client->name = $request->name;
+        $client->featured = $request->featured;
+        $client->product_id = $request->products;
+
+        $client->save();
+
+        return redirect()->route('client.create')->with('success', 'Client updated successfully');
     }
 
     /**

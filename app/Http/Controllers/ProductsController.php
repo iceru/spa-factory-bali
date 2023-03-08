@@ -42,7 +42,6 @@ class ProductsController extends Controller
             'description' => 'required'
         ]);
 
-
         $products = new Products;
 
         $path = $request->file('image')->store('public/products-image');
