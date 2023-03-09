@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Index;
+use App\Models\Client;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class IndexController extends Controller
     public function index()
     {
         $products = Products::all();
-        return view('index', compact('products'));
+        $clients = Client::where('featured', 'yes')->get();
+        return view('index', compact('products', 'clients'));
     }
 
     /**

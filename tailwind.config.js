@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -25,13 +26,29 @@ module.exports = {
                 serif: ['Philosopher', ...defaultTheme.fontFamily.serif]
             },
             colors: {
+                transparent: 'transparent',
+                body: '#515151',
+                black: colors.black,
+                blue: colors.blue,
+                cyan: colors.cyan,
+                emerald: colors.emerald,
+                fuchsia: colors.fuchsia,
+                green: colors.green,
+                indigo: colors.indigo,
+                lime: colors.lime,
+                orange: colors.orange,
+                pink: colors.pink,
+                purple: colors.purple,
+                red: colors.red,
+                rose: colors.rose,
+                sky: colors.sky,//warn - As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`.
+                teal: colors.teal,
+                violet: colors.violet,
+                yellow: colors.amber,
+                white: colors.white,
                 'primary': '#588157',
                 'secondary': '#3A5A40',
                 'light': '#E6EEE6',
-                white: '#FFF',
-                black: '#000',
-                transparent: 'transparent',
-                body: '#515151',
             },
             backgroundImage: {
                 'header': "url('../../public/images/bg-header.jpg')",

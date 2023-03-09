@@ -2,6 +2,11 @@
     <div class="font-bold text-2xl text-secondary">
         Input Products
     </div>
+    @if ($message = Session::get('success'))
+        <div class="w-full mt-4 bg-green-100 border border-green-400 p-4 rounded-md text-green-700">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
     <div class="my-6 w-full border-b border-gray-200"></div>
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -68,7 +73,14 @@
                             <a href="{{ route('products.edit', $product->id) }}">
                                 <x-primary-button class="text-sm mb-3">Edit</x-primary-button>
                             </a>
-                            <x-primary-button class="bg-red-700 hover:bg-red-800 text-sm">Delete</x-primary-button>
+                            <form action="{{ route('products.delete', $product->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <x-primary-button
+                                    class="!bg-red-500 hover:!bg-red-700 focus:!bg-red:700 active:!bg-red-700 text-sm"
+                                    type="submit">Delete
+                                </x-primary-button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

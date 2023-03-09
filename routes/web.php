@@ -46,13 +46,13 @@ Route::middleware('auth')->group(function () {
         Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
         Route::get('/client/edit/{client}', [ClientController::class, 'edit'])->name('client.edit');
         Route::patch('/client/update/{client}', [ClientController::class, 'update'])->name('client.update');
-        Route::delete('/client/delete/{client}', [ClientController::class, 'delete'])->name('client.delete');
+        Route::delete('/client/delete/{client}', [ClientController::class, 'destroy'])->name('client.delete');
 
         Route::get('/products', [ProductsController::class, 'create'])->name('products.create');
         Route::post('/products/store', [ProductsController::class, 'store'])->name('products.store');
         Route::get('/products/edit/{product}', [ProductsController::class, 'edit'])->name('products.edit');
         Route::patch('/products/update/{product}', [ProductsController::class, 'update'])->name('products.update');
-        Route::delete('/products/delete/{product}', [ProductsController::class, 'delete'])->name('products.delete');
+        Route::delete('/products/delete/{product}', [ProductsController::class, 'destroy'])->name('products.delete');
     });
 });
 

@@ -2,8 +2,10 @@
     <div class="font-bold text-2xl text-secondary">
         Input Clients Data
     </div>
-    @if ($errors->any())
-        {!! implode('', $errors->all('<div>:message</div>')) !!}
+    @if ($message = Session::get('success'))
+        <div class="w-full mt-4 bg-green-100 border border-green-400 p-4 rounded-md text-green-700">
+            <p>{{ $message }}</p>
+        </div>
     @endif
     <div class="my-6 w-full border-b border-gray-200"></div>
     <form action="{{ route('client.store') }}" method="POST" enctype="multipart/form-data">
@@ -93,9 +95,19 @@
                         </td>
                         <td class="p-3 border">{{ Str::ucfirst($client->featured) }}</td>
                         <td class="p-3 border">{{ $client->product->title }}</td>
-                        <td class="p-3"> <a href="{{ route('client.edit', $client->id) }}">
+                        <td class="p-3">
+                            <a href="{{ route('client.edit', $client->id) }}">
                                 <x-primary-button class="text-sm mb-3">Edit</x-primary-button>
                             </a>
+
+                            <form action="{{ route('client.delete', $client->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <x-primary-button
+                                    class="!bg-red-500 hover:!bg-red-700 focus:!bg-red:700 active:!bg-red-700 text-sm"
+                                    type="submit">Delete
+                                </x-primary-button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

@@ -52,7 +52,7 @@ class ProductsController extends Controller
 
         $products->save();
 
-        return redirect()->route('products.create')->with('success', 'Product crated successfully');
+        return redirect()->route('products.create')->with('success', 'Product created successfully');
     }
 
     /**
@@ -116,8 +116,12 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Products $products)
+    public function destroy(Request $request)
     {
-        //
+        $product = Products::where('id', $request->product)->first();
+
+        $product->delete();
+
+        return redirect()->route('products.create')->with('success', 'Product deleted successfully');
     }
 }

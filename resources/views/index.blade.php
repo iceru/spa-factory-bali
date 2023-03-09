@@ -2,23 +2,30 @@
     <header class="home__header pb-12">
         <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center bg-black bg-opacity-70">
             <div class="home__cta-text text-white p-0 lg:p-10 pr-6 mb-8 lg:mb-0 lg:w-2/5">
-                <div class="font-serif text-4xl mb-2">
+                <div class="font-serif text-4xl mb-2" data-aos="fade-right">
                     Spa Factory Bali™
                 </div>
-                <div class="text-xl mb-4">
-                    A Pioneer in Bali’s contract manufacturing for natural cosmetics.
+                <div class="text-xl mb-4" data-aos="fade-right" data-aos-duration="700">
+                    A Pioneer in Bali's contract manufacturing for natural cosmetics.
                 </div>
-                <x-button-link link="/contact-us">
+                <x-button-link link="/contact-us" data-aos="fade-right" data-aos-duration="1000">
                     Contact Us
                 </x-button-link>
             </div>
             <div class="home__cta-img lg:w-3/5">
-                <img src="/images/sfb-gedung.jpg" class="w-full" alt="Gedung Spa Factory Bali">
+                <div id="home-sliders">
+                    <img src="/images/sfb-gedung.jpg" class="w-full" alt="Gedung Spa Factory Bali">
+                    <img src="/images/sfb-gedung.jpg" class="w-full" alt="Gedung Spa Factory Bali">
+                    <img src="/images/sfb-gedung.jpg" class="w-full" alt="Gedung Spa Factory Bali">
+                </div>
             </div>
         </div>
     </header>
-    <div class="py-8 bg-primary text-center text-white font-serif text-xl">
-        Professional, Traceable, Sustainable-Focused, High Quality Bali Contract Manufacturer
+    <div class="py-8 bg-primary text-center text-white font-serif text-xl" data-aos="fade-bottom"
+        data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-offset="400">
+        <div ata-aos="fade-bottom" data-aos-delay="600">
+            Professional, Traceable, Sustainable-Focused, High Quality Bali Contract Manufacturer
+        </div>
     </div>
     <div class="section container">
         <div class="text-center font-serif text-primary mb-6 text-4xl">
@@ -107,24 +114,13 @@
 
     <div class="section container grid lg:grid-cols-2 gap-9">
         <div class="grid grid-cols-3 gap-4">
-            <div class="bg-secondary flex justify-center items-center h-fit">
-                <img src="/images/ritz-carlton.png" alt="">
-            </div>
-            <div class="bg-primary flex justify-center items-center">
-                <img src="/images/ritz-carlton.png" alt="">
-            </div>
-            <div class="bg-primary flex justify-center items-center">
-                <img src="/images/ritz-carlton.png" alt="">
-            </div>
-            <div class="bg-secondary flex justify-center items-center">
-                <img src="/images/ritz-carlton.png" alt="">
-            </div>
-            <div class="bg-primary flex justify-center items-center">
-                <img src="/images/ritz-carlton.png" alt="">
-            </div>
-            <div class="bg-secondary flex justify-center items-center">
-                <img src="/images/ritz-carlton.png" alt="">
-            </div>
+            @foreach ($clients as $client)
+                <a href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}">
+                    <div class="odd:bg-secondary even:bg-primary flex justify-center items-center h-32">
+                        <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}">
+                    </div>
+                </a>
+            @endforeach
         </div>
         <div>
             <div class="font-serif text-primary text-2xl mb-4">
@@ -146,4 +142,10 @@
             </x-button-link>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#home-sliders').slick()
+        });
+    </script>
 </x-guest-layout>
