@@ -14,9 +14,9 @@
             </div>
             <div class="home__cta-img lg:w-3/5">
                 <div id="home-sliders">
-                    <img src="/images/sfb-gedung.jpg" class="w-full" alt="Gedung Spa Factory Bali">
-                    <img src="/images/sfb-gedung.jpg" class="w-full" alt="Gedung Spa Factory Bali">
-                    <img src="/images/sfb-gedung.jpg" class="w-full" alt="Gedung Spa Factory Bali">
+                    @foreach ($sliders as $slider)
+                        <img src="{{ Storage::url($slider->image) }}" class="w-full" alt="Spa Factory Bali">
+                    @endforeach
                 </div>
             </div>
         </div>

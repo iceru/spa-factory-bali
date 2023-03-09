@@ -46,8 +46,8 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/sliders">
-                    Image Sliders
+                <a href="/admin/homeslider">
+                    Home Sliders
                 </a>
             </li>
         </ul>

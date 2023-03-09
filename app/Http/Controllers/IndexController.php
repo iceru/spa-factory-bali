@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Index;
 use App\Models\Client;
+use App\Models\HomeSlider;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class IndexController extends Controller
     {
         $products = Products::all();
         $clients = Client::where('featured', 'yes')->get();
-        return view('index', compact('products', 'clients'));
+        $sliders = HomeSlider::orderBy('order')->get();
+        return view('index', compact('products', 'clients', 'sliders'));
     }
 
     /**

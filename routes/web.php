@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SustainabilityController;
@@ -32,11 +34,10 @@ Route::get('/clientele', [ClientController::class, 'index'])->name('client.index
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -53,6 +54,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/products/edit/{product}', [ProductsController::class, 'edit'])->name('products.edit');
         Route::patch('/products/update/{product}', [ProductsController::class, 'update'])->name('products.update');
         Route::delete('/products/delete/{product}', [ProductsController::class, 'destroy'])->name('products.delete');
+
+
+        Route::get('/homeslider', [HomeSliderController::class, 'create'])->name('homeslider.create');
+        Route::post('/homeslider/store', [HomeSliderController::class, 'store'])->name('homeslider.store');
+        Route::get('/homeslider/edit/{homeslider}', [HomeSliderController::class, 'edit'])->name('homeslider.edit');
+        Route::patch('/homeslider/update/{homeslider}', [HomeSliderController::class, 'update'])->name('homeslider.update');
+        Route::delete('/homeslider/delete/{homeslider}', [HomeSliderController::class, 'destroy'])->name('homeslider.delete');
     });
 });
 
