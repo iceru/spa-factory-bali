@@ -61,6 +61,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/homeslider/edit/{homeslider}', [HomeSliderController::class, 'edit'])->name('homeslider.edit');
         Route::patch('/homeslider/update/{homeslider}', [HomeSliderController::class, 'update'])->name('homeslider.update');
         Route::delete('/homeslider/delete/{homeslider}', [HomeSliderController::class, 'destroy'])->name('homeslider.delete');
+
+        Route::get('/sustainability', [SustainabilityController::class, 'create'])->name('sustainability.create');
+        Route::post('/sustainability/store', [SustainabilityController::class, 'store'])->name('sustainability.store');
+        Route::get('/sustainability/edit/{sustainability}', [SustainabilityController::class, 'edit'])->name('sustainability.edit');
+        Route::patch('/sustainability/update/{sustainability}', [SustainabilityController::class, 'update'])->name('sustainability.update');
+        Route::delete('/sustainability/delete/{sustainability}', [SustainabilityController::class, 'destroy'])->name('sustainability.delete');
     });
 });
 

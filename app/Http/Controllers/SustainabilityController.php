@@ -14,6 +14,7 @@ class SustainabilityController extends Controller
      */
     public function index()
     {
+
         return view('sustainability');
     }
 
@@ -24,7 +25,8 @@ class SustainabilityController extends Controller
      */
     public function create()
     {
-        //
+        $sustainabilities = Sustainability::all();
+        return response(view('admin.sustainability.create', compact('sustainabilities')));
     }
 
     /**

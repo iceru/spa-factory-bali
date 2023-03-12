@@ -5,22 +5,24 @@
                 <img src="/images/logo-white.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali"></a>
         </div>
         <ul class="nav__menu-list items-center text-primary hidden lg:flex">
-            <li>
+            <li class="{{ Route::currentRouteName() === 'index' ? 'active' : '' }}">
                 <a href="/">Home</a>
             </li>
-            <li>
+            <li class="{{ Route::currentRouteName() === 'about' ? 'active' : '' }}">
                 <a href="/about-us">About Us</a>
             </li>
-            <li>
+            <li class="{{ Route::currentRouteName() === 'sustain.index' ? 'active' : '' }}">
                 <a href="/sustainability">Sustainability</a>
             </li>
-            <li>
-                <a href="/clientele">Clientele</a>
+            <li class="{{ Route::currentRouteName() === 'client.index' ? 'active' : '' }}">
+                <a href="/clientele">
+                    Clientele
+                </a>
             </li>
             <li>
                 <a href="/e-library">E-Library</a>
             </li>
-            <li>
+            <li class="{{ Route::currentRouteName() === 'contact.index' ? 'active' : '' }}">
                 <a href="/contact-us">Contact Us</a>
             </li>
         </ul>
@@ -28,4 +30,23 @@
             <img src="/images/hamburger.png" alt="Menu" />
         </div>
     </div>
+
+    <script>
+        const onMouseUp = e => {
+            if (!$('.sidemobile__wrapper').is(e.target) &&
+                $('.sidemobile__wrapper').has(e.target).length === 0) {
+                $('.sidemobile__wrapper').removeClass('active')
+            }
+        }
+
+        $('.hamburger').on('click', () => {
+            $('.sidemobile__wrapper').toggleClass('active').promise().done(() => {
+                if ($('.sidemobile__wrapper').hasClass('active')) {
+                    $(document).on('mouseup', onMouseUp)
+                } else {
+                    $(document).off('mouseup', onMouseUp)
+                }
+            })
+        })
+    </script>
 </nav>

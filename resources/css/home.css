@@ -70,6 +70,37 @@
     }
 }
 
+.about__traceWrapper {
+    position: relative;
+    &::before {
+        content: "";
+        height: 2px;
+        width: 100%;
+        z-index: 0;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+    }
+}
+
+.about__process {
+    .about__process-image {
+        filter: grayscale(1);
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+    }
+
+    &.active,
+    &:hover {
+        .about__process-image {
+            filter: grayscale(0);
+            border: 2px solid white;
+        }
+    }
+}
+
 .sustain__sgd-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);

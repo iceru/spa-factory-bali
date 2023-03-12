@@ -65,6 +65,75 @@
             </div>
         </div>
     </div>
+    <div class="section bg-linear">
+        <div class="container">
+            <div class="font-serif text-white mb-4 text-2xl text-center">
+                Transparent and Traceable Production Process
+            </div>
+            <div class="text-white text-center">
+                In line with the trend of ‘Farm to Beauty’, Spa Factory Bali Provides transparency – traceability of
+                production process and supply chain to ensure the purity and quality of active ingredients used.
+            </div>
+            <div class="flex my-8 justify-between about__traceWrapper">
+                <div class="z-10 about__process active" id="process-1">
+                    <div class="flex text-white mb-4 font-serif items-center justify-center">
+                        <div class="mr-3">
+                            <img src="/images/about/icon-leaf.png" alt="">
+                        </div>
+                        Process Name
+                    </div>
+                    <div>
+                        <img src="/images/about/process-1.jpg" alt=""
+                            class="w-40 h-40 object-cover rounded-full about__process-image">
+                    </div>
+                </div>
+                <div class="z-10 about__process" id="process-2">
+                    <div class="flex text-white mb-4 font-serif items-center justify-center">
+                        <div class="mr-3">
+                            <img src="/images/about/icon-industry.png" alt="">
+                        </div>
+                        Process Name
+                    </div>
+                    <div>
+                        <img src="/images/about/process-2.jpg" alt=""
+                            class="w-40 h-40 object-cover rounded-full about__process-image">
+                    </div>
+                </div>
+                <div class="z-10 about__process" id="process-3">
+                    <div class="flex text-white mb-4 font-serif items-center justify-center">
+                        <div class="mr-3">
+                            <img src="/images/about/icon-lotion.png" alt="">
+                        </div>
+                        Process Name
+                    </div>
+                    <div>
+                        <img src="/images/about/about-1.jpg" alt=""
+                            class="w-40 h-40 object-cover rounded-full about__process-image">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="process-1 about__process-large relative" style="height: 600px">
+                    <div class="absolute h-1/2 w-full bg-gradient-to-b from-black left-0 top-0">
+                    </div>
+                    <div class="absolute top-8 left-8 z-10">
+                        <div class="font-serif text-2xl text-white">
+                            Process Name
+                        </div>
+                        <div class="text-white">
+                            Lorem ipsum dolor sit amet consectetur. Volutpat lectus semper praesent sit viverra
+                            pellentesque augue maecenas blandit. At diam tellus ultricies dolor odio dictumst sem
+                            cursus. Rutrum ac neque sit quisque vitae ac arcu. Tristique mattis in vitae etiam feugiat
+                            vitae. Laoreet placerat facilisis fames egestas. Purus id aliquet id nec libero maecenas.
+                            Tempor dignissim at sit ac cursus vitae pharetra. Viverra et nisl nibh aliquam convallis
+                            vitae.
+                        </div>
+                    </div>
+                    <img src="/images/about/process-1.jpg" class="h-full w-full object-cover" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="section">
         <div class="container grid lg:grid-cols-2 gap-4">
             <div class="flex flex-col justify-center p-0 lg:p-4 pl-0 order-2 lg:order-1">

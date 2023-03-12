@@ -42,7 +42,10 @@
     </main>
 
     <script>
-        AOS.init();
+        AOS.init({
+            once: true,
+            duration: 600,
+        });
     </script>
 
     <x-footer />

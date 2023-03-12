@@ -1,6 +1,7 @@
 <x-guest-layout>
     <header class="home__header pb-12">
-        <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center bg-black bg-opacity-70">
+        <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center bg-black bg-opacity-70"
+            data-aos="fade-right">
             <div class="home__cta-text text-white p-0 lg:p-10 pr-6 mb-8 lg:mb-0 lg:w-2/5">
                 <div class="font-serif text-4xl mb-2" data-aos="fade-right">
                     Spa Factory Bali™
@@ -12,7 +13,7 @@
                     Contact Us
                 </x-button-link>
             </div>
-            <div class="home__cta-img lg:w-3/5">
+            <div class="home__cta-img w-full lg:w-3/5">
                 <div id="home-sliders">
                     @foreach ($sliders as $slider)
                         <img src="{{ Storage::url($slider->image) }}" class="w-full" alt="Spa Factory Bali">
@@ -21,17 +22,17 @@
             </div>
         </div>
     </header>
-    <div class="py-8 bg-primary text-center text-white font-serif text-xl" data-aos="fade-bottom"
-        data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-offset="400">
-        <div ata-aos="fade-bottom" data-aos-delay="600">
+    <div class="py-8 bg-primary text-center text-white font-serif text-xl" data-aos="fade-down"
+        data-aos-easing="ease-in-sine">
+        <div data-aos="fade-down" data-aos-delay="400">
             Professional, Traceable, Sustainable-Focused, High Quality Bali Contract Manufacturer
         </div>
     </div>
     <div class="section container">
-        <div class="text-center font-serif text-primary mb-6 text-4xl">
+        <div class="text-center font-serif text-primary mb-6 text-4xl" data-aos="fade-down">
             Spa Factory Bali™
         </div>
-        <div class="text-justify text-body">
+        <div class="text-justify text-body" data-aos="fade-down" data-aos-delay="400">
             Spa Factory Bali is a renowned, professional contract manufacturer in Bali with a production facility that
             complies with Good Manufacture Practice standards. As an established, constantly improving contract
             manufacturer, we develop unique, requested products for our clientele. We manufacture various products in
@@ -41,29 +42,30 @@
         </div>
     </div>
     <div class="section container grid lg:grid-cols-2 items-center">
-        <div class="text-justify text-body  lg:pr-16 order-2 lg:order-1">
+        <div class="text-justify text-body  lg:pr-16 order-2 lg:order-1" data-aos="fade-right" data-aos-delay="800"
+            data-aos-offset="-400">
             Spa Factory Bali is the optimal choice for a company who decides to launch a new product line and may not
             have the fundamental materials to produce it autogenously as it may incur in overpriced production or a lack
             of business foresight in understanding the risk. In this process, products are made over a mutually agreed
             period of time and feasible for businesses who want a steady, reliable source as a limited part of their
             manufacturing process.
         </div>
-        <div class="mb-6 lg:mb-0 order-1 lg:order-2">
+        <div class="mb-6 lg:mb-0 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="800">
             <img src="/images/home-about.png" alt="Proses Produksi Spa Factory Bali" />
         </div>
     </div>
 
-    <div class="section bg-radial text-white ">
-        <div class="text-center mb-3 font-serif text-3xl">
+    <div class="section bg-radial text-white" data-aos="fade-down" data-aos-duration="800">
+        <div class="text-center mb-3 font-serif text-3xl" data-aos="fade-down" data-aos-delay="400">
             Our Products
         </div>
-        <div class="text-center lg:w-3/5 m-auto mb-12">
+        <div class="text-center lg:w-3/5 m-auto mb-12" data-aos="fade-down" data-aos-delay="600">
             We are open to partner with brands/companies who are searching for a certified chemist to help with product
             development and production for:
         </div>
         <div class="grid lg:grid-cols-3 container gap-12">
-            @foreach ($products as $product)
-                <div class="drop-shadow-xl">
+            @foreach ($products as $key => $product)
+                <div class="drop-shadow-xl" data-aos="fade-right" data-aos-delay="{{ ($key + 1) * 400 }}">
                     <img src="{{ Storage::url($product->image) }}" class="w-full" alt="{{ $product->title }}" />
                     <div class="bg-white bg-opacity-30 pt-4 pb-8 px-6">
                         <div class="text-center font-bold text-lg mb-2">
@@ -81,30 +83,41 @@
     <div class="section container">
         <div class="flex flex-col items-center justify-between">
             <div class="text-center mb-8">
-                <div class="text-primary font-serif text-3xl mb-4">
+                <div class="text-primary font-serif text-3xl mb-4" data-aos="fade-down">
                     Certifications
                 </div>
-                <div class="text-body">
+                <div class="text-body" data-aos="fade-down" data-aos-delay="400">
                     Spa Factory Bali has earned a Fully Certified GMP (Cosmetics Good Manufacturing Practice) under BPOM
                     (Indonesian Agency of Drug & Food Control), Halal under MUI (Indonesian Ulema Council) and ISO
                     9001:2015 for quality assurance. We are also a member of RSPO (Roundtable on Sustainable Palm Oil).
                 </div>
             </div>
-            <div class="flex items-center w-full justify-between">
-                <img src="/images/bpom.png" class="h-40" alt="mutu certification international" />
-                <img src="/images/halal.png" class="h-40" alt="mutu certification international" />
-                <img src="/images/SERT.png" class="h-40" alt="mutu certification international" />
-                <img src="/images/rspo.png" class="h-40" alt="mutu certification international" />
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex justify-center" data-aos="fade-right" data-aos-delay="800">
+                    <img src="/images/bpom.png" class="h-40" alt="mutu certification international" />
+                </div>
+                <div class="flex justify-center" data-aos="fade-right" data-aos-delay="400">
+                    <img src="/images/halal.png" class="h-40" alt="mutu certification international" />
+                </div>
+
+                <div class="flex justify-center" data-aos="fade-left" data-aos-delay="400">
+                    <img src="/images/SERT.png" class="h-40" alt="mutu certification international" />
+                </div>
+
+                <div class="flex justify-center" data-aos="fade-left" data-aos-delay="800">
+                    <img src="/images/rspo.png" class="h-40" alt="mutu certification international" />
+                </div>
+
             </div>
         </div>
     </div>
 
     <div class="section text-white bg-quote bg-no-repeat bg-cover">
         <div class="container grid lg:grid-flow-col items-center gap-6">
-            <div class="flex justify-center lg:block">
+            <div class="flex justify-center lg:block" data-aos="fade-right" data-aos-duration="400">
                 <img src="/images/home-quote-2.png" class="w-28" alt="Nature">
             </div>
-            <div class="text-justify font-serif text-xl lg:text-2xl">
+            <div class="text-justify font-serif text-xl lg:text-2xl" data-aos="fade-right" data-aos-delay="400">
                 Our ultimate resources, combined with an esteemed development team works collaboratively with our
                 clients to manufacture existing formulations or to create new products that satisfy the customer and
                 advance the competitive edge.
@@ -137,15 +150,56 @@
                 and manufacturing process to bring your ideas to fruition.
             </div>
 
-            <x-button-link link="/clientele" class="mt-4 border-primary text-primary hover:bg-primary hover:text-white">
+            <x-button-link link="/clientele"
+                class="mt-4 border-primary text-primary hover:bg-primary hover:text-white">
                 Learn More
             </x-button-link>
         </div>
     </div>
 
+    <div class="sidemobile__wrapper bg-linear p-6 min-h-screen w-2/3">
+        <div class="logo mb-10">
+            <img src="/images/logo-white.png" alt="">
+        </div>
+        <nav class="sidemobile__menu text-white font-semibold mb-10 uppercase">
+            <ul class="gap-4 grid">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/about-us">About Us</a>
+                </li>
+                <li>
+                    <a href="/sustainability">Sustainability</a>
+                </li>
+                <li>
+                    <a href="/clientele">Clientele</a>
+                </li>
+                <li>
+                    <a href="/e-library">E-Library</a>
+                </li>
+                <li>
+                    <a href="/contact-us">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="flex gap-6 items-center">
+            <a href="#">
+                <img src="/images/instagram.png" class="h-6 object-contain" alt="Instagram">
+            </a>
+            <a href="#">
+                <img src="/images/facebook.png" class="h-6 object-contain" alt="Facebook">
+            </a>
+            <a href="#">
+                <img src="/images/twitter.png" class="h-6 object-contain" alt="Twitter">
+            </a>
+        </div>
+
+    </div>
+
     <script>
         $(document).ready(function() {
-            $('#home-sliders').slick()
+            $('#home-sliders').slick();
         });
     </script>
 </x-guest-layout>
