@@ -9,30 +9,121 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Scripts -->
+    <script src='https://cdn.tiny.cloud/1/w6cvfb6bgswq49z8hbl7msw8t7r9cw5auu24heasdln1q2fy/tinymce/5/tinymce.min.js'
+        referrerpolicy="origin"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
-
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
-
         <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        <main class="flex">
+            <x-sidebar />
+
+            <div class="w-3/4 py-12">
+                <div class="sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 text-gray-900">
+                            {{ $slot }}
+                        </div>
+                    </div>
+                </div>
+                @if (isset($table))
+                    <div class="sm:px-6 lg:px-8 mt-6">
+                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                            <div class="p-6 text-gray-900">
+                                {{ $table }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
         </main>
     </div>
 </body>
+
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'link image imagetools paste forecolor',
+        paste_as_text: true,
+        toolbar: [{
+                name: 'history',
+                items: ['undo', 'redo']
+            },
+            {
+                name: 'styles',
+                items: ['styleselect']
+            },
+            {
+                name: 'formatting',
+                items: ['bold', 'italic', 'underline']
+            },
+            {
+                name: 'alignment',
+                items: ['alignleft', 'aligncenter', 'alignright', 'alignjustify']
+            },
+            {
+                name: 'indentation',
+                items: ['outdent', 'indent']
+            },
+            {
+                name: 'colors',
+                items: ['forecolor']
+            }
+        ],
+        a11y_advanced_options: true,
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'UKMJAGOWAN.ID',
+        height: "350",
+        color_cols: 5,
+        color_map: [
+            '16857E', 'Primary',
+            '58C082', 'Secondary',
+            '000000', 'Black',
+            'FFFFFF', 'White',
+            "00FFFF", "Aqua",
+            "00CCFF", "Sky blue",
+            "993366", "Red violet",
+            "008080", "Teal",
+            "0000FF", "Blue",
+            "666699", "Grayish blue",
+            "808080", "Gray",
+            "FF0000", "Red",
+        ],
+        image_title: true,
+        automatic_uploads: true,
+        images_upload_url: '/upload/image',
+        file_picker_types: 'image',
+        file_picker_callback: function(cb, value, meta) {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            input.onchange = function() {
+                var file = this.files[0];
+
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function() {
+                    var id = 'blobid' + (new Date()).getTime();
+                    var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                    var base64 = reader.result.split(',')[1];
+                    var blobInfo = blobCache.create(id, file, base64);
+                    blobCache.add(blobInfo);
+                    cb(blobInfo.blobUri(), {
+                        title: file.name
+                    });
+                };
+            };
+            input.click();
+        }
+    });
+</script>
 
 </html>

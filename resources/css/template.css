@@ -1,5 +1,76 @@
 .nav__menu-list {
     li {
         margin-right: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 25px;
+            height: 1px;
+        }
+
+        &.active {
+            &:after {
+                background-color: #588157;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.nav__about,
+.nav__auth,
+.nav__index {
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 88%);
+    background-color: transparent !important;
+
+    .nav__menu-list {
+        color: white !important;
+
+        li {
+            &.active {
+                &:after {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+.footer__section li {
+    margin-bottom: 1rem;
+}
+
+.sidebar__menu {
+    ul {
+        li {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
+
+.sidemobile__wrapper {
+    position: fixed;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease all;
+    left: 0;
+    top: 0;
+    z-index: 20;
+
+    &.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 }

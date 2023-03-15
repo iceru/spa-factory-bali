@@ -1,0 +1,144 @@
+.home__header {
+    background: url("../../public/images/bg-header.jpg");
+    background-size: cover;
+    position: relative;
+    margin-top: -128px;
+    padding-top: calc(128px + 18px);
+    z-index: 2;
+
+    .home__cta {
+        z-index: 3;
+        position: relative;
+    }
+    &::after {
+        content: "";
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 0;
+    }
+}
+
+.section {
+    padding: 64px 0;
+
+    @media (min-width: 1200px) {
+        &.container {
+            width: 1000px;
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 2rem 1rem;
+    }
+}
+
+.about__header {
+    background: url("../../public/images/about/about-header.JPG");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -128px;
+    min-height: 40vw;
+    padding-top: calc(128px + 18px);
+
+    @media (max-width: 640px) {
+        height: 60vh;
+    }
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 40%;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        background: linear-gradient(
+            0,
+            rgba(0, 0, 0, 50%) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        z-index: 0;
+    }
+}
+
+.about__traceWrapper {
+    position: relative;
+    &::before {
+        content: "";
+        height: 2px;
+        width: 100%;
+        z-index: 0;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+    }
+}
+
+.about__process {
+    .about__process-image {
+        filter: grayscale(1);
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+    }
+
+    &.active,
+    &:hover {
+        .about__process-image {
+            filter: grayscale(0);
+            border: 2px solid white;
+        }
+    }
+}
+
+.sustain__sgd-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+}
+
+.clientele__catalog {
+    li {
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        font-size: 18px;
+        transition: all 0.2s ease;
+        display: inline-block;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 0%;
+            position: absolute;
+            height: 1px;
+            background-color: #588157;
+            left: 0;
+            bottom: 0;
+            transition: all 0.5s ease;
+        }
+
+        &.active,
+        &:hover {
+            color: #588157;
+            font-weight: bold;
+
+            &::after {
+                width: 60%;
+            }
+        }
+
+        &:hover {
+            font-weight: normal;
+        }
+    }
+}

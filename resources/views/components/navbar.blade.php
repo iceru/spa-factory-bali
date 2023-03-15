@@ -1,27 +1,52 @@
-<nav>
-    <div class="container mx-auto flex justify-between items-center">
+<nav class="nav__wrapper nav__{{ $type }} py-6 px-4 lg:px-0 z-10 relative bg-light">
+    <div class="container flex justify-between items-center">
         <div class="nav__logo">
-            <img src="/images/logo-white.png" alt="Spa Factory Bali">
+            <a href="/">
+                <img src="/images/logo-white.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali"></a>
         </div>
-        <ul class="nav__menu-list flex items-center">
-            <li>
+        <ul class="nav__menu-list items-center text-primary hidden lg:flex">
+            <li class="{{ Route::currentRouteName() === 'index' ? 'active' : '' }}">
                 <a href="/">Home</a>
             </li>
-            <li>
-                <a href="/">About Us</a>
+            <li class="{{ Route::currentRouteName() === 'about' ? 'active' : '' }}">
+                <a href="/about-us">About Us</a>
+            </li>
+            <li class="{{ Route::currentRouteName() === 'sustain.index' ? 'active' : '' }}">
+                <a href="/sustainability">Sustainability</a>
+            </li>
+            <li class="{{ Route::currentRouteName() === 'client.index' ? 'active' : '' }}">
+                <a href="/clientele">
+                    Clientele
+                </a>
             </li>
             <li>
-                <a href="/">Sustainability</a>
+                <a href="/e-library">E-Library</a>
             </li>
-            <li>
-                <a href="/">Clientele</a>
-            </li>
-            <li>
-                <a href="/">E-Library</a>
-            </li>
-            <li>
-                <a href="/">Contact Us</a>
+            <li class="{{ Route::currentRouteName() === 'contact.index' ? 'active' : '' }}">
+                <a href="/contact-us">Contact Us</a>
             </li>
         </ul>
+        <div class="hamburger lg:hidden">
+            <img src="/images/hamburger.png" alt="Menu" />
+        </div>
     </div>
+
+    <script>
+        const onMouseUp = e => {
+            if (!$('.sidemobile__wrapper').is(e.target) &&
+                $('.sidemobile__wrapper').has(e.target).length === 0) {
+                $('.sidemobile__wrapper').removeClass('active')
+            }
+        }
+
+        $('.hamburger').on('click', () => {
+            $('.sidemobile__wrapper').toggleClass('active').promise().done(() => {
+                if ($('.sidemobile__wrapper').hasClass('active')) {
+                    $(document).on('mouseup', onMouseUp)
+                } else {
+                    $(document).off('mouseup', onMouseUp)
+                }
+            })
+        })
+    </script>
 </nav>
