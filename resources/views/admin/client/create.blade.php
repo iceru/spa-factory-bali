@@ -86,16 +86,17 @@
                     <tr>
                         <td class="p-3 border">{{ $client->name }}</td>
                         <td class="p-3 border">
-                            <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}">
+                            <img src="{{ Storage::url($client->logo) }}" width="200" alt="{{ $client->name }}">
                         </td>
                         <td class="p-3 border">
                             @foreach (json_decode($client->images) as $image)
-                                <img src="{{ Storage::url('/client-images/' . $image) }}" alt="{{ $client->name }}">
+                                <img src="{{ Storage::url('/client-images/' . $image) }}" width="200"
+                                    alt="{{ $client->name }}">
                             @endforeach
                         </td>
                         <td class="p-3 border">{{ Str::ucfirst($client->featured) }}</td>
                         <td class="p-3 border">{{ $client->product->title }}</td>
-                        <td class="p-3">
+                        <td class="p-3 border">
                             <a href="{{ route('client.edit', $client->id) }}">
                                 <x-primary-button class="text-sm mb-3">Edit</x-primary-button>
                             </a>

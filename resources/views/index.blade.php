@@ -126,13 +126,15 @@
     </div>
 
     <div class="section container grid lg:grid-cols-2 gap-9">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-3 gap-4 h-1/2">
             @foreach ($clients as $client)
-                <a href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}">
-                    <div class="odd:bg-secondary even:bg-primary flex justify-center items-center h-32">
-                        <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}">
+                <div href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
+                    class="block odd:bg-secondary even:bg-primary">
+                    <div class=" flex justify-center items-center h-full ">
+                        <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}"
+                            class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}">
                     </div>
-                </a>
+                </div>
             @endforeach
         </div>
         <div>
