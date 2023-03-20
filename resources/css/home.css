@@ -2,8 +2,6 @@
     background: url("../../public/images/bg-header.jpg");
     background-size: cover;
     position: relative;
-    margin-top: -128px;
-    padding-top: calc(128px + 18px);
     z-index: 2;
 
     .home__cta {
@@ -28,7 +26,7 @@
 
     @media (min-width: 1200px) {
         &.container {
-            width: 1000px;
+            width: 1100px;
             margin: auto;
         }
     }
@@ -45,9 +43,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: -128px;
     min-height: 40vw;
-    padding-top: calc(128px + 18px);
+    padding-top: 8rem;
 
     @media (max-width: 640px) {
         height: 60vh;

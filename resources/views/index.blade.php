@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <header class="home__header pb-12">
+    <header class="home__header pb-20 pt-36">
         <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center bg-black bg-opacity-70"
             data-aos="fade-right">
             <div class="home__cta-text text-white p-0 lg:p-10 pr-6 mb-8 lg:mb-0 lg:w-2/5">
@@ -23,8 +23,8 @@
         </div>
     </header>
     <div class="py-8 bg-primary text-center text-white font-serif text-xl" data-aos="fade-down"
-        data-aos-easing="ease-in-sine">
-        <div data-aos="fade-down" data-aos-delay="400">
+        data-aos-easing="ease-in-sine" data-aos-offset="-400">
+        <div data-aos="fade-down" data-aos-delay="400" data-aos-offset="-400">
             Professional, Traceable, Sustainable-Focused, High Quality Bali Contract Manufacturer
         </div>
     </div>
@@ -164,7 +164,7 @@
             <img src="/images/logo-white.png" alt="">
         </div>
         <nav class="sidemobile__menu text-white font-semibold mb-10 uppercase">
-            <ul class="gap-4 grid">
+            <ul class="gap-8 grid">
                 <li>
                     <a href="/">Home</a>
                 </li>

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="bg-light py-24">
+    <div class="bg-light py-24 mt-32">
         <div class="container grid lg:grid-cols-2 gap-12">
             <div>
                 <div class="mb-4 font-serif text-4xl text-primary">
@@ -14,7 +14,7 @@
                     degradation, peace and justice.
                 </div>
             </div>
-            <div>
+            <div class="flex flex-col justify-center">
                 <img src="/images/sustainability.png" alt="Sustainable Development Goals">
             </div>
         </div>

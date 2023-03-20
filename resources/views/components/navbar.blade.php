@@ -1,8 +1,14 @@
-<nav class="nav__wrapper nav__{{ $type }} py-6 px-4 lg:px-0 z-10 relative bg-light">
+<nav class="nav__wrapper nav__{{ $type }} py-6 px-4 lg:px-0 z-10 absolute top-0 w-screen left-0 bg-light">
     <div class="container flex justify-between items-center">
-        <div class="nav__logo">
+        <div class="nav__logo ">
             <a href="/">
-                <img src="/images/logo-white.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali"></a>
+                @if (Route::currentRouteName() === 'index' or Route::currentRouteName() === 'about')
+                    <img src="/images/logo.png" class="h-16 lg:h-20 object-contain brightness-0 invert"
+                        alt="Spa Factory Bali">
+                @else
+                    <img src="/images/logo.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali">
+                @endif
+            </a>
         </div>
         <ul class="nav__menu-list items-center text-primary hidden lg:flex">
             <li class="{{ Route::currentRouteName() === 'index' ? 'active' : '' }}">
