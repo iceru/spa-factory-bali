@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-bold text-2xl text-secondary">
-        Edit Product - {{ $client->name }}
+        Edit Client - {{ $client->name }}
     </div>
     <div class="my-6 w-full border-b border-gray-200"></div>
     <form action={{ route('client.update', $client->id) }} method="POST" enctype="multipart/form-data">

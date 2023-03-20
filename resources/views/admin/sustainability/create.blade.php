@@ -21,6 +21,15 @@
         </div>
 
         <div class="flex items-center mb-6">
+            <x-input-label for="number" :value="__('SGD Number')" class="mr-4 w-1/5 text-lg" />
+
+            <div class="w-3/5">
+                <x-text-input id="number" class="block w-full" type="number" name="number" required />
+                <x-input-error :messages="$errors->get('number')" class="mt-2" />
+            </div>
+        </div>
+
+        <div class="flex items-center mb-6">
             <x-input-label for="description" :value="__('Description')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
@@ -32,12 +41,12 @@
 
 
         <div class="flex items-center mb-6">
-            <x-input-label for="image" :value="__('Image')" class="mr-4 w-1/5 text-lg" />
+            <x-input-label for="images" :value="__('Images')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
-                <input type="file" name="image" id="image">
+                <input type="file" name="images[]" id="images" multiple>
 
-                <x-input-error :messages="$errors->get('image')" class="mt-2" />
+                <x-input-error :messages="$errors->get('images')" class="mt-2" />
             </div>
         </div>
 
@@ -57,6 +66,7 @@
             <thead>
                 <tr>
                     <th class="p-3 border">Title</th>
+                    <th class="p-3 border">Number</th>
                     <th class="p-3 border">Description</th>
                     <th class="p-3 border">Image</th>
                     <th class="p-3 border">Action</th>
@@ -66,9 +76,14 @@
                 @foreach ($sustainabilities as $sustainability)
                     <tr>
                         <td class="p-3 border">{{ $sustainability->title }}</td>
+                        <td class="p-3 border">{{ $sustainability->number }}</td>
                         <td class="p-3 border">{!! $sustainability->description !!}</td>
-                        <td class="p-3 border"><img width="300" src="{{ Storage::url($sustainability->image) }}"
-                                alt="{{ $sustainability->title }}"></td>
+                        <td class="p-3 border">
+                            @foreach (json_decode($sustainability->images) as $image)
+                                <img src="{{ Storage::url('/sustainability-images/' . $image) }}" class="mb-2"
+                                    width="200" alt="{{ $sustainability->name }}">
+                            @endforeach
+                        </td>
                         <td class="p-3 border">
                             <a href="{{ route('sustainability.edit', $sustainability->id) }}">
                                 <x-primary-button class="text-sm mb-3">Edit</x-primary-button>

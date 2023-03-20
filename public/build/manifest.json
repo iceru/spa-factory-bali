@@ -1,0 +1,28 @@
+{
+  "public/images/about/about-header.JPG": {
+    "file": "assets/about-header-118d9445.JPG",
+    "src": "public/images/about/about-header.JPG"
+  },
+  "public/images/bg-body.png": {
+    "file": "assets/bg-body-fa419e81.png",
+    "src": "public/images/bg-body.png"
+  },
+  "public/images/bg-header.jpg": {
+    "file": "assets/bg-header-17469611.jpg",
+    "src": "public/images/bg-header.jpg"
+  },
+  "public/images/bg-quote-2.png": {
+    "file": "assets/bg-quote-2-794646a8.png",
+    "src": "public/images/bg-quote-2.png"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-d62b6356.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-1736b1f2.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}

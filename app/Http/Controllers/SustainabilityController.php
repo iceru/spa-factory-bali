@@ -37,7 +37,37 @@ class SustainabilityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'number' => 'required',
+            'images' => 'required',
+            'images.*' => 'required',
+            'description' => 'required',
+        ]);
+
+        $sustain = new Sustainability;
+        $imageFiles = [];
+
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+                $imageName = time() . '_' . $request->title . '.' . $image->extension();
+                $image->storeAs('public/sustainability-images', $imageName);
+
+                $imageFiles[] = $imageName;
+            }
+        }
+
+        $sustain->title = $request->title;
+        $sustain->number = $request->number;
+        $sustain->images = json_encode($imageFiles);
+        $sustain->description = $request->description;
+
+        $sustain->save();
+
+        return redirect()->route('sustainability.create')
+            ->with('success', 'Sustainability created successfully');
     }
 
     /**
@@ -57,9 +87,10 @@ class SustainabilityController extends Controller
      * @param  \App\Models\Sustainability  $sustainability
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sustainability $sustainability)
+    public function edit(Request $request)
     {
-        //
+        $sustainability = Sustainability::where('id', $request->sustainability)->firstOrFail();
+        return view('admin.sustainability.edit', compact('sustainability'));
     }
 
     /**
@@ -69,9 +100,39 @@ class SustainabilityController extends Controller
      * @param  \App\Models\Sustainability  $sustainability
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sustainability $sustainability)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'number' => 'required',
+            'images' => 'nullable',
+            'images.*' => 'nullable',
+            'description' => 'required',
+        ]);
+
+        $sustain = Sustainability::where('id', $request->sustainability)->first();;
+        $imageFiles = [];
+
+        if ($request->hasFile('images')) {
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+                $imageName = time() . '_' . $request->title . '.' . $image->extension();
+                $image->storeAs('public/sustainability-images', $imageName);
+
+                $imageFiles[] = $imageName;
+            }
+            $sustain->images = json_encode($imageFiles);
+        }
+
+        $sustain->title = $request->title;
+        $sustain->number = $request->number;
+        $sustain->description = $request->description;
+
+        $sustain->save();
+
+        return redirect()->route('sustainability.create')
+            ->with('success', 'Sustainability updated successfully');
     }
 
     /**
@@ -80,8 +141,12 @@ class SustainabilityController extends Controller
      * @param  \App\Models\Sustainability  $sustainability
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sustainability $sustainability)
+    public function destroy(Request $request)
     {
-        //
+        $sustainability = Sustainability::where('id', $request->sustainability)->first();
+
+        $sustainability->delete();
+
+        return redirect()->route('sustainability.create')->with('success', 'Sustianability deleted successfully');
     }
 }

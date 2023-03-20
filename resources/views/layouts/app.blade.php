@@ -50,33 +50,9 @@
 <script>
     tinymce.init({
         selector: 'textarea',
-        plugins: 'link image imagetools paste forecolor',
+        plugins: 'link image imagetools paste forecolor lists',
         paste_as_text: true,
-        toolbar: [{
-                name: 'history',
-                items: ['undo', 'redo']
-            },
-            {
-                name: 'styles',
-                items: ['styleselect']
-            },
-            {
-                name: 'formatting',
-                items: ['bold', 'italic', 'underline']
-            },
-            {
-                name: 'alignment',
-                items: ['alignleft', 'aligncenter', 'alignright', 'alignjustify']
-            },
-            {
-                name: 'indentation',
-                items: ['outdent', 'indent']
-            },
-            {
-                name: 'colors',
-                items: ['forecolor']
-            }
-        ],
+        toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
         a11y_advanced_options: true,
         toolbar_mode: 'floating',
         tinycomments_mode: 'embedded',
