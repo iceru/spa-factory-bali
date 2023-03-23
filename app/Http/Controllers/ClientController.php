@@ -16,7 +16,18 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::all();
-        return view('clientele', compact('clients'));
+        $hotel = Client::whereHas('product', function ($query) {
+            return $query->where('title', 'Hotel Amenities');
+        })->get();
+
+        $spa = Client::whereHas('product', function ($query) {
+            return $query->where('title', 'Professional & Retail Spa Products');
+        })->get();
+
+        $beauty = Client::whereHas('product', function ($query) {
+            return $query->where('title', 'Beauty Skincare');
+        })->get();
+        return view('clientele', compact('clients', 'hotel', 'spa', 'beauty'));
     }
 
     /**

@@ -52,18 +52,62 @@
                     wonder of products.
                 </div>
             </div>
-            <div class="flex gap-8">
+            <div class="flex gap-8" x-data="{ open: 'hotel' }">
                 <ul class="w-1/4 clientele__catalog">
-                    <li class="active">
+                    <li x-on:click="open = 'hotel'" :class="open == 'hotel' ? 'active' : ''">
                         Hotel Amenities
                     </li>
-                    <li>
+                    <li x-on:click="open = 'spa'" :class="open == 'spa' ? 'active' : ''">
                         Professional & Retail Spa Products
                     </li>
-                    <li>
+                    <li x-on:click="open = 'beauty'" :class="open == 'beauty' ? 'active' : ''">
                         Beauty Skincare
                     </li>
                 </ul>
+                <div class="w-3/4 ">
+                    <div class="hotel grid grid-cols-3 gap-4" x-cloak x-show.important="open == 'hotel'">
+                        @foreach ($hotel as $item)
+                            <a href="{{ $item->link }}">
+                                <div>
+                                    @foreach ((array) json_decode($item->images)[0] as $image)
+                                        <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
+                                    @endforeach
+                                </div>
+                                <div class="mt-2 text-body font-bold">
+                                    {{ $item->name }}
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                    <div class="spa grid grid-cols-3 gap-4" x-cloak x-show.important="open == 'spa'">
+                        @foreach ($spa as $item)
+                            <a href="{{ $item->link }}">
+                                <div>
+                                    @foreach ((array) json_decode($item->images)[0] as $image)
+                                        <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
+                                    @endforeach
+                                </div>
+                                <div class="mt-2 text-body font-bold">
+                                    {{ $item->name }}
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                    <div class="beauty grid grid-cols-3 gap-4" x-cloak x-show.important="open == 'beauty'">
+                        @foreach ($beauty as $item)
+                            <a href="{{ $item->link }}">
+                                <div>
+                                    @foreach ((array) json_decode($item->images)[0] as $image)
+                                        <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
+                                    @endforeach
+                                </div>
+                                <div class="mt-2 text-body font-bold">
+                                    {{ $item->name }}
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </div>
