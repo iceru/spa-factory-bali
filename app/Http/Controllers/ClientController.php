@@ -60,6 +60,7 @@ class ClientController extends Controller
             'images' => 'required',
             'images.*' => 'required',
             'featured' => 'required',
+            'link' => 'required',
             'products' => 'required',
         ]);
 
@@ -83,6 +84,7 @@ class ClientController extends Controller
         $client->logo = $path;
         $client->images = json_encode($imageFiles);
         $client->featured = $request->featured;
+        $client->link = $request->link;
         $client->product_id = $request->products;
 
         $client->save();
@@ -133,6 +135,7 @@ class ClientController extends Controller
             'images' => 'nullable',
             'images.*' => 'required',
             'featured' => 'required',
+            'link' => 'required',
             'products' => 'required',
         ]);
 
@@ -158,6 +161,7 @@ class ClientController extends Controller
 
         $client->name = $request->name;
         $client->featured = $request->featured;
+        $client->link = $request->link;
         $client->product_id = $request->products;
 
         $client->save();

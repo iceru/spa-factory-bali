@@ -104,6 +104,13 @@
     text-orientation: mixed;
 }
 
+.sustain__sgd-desc {
+    ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+    }
+}
+
 .clientele__catalog {
     li {
         margin-bottom: 1rem;

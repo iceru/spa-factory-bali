@@ -14,8 +14,8 @@ class SustainabilityController extends Controller
      */
     public function index()
     {
-
-        return view('sustainability');
+        $sustains = Sustainability::all();
+        return view('sustainability', compact('sustains'));
     }
 
     /**
@@ -43,6 +43,7 @@ class SustainabilityController extends Controller
             'images' => 'required',
             'images.*' => 'required',
             'description' => 'required',
+            'bg_color' => 'required',
         ]);
 
         $sustain = new Sustainability;
@@ -50,17 +51,21 @@ class SustainabilityController extends Controller
 
         if ($request->hasFile('images')) {
             $images = $request->file('images');
+            $x = 1;
 
             foreach ($images as $image) {
-                $imageName = time() . '_' . $request->title . '.' . $image->extension();
+                $imageName = 'sustain_' . $request->title . '_' . $x . '_' . $image->getClientOriginalName();
                 $image->storeAs('public/sustainability-images', $imageName);
 
                 $imageFiles[] = $imageName;
             }
+
+            $x++;
         }
 
         $sustain->title = $request->title;
         $sustain->number = $request->number;
+        $sustain->bg_color = $request->bg_color;
         $sustain->images = json_encode($imageFiles);
         $sustain->description = $request->description;
 
@@ -108,6 +113,7 @@ class SustainabilityController extends Controller
             'images' => 'nullable',
             'images.*' => 'nullable',
             'description' => 'required',
+            'bg_color' => 'required',
         ]);
 
         $sustain = Sustainability::where('id', $request->sustainability)->first();;
@@ -115,9 +121,10 @@ class SustainabilityController extends Controller
 
         if ($request->hasFile('images')) {
             $images = $request->file('images');
+            $x = 1;
 
             foreach ($images as $image) {
-                $imageName = time() . '_' . $request->title . '.' . $image->extension();
+                $imageName = 'sustain_' . $request->title . '_' . $x . '_' . $image->getClientOriginalName();
                 $image->storeAs('public/sustainability-images', $imageName);
 
                 $imageFiles[] = $imageName;
@@ -128,6 +135,7 @@ class SustainabilityController extends Controller
         $sustain->title = $request->title;
         $sustain->number = $request->number;
         $sustain->description = $request->description;
+        $sustain->bg_color = $request->bg_color;
 
         $sustain->save();
 

@@ -28,6 +28,16 @@
         </div>
 
         <div class="flex items-center mb-6">
+            <x-input-label for="bg_color" :value="__('Background Color')" class="mr-4 w-1/5 text-lg" />
+
+            <div class="w-3/5">
+                <x-text-input id="bg_color" class="block w-full" type="bg_color" name="bg_color" required
+                    value="{{ $sustainability->bg_color }}" />
+                <x-input-error :messages="$errors->get('bg_color')" class="mt-2" />
+            </div>
+        </div>
+
+        <div class="flex items-center mb-6">
             <x-input-label for="description" :value="__('Description')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
@@ -50,11 +60,11 @@
         </div>
 
         <div class="flex items-center mb-6">
-            <x-input-label for="image" :value="__('Image')" class="mr-4 w-1/5 text-lg" />
+            <x-input-label for="images" :value="__('Images')" class="mr-4 w-1/5 text-lg" />
 
-            <input type="file" name="image" id="image">
+            <input type="file" name="images[]" id="images" multiple>
 
-            <x-input-error :messages="$errors->get('image')" class="mt-2" />
+            <x-input-error :messages="$errors->get('images')" class="mt-2" />
         </div>
 
         <div class="flex">
@@ -66,4 +76,13 @@
             </a>
         </div>
     </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#bg_color").spectrum({
+                showInput: true,
+                type: 'component'
+            });
+        });
+    </script>
 </x-app-layout>

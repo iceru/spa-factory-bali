@@ -30,6 +30,15 @@
         </div>
 
         <div class="flex items-center mb-6">
+            <x-input-label for="bg_color" :value="__('Background Color')" class="mr-4 w-1/5 text-lg" />
+
+            <div class="w-3/5">
+                <x-text-input id="bg_color" class="block w-full" type="bg_color" name="bg_color" required />
+                <x-input-error :messages="$errors->get('bg_color')" class="mt-2" />
+            </div>
+        </div>
+
+        <div class="flex items-center mb-6">
             <x-input-label for="description" :value="__('Description')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
@@ -57,6 +66,15 @@
         </div>
     </form>
 
+    <script>
+        $(document).ready(function() {
+            $("#bg_color").spectrum({
+                showInput: true,
+                type: 'component'
+            });
+        });
+    </script>
+
     <x-slot name="table">
         <div class="font-bold text-2xl text-secondary">
             Sustainabilities Data
@@ -67,6 +85,7 @@
                 <tr>
                     <th class="p-3 border">Title</th>
                     <th class="p-3 border">Number</th>
+                    <th class="p-3 border">Background Color</th>
                     <th class="p-3 border">Description</th>
                     <th class="p-3 border">Image</th>
                     <th class="p-3 border">Action</th>
@@ -77,6 +96,12 @@
                     <tr>
                         <td class="p-3 border">{{ $sustainability->title }}</td>
                         <td class="p-3 border">{{ $sustainability->number }}</td>
+                        <td class="p-3 border">
+                            <div class="h-10 w-10 rounded-lg mb-2"
+                                style="background-color:{{ $sustainability->bg_color }}">
+                            </div>
+                            {{ $sustainability->bg_color }}
+                        </td>
                         <td class="p-3 border">{!! $sustainability->description !!}</td>
                         <td class="p-3 border">
                             @foreach (json_decode($sustainability->images) as $image)

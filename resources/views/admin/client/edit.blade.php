@@ -18,6 +18,18 @@
             </div>
         </div>
 
+        <div class="flex flex-wrap items-center mb-6">
+            <x-input-label for="link" :value="__('Link')" class="mr-4 w-full lg:w-1/5 text-lg" />
+
+            <div class="w-full lg:w-3/5">
+                <x-text-input id="link" class="block w-full" type="link" name="link" required
+                    value="{{ $client->link }}" />
+
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+        </div>
+
+
         <div class="flex items-center mb-6">
             {{-- Add Feature Delete Image --}}
             <x-input-label for="logo" :value="__('Logo')" class="mr-4 w-1/5 text-lg" />
