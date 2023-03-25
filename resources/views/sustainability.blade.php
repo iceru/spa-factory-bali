@@ -60,7 +60,7 @@
                 @foreach ($sustains as $sustain)
                     <div class="flex w-full" x-cloak x-show.important="open == {{ $sustain->number }}">
                         <div class="sustain__sgd-item flex flex-col items-center justify-between font-bold p-6 gap-12
-                        text-white cursor-pointer border-4 border-white"
+                        text-white cursor-pointer border-2 border-white"
                             style="background-color: {{ $sustain->bg_color }}" @click="open = {{ $sustain->number }}">
                             <div class="text-3xl ml-0.5">
                                 {{ $sustain->number }}

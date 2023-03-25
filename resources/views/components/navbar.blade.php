@@ -2,7 +2,7 @@
     <div class="container flex justify-between items-center">
         <div class="nav__logo ">
             <a href="/">
-                @if (Route::currentRouteName() === 'index' or Route::currentRouteName() === 'about')
+                @if (Route::currentRouteName() === 'index' or Route::currentRouteName() === 'about' or $type === 'auth')
                     <img src="/images/logo.png" class="h-16 lg:h-20 object-contain brightness-0 invert"
                         alt="Spa Factory Bali">
                 @else

@@ -177,9 +177,9 @@ class ClientController extends Controller
      */
     public function destroy(Request $request)
     {
-        $product = Client::where('id', $request->client)->first();
+        $client = Client::where('id', $request->client)->first();
 
-        $product->delete();
+        $client->delete();
 
         return redirect()->route('client.create')->with('success', 'Client deleted successfully');
     }
