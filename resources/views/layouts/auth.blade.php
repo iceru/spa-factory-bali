@@ -25,7 +25,7 @@
             class=" bg-header bg-black bg-opacity-50
             bg-blend-darken bg-center bg-no-repeat bg-cover -mt-32 pt-32">
             <div class="container grid lg:grid-cols-2 gap-8  items-center">
-                <div class="login__image relative " style="height: 40vw">
+                <div class="login__image relative " style="height: 50vw">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                         <img src="/images/logo-white.png" class="h-40 w-auto object-contain" alt="Spa Factory Bali">
                     </div>

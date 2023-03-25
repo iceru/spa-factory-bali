@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <header class="home__header pb-12">
+    <header class="home__header pb-20 pt-36">
         <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center bg-black bg-opacity-70"
             data-aos="fade-right">
             <div class="home__cta-text text-white p-0 lg:p-10 pr-6 mb-8 lg:mb-0 lg:w-2/5">
@@ -23,8 +23,8 @@
         </div>
     </header>
     <div class="py-8 bg-primary text-center text-white font-serif text-xl" data-aos="fade-down"
-        data-aos-easing="ease-in-sine">
-        <div data-aos="fade-down" data-aos-delay="400">
+        data-aos-easing="ease-in-sine" data-aos-offset="-400">
+        <div data-aos="fade-down" data-aos-delay="400" data-aos-offset="-400">
             Professional, Traceable, Sustainable-Focused, High Quality Bali Contract Manufacturer
         </div>
     </div>
@@ -126,13 +126,15 @@
     </div>
 
     <div class="section container grid lg:grid-cols-2 gap-9">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-3 gap-4 h-1/2">
             @foreach ($clients as $client)
-                <a href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}">
-                    <div class="odd:bg-secondary even:bg-primary flex justify-center items-center h-32">
-                        <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}">
+                <div href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
+                    class="block odd:bg-secondary even:bg-primary">
+                    <div class=" flex justify-center items-center h-full ">
+                        <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}"
+                            class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}">
                     </div>
-                </a>
+                </div>
             @endforeach
         </div>
         <div>
@@ -162,7 +164,7 @@
             <img src="/images/logo-white.png" alt="">
         </div>
         <nav class="sidemobile__menu text-white font-semibold mb-10 uppercase">
-            <ul class="gap-4 grid">
+            <ul class="gap-8 grid">
                 <li>
                     <a href="/">Home</a>
                 </li>

@@ -7,6 +7,10 @@
 
 body {
     background: url("../../public/images/bg-body.png");
+    overflow-x: hidden;
+}
+[x-cloak] {
+    display: none !important;
 }
 
 .btn {

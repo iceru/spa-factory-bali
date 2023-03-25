@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-bold text-2xl text-secondary">
-        Edit Product - {{ $client->name }}
+        Edit Client - {{ $client->name }}
     </div>
     <div class="my-6 w-full border-b border-gray-200"></div>
     <form action={{ route('client.update', $client->id) }} method="POST" enctype="multipart/form-data">
@@ -17,6 +17,18 @@
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
         </div>
+
+        <div class="flex flex-wrap items-center mb-6">
+            <x-input-label for="link" :value="__('Link')" class="mr-4 w-full lg:w-1/5 text-lg" />
+
+            <div class="w-full lg:w-3/5">
+                <x-text-input id="link" class="block w-full" type="link" name="link" required
+                    value="{{ $client->link }}" />
+
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+        </div>
+
 
         <div class="flex items-center mb-6">
             {{-- Add Feature Delete Image --}}

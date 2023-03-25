@@ -16,7 +16,18 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::all();
-        return view('clientele', compact('clients'));
+        $hotel = Client::whereHas('product', function ($query) {
+            return $query->where('title', 'Hotel Amenities');
+        })->get();
+
+        $spa = Client::whereHas('product', function ($query) {
+            return $query->where('title', 'Professional & Retail Spa Products');
+        })->get();
+
+        $beauty = Client::whereHas('product', function ($query) {
+            return $query->where('title', 'Beauty Skincare');
+        })->get();
+        return view('clientele', compact('clients', 'hotel', 'spa', 'beauty'));
     }
 
     /**
@@ -49,6 +60,7 @@ class ClientController extends Controller
             'images' => 'required',
             'images.*' => 'required',
             'featured' => 'required',
+            'link' => 'required',
             'products' => 'required',
         ]);
 
@@ -72,6 +84,7 @@ class ClientController extends Controller
         $client->logo = $path;
         $client->images = json_encode($imageFiles);
         $client->featured = $request->featured;
+        $client->link = $request->link;
         $client->product_id = $request->products;
 
         $client->save();
@@ -122,6 +135,7 @@ class ClientController extends Controller
             'images' => 'nullable',
             'images.*' => 'required',
             'featured' => 'required',
+            'link' => 'required',
             'products' => 'required',
         ]);
 
@@ -147,6 +161,7 @@ class ClientController extends Controller
 
         $client->name = $request->name;
         $client->featured = $request->featured;
+        $client->link = $request->link;
         $client->product_id = $request->products;
 
         $client->save();
@@ -162,9 +177,9 @@ class ClientController extends Controller
      */
     public function destroy(Request $request)
     {
-        $product = Client::where('id', $request->client)->first();
+        $client = Client::where('id', $request->client)->first();
 
-        $product->delete();
+        $client->delete();
 
         return redirect()->route('client.create')->with('success', 'Client deleted successfully');
     }

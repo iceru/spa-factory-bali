@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ClientController;
@@ -33,10 +34,12 @@ Route::get('/clientele', [ClientController::class, 'index'])->name('client.index
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 
+Route::get('/e-library', [ArticleController::class, 'index'])->name('article.index');
+
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -67,6 +70,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/sustainability/edit/{sustainability}', [SustainabilityController::class, 'edit'])->name('sustainability.edit');
         Route::patch('/sustainability/update/{sustainability}', [SustainabilityController::class, 'update'])->name('sustainability.update');
         Route::delete('/sustainability/delete/{sustainability}', [SustainabilityController::class, 'destroy'])->name('sustainability.delete');
+
+        Route::get('/e-library', [ArticleController::class, 'create'])->name('article.create');
+        Route::post('/e-library/store', [ArticleController::class, 'store'])->name('article.store');
+        Route::get('/e-library/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
+        Route::patch('/e-library/update/{article}', [ArticleController::class, 'update'])->name('article.update');
+        Route::delete('/e-library/delete/{article}', [ArticleController::class, 'destroy'])->name('article.delete');
     });
 });
 

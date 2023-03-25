@@ -20,6 +20,15 @@
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
         </div>
+        <div class="flex flex-wrap items-center mb-6">
+            <x-input-label for="link" :value="__('Link')" class="mr-4 w-full lg:w-1/5 text-lg" />
+
+            <div class="w-full lg:w-3/5">
+                <x-text-input id="link" class="block w-full" type="link" name="link" required />
+
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+        </div>
 
         <div class="flex flex-wrap items-center mb-6">
             <x-input-label for="logo" :value="__('Logo')" class="mr-4 w-full lg:w-1/5 text-lg" />
@@ -77,6 +86,7 @@
                     <th class="p-3 border">Logo</th>
                     <th class="p-3 border">Images</th>
                     <th class="p-3 border">Featured</th>
+                    <th class="p-3 border">Link</th>
                     <th class="p-3 border">Product</th>
                     <th class="p-3 border">Action</th>
                 </tr>
@@ -86,16 +96,21 @@
                     <tr>
                         <td class="p-3 border">{{ $client->name }}</td>
                         <td class="p-3 border">
-                            <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}">
+                            <img src="{{ Storage::url($client->logo) }}" width="200" alt="{{ $client->name }}">
                         </td>
                         <td class="p-3 border">
                             @foreach (json_decode($client->images) as $image)
-                                <img src="{{ Storage::url('/client-images/' . $image) }}" alt="{{ $client->name }}">
+                                <img src="{{ Storage::url('/client-images/' . $image) }}" width="200"
+                                    alt="{{ $client->name }}">
                             @endforeach
                         </td>
                         <td class="p-3 border">{{ Str::ucfirst($client->featured) }}</td>
+                        <td class="p-3 border">
+                            <a href="{{ $client->link }}" target="_blank" class="text-blue-600">{{ $client->link }}
+                            </a>
+                        </td>
                         <td class="p-3 border">{{ $client->product->title }}</td>
-                        <td class="p-3">
+                        <td class="p-3 border">
                             <a href="{{ route('client.edit', $client->id) }}">
                                 <x-primary-button class="text-sm mb-3">Edit</x-primary-button>
                             </a>

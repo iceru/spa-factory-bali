@@ -13,6 +13,7 @@ class Sustainability extends Model
         'title',
         'description',
         'number',
-        'images'
+        'images',
+        'bg_color'
     ];
 }

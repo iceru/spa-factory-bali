@@ -39,10 +39,13 @@
             <x-input-error :messages="$errors->get('image')" class="mt-2" />
         </div>
 
-        <div>
+        <div class="flex">
             <x-primary-button type="submit">
                 Submit
             </x-primary-button>
+            <a href="{{ route('products.create') }}" class="btn bg-red-600 hover:bg-red-800 ml-4">
+                Cancel
+            </a>
         </div>
     </form>
 </x-app-layout>

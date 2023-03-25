@@ -10,8 +10,6 @@
     <div class="my-6 w-full border-b border-gray-200"></div>
     <form action="{{ route('homeslider.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-
-
         <div class="flex items-center mb-6">
             <x-input-label for="image" :value="__('Image')" class="mr-4 w-1/5 text-lg" />
 
