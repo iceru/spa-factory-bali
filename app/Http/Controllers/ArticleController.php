@@ -16,7 +16,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('article');
+        $banner = Article::where('type', 'banner')->take(1)->get();
+        $latest = Article::where('type', 'latest')->take(3)->get();
+        $featured = Article::where('type', 'featured')->take(3)->get();
+        return view('article', compact('banner', 'latest', 'featured'));
     }
 
     /**
@@ -46,6 +49,7 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required',
             'text' => 'required',
+            'subtext' => 'required',
             'type' => 'required',
             'created_at' => 'required',
             'image' => 'required|image',
@@ -59,6 +63,7 @@ class ArticleController extends Controller
 
             $article->title = $request->title;
             $article->text = $request->text;
+            $article->subtext = $request->subtext;
             $article->author = Auth::user()->name;
             $article->type = $request->type;
             $article->created_at =  \Carbon\Carbon::createFromFormat('d-m-Y', $request->created_at);
@@ -114,6 +119,7 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required',
             'text' => 'required',
+            'subtext' => 'required',
             'type' => 'required',
             'created_at' => 'required',
             'image' => 'nullable|image',
@@ -129,6 +135,7 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->text = $request->text;
+        $article->subtext = $request->subtext;
         $article->author = Auth::user()->name;
         $article->type = $request->type;
         $article->created_at = $request->created_at;

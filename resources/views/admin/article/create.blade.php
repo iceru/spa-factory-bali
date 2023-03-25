@@ -26,6 +26,14 @@
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
+            <x-input-label for="subtext" :value="__('Sub Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+
+            <div class="w-full lg:w-3/5">
+                <textarea name="subtext" id="subtext" cols="20" rows="10">{{ old('subtext') }}</textarea>
+                <x-input-error :messages="$errors->get('subtext')" class="mt-2" />
+            </div>
+        </div>
+        <div class="flex flex-wrap items-center mb-6">
             <x-input-label for="text" :value="__('Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
 
             <div class="w-full lg:w-3/5">
@@ -90,6 +98,7 @@
                 <tr>
                     <th class="p-3 border">Title</th>
                     <th class="p-3 border">Image</th>
+                    <th class="p-3 border">Sub Text</th>
                     <th class="p-3 border">Text</th>
                     <th class="p-3 border">Author</th>
                     <th class="p-3 border">Type</th>
@@ -103,6 +112,7 @@
                         <td class="p-3 border">
                             <img src="{{ Storage::url($article->image) }}" width="200" alt="{{ $article->title }}">
                         </td>
+                        <td class="p-3 border">{{ $article->subtext }}</td>
                         <td class="p-3 border">{!! $article->text !!}</td>
                         <td class="p-3 border">
                             {{ $article->author }}

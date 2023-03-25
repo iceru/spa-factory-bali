@@ -18,6 +18,14 @@
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
+            <x-input-label for="subtext" :value="__('Sub Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+
+            <div class="w-full lg:w-3/5">
+                <textarea name="subtext" id="subtext" cols="20" rows="10">{{ $article->subtext }}</textarea>
+                <x-input-error :messages="$errors->get('subtext')" class="mt-2" />
+            </div>
+        </div>
+        <div class="flex flex-wrap items-center mb-6">
             <x-input-label for="text" :value="__('Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
 
             <div class="w-full lg:w-3/5">
