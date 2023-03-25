@@ -1,6 +1,8 @@
 <div class="p-6 bg-primary w-1/4 min-h-screen">
     <div class="flex gap-4 mb-8">
-        <img src="/images/logo-white.png" alt="Spa Factory Bali">
+        <a href="/">
+            <img src="/images/logo-white.png" alt="Spa Factory Bali">
+        </a>
         <div class="text-white">
             <div class="text-xl mb-1">
                 {{ Auth::user()->name }}
@@ -20,7 +22,7 @@
     <nav class="text-white sidebar__menu">
         <ul>
             <li>
-                <a href="/dashboard">
+                <a href="/admin">
                     Dashboard
                 </a>
             </li>
