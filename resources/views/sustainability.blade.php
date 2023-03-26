@@ -20,8 +20,8 @@
         </div>
     </div>
     <div class="section ">
-        <div class="max-w-7xl m-auto">
-            <div class="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-16" x-data="{ open: 'all' }">
+        <div class="max-w-[1200px] m-auto" x-data="{ open: 'all' }">
+            <div class="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-16">
                 <div class="order-2 lg:order-1 w-full">
                     <div x-cloak x-show.important="open == 'all'">
                         <div class="font-serif text-3xl mb-4">
@@ -104,6 +104,21 @@
                         </div>
                     @endforeach
                 </div>
+            </div>
+            <div class="mt-12">
+                <div x-cloak x-show.important="open == 'all'">
+                    <img src="/images/sustain-all.png" class="w-full" alt="">
+                </div>
+                @foreach ($sustains as $sustain)
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" x-cloak
+                        x-show.important="open == {{ $sustain->number }}" :class="open == 12 ? 'hidden' : ''">
+                        @foreach (json_decode($sustain->images) as $image)
+                            <div>
+                                <img src="{{ Storage::url('sustainability-images/' . $image) }}" alt="">
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
