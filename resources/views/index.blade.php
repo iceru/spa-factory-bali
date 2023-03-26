@@ -130,7 +130,7 @@
     </div>
 
     <div class="section container grid lg:grid-cols-2 gap-9">
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 h-1/2">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 h-1/2" data-aos="fade-right">
             @foreach ($clients as $client)
                 <div href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
                     class="block odd:bg-secondary even:bg-primary">
@@ -142,10 +142,10 @@
             @endforeach
         </div>
         <div>
-            <div class="font-serif text-primary text-2xl mb-4">
+            <div class="font-serif text-primary text-2xl mb-4" data-aos="fade-left">
                 Partner with Brands in Creating Premium Natural Cosmetics
             </div>
-            <div class="text-justify text-body">
+            <div class="text-justify text-body" data-aos="fade-left" data-aos-duration="400">
                 Integrating local wisdom & utilizing Indonesian active ingredients are our main focus, thus creating
                 brilliant, natural synergies in every product that we created.
                 <br><br>
@@ -157,7 +157,8 @@
             </div>
 
             <x-button-link link="/clientele"
-                class="mt-4 border-primary text-primary hover:bg-primary hover:text-white">
+                class="mt-4 border-primary text-primary hover:bg-primary hover:text-white" data-aos="fade-left"
+                data-aos-duration="800">
                 Learn More
             </x-button-link>
         </div>
