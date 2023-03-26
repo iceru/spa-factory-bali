@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <div class="bg-light py-16">
-        <div class="container grid lg:flex gap-12 items-center">
+    <div class="bg-light py-16 mt-24">
+        <div class="container px-4 grid lg:flex gap-12 items-center">
             <div>
                 <div class="mb-4 font-serif text-4xl text-primary">
                     Contact Us
@@ -18,7 +18,7 @@
     <div class="section">
         <div class="container">
             <div class="grid lg:grid-cols-2">
-                <div>
+                <div class="mb-12 lg:mb-0">
                     <div class="font-serif text-primary text-3xl mb-4">
                         Spa Factory Bali
                     </div>

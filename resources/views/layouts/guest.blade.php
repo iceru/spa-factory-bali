@@ -41,6 +41,9 @@
         {{ $slot }}
     </main>
 
+    <x-sidemobile />
+
+
     <script>
         AOS.init({
             once: true,

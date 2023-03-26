@@ -80,6 +80,34 @@
         transform: translate(-50%, -50%);
         background-color: white;
     }
+
+    @media screen and (max-width: 992px) {
+        &::before {
+            height: 35%;
+            width: 30%;
+            background-color: transparent;
+            border: 2px solid white;
+            right: 10%;
+            left: auto;
+            transform: none;
+            top: 15%;
+            border-left: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 35%;
+            width: 30%;
+            background-color: transparent;
+            border: 2px solid white;
+            right: auto;
+            left: 15%;
+            transform: none;
+            bottom: 15%;
+            border-right: 0;
+        }
+    }
 }
 
 .about__process {
@@ -99,9 +127,11 @@
 }
 
 .sustain__sgd-text {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    text-orientation: mixed;
+    @media screen and (min-width: 992px) {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-orientation: mixed;
+    }
 }
 
 .sustain__sgd-desc {

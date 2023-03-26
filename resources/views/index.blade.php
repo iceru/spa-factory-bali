@@ -94,18 +94,22 @@
             </div>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="flex justify-center" data-aos="fade-right" data-aos-delay="800">
-                    <img src="/images/bpom.png" class="h-40" alt="mutu certification international" />
+                    <img src="/images/bpom.png" class="h-40 w-full object-contain"
+                        alt="mutu certification international" />
                 </div>
                 <div class="flex justify-center" data-aos="fade-right" data-aos-delay="400">
-                    <img src="/images/halal.png" class="h-40" alt="mutu certification international" />
+                    <img src="/images/halal.png" class="h-40 w-full object-contain"
+                        alt="mutu certification international" />
                 </div>
 
                 <div class="flex justify-center" data-aos="fade-left" data-aos-delay="400">
-                    <img src="/images/SERT.png" class="h-40" alt="mutu certification international" />
+                    <img src="/images/SERT.png" class="h-40 w-full object-contain"
+                        alt="mutu certification international" />
                 </div>
 
                 <div class="flex justify-center" data-aos="fade-left" data-aos-delay="800">
-                    <img src="/images/rspo.png" class="h-40" alt="mutu certification international" />
+                    <img src="/images/rspo.png" class="h-40 w-full object-contain"
+                        alt="mutu certification international" />
                 </div>
 
             </div>
@@ -126,7 +130,7 @@
     </div>
 
     <div class="section container grid lg:grid-cols-2 gap-9">
-        <div class="grid grid-cols-3 gap-4 h-1/2">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 h-1/2">
             @foreach ($clients as $client)
                 <div href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
                     class="block odd:bg-secondary even:bg-primary">
@@ -158,47 +162,6 @@
             </x-button-link>
         </div>
     </div>
-
-    <div class="sidemobile__wrapper bg-linear p-6 min-h-screen w-2/3">
-        <div class="logo mb-10">
-            <img src="/images/logo-white.png" alt="">
-        </div>
-        <nav class="sidemobile__menu text-white font-semibold mb-10 uppercase">
-            <ul class="gap-8 grid">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/about-us">About Us</a>
-                </li>
-                <li>
-                    <a href="/sustainability">Sustainability</a>
-                </li>
-                <li>
-                    <a href="/clientele">Clientele</a>
-                </li>
-                <li>
-                    <a href="/e-library">E-Library</a>
-                </li>
-                <li>
-                    <a href="/contact-us">Contact Us</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="flex gap-6 items-center">
-            <a href="#">
-                <img src="/images/instagram.png" class="h-6 object-contain" alt="Instagram">
-            </a>
-            <a href="#">
-                <img src="/images/facebook.png" class="h-6 object-contain" alt="Facebook">
-            </a>
-            <a href="#">
-                <img src="/images/twitter.png" class="h-6 object-contain" alt="Twitter">
-            </a>
-        </div>
-
-    </div>
-
     <script>
         $(document).ready(function() {
             $('#home-sliders').slick();

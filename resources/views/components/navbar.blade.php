@@ -32,9 +32,15 @@
                 <a href="/contact-us">Contact Us</a>
             </li>
         </ul>
-        <div class="hamburger lg:hidden">
-            <img src="/images/hamburger.png" alt="Menu" />
-        </div>
+        @if (Route::currentRouteName() === 'index' or Route::currentRouteName() === 'about' or $type === 'auth')
+            <div class="hamburger lg:hidden">
+                <img src="/images/hamburger.png" alt="Menu" />
+            </div>
+        @else
+            <div class="hamburger lg:hidden">
+                <img src="/images/hamburger-green.png" alt="Menu" />
+            </div>
+        @endif
     </div>
 
     <script>
