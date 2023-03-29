@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('MAIL_MAILER', 'sendmail'),
 
     /*
     |--------------------------------------------------------------------------
@@ -57,10 +57,7 @@ return [
             'transport' => 'postmark',
         ],
 
-        'sendmail' => [
-            'transport' => 'sendmail',
-            'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
-        ],
+        'sendmail' => env('MAIL_SENDMAIL', '/usr/sbin/sendmail -bs'),
 
         'log' => [
             'transport' => 'log',

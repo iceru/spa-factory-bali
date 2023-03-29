@@ -1,6 +1,6 @@
 <x-guest-layout>
     @foreach ($banner as $item)
-        <div class="relative h-[80vh] mt-24 lg:mt-[128px]">
+        <div class="relative h-[80vh]">
             <div class="h-full">
                 <img src="{{ Storage::url($item->image) }}" class="w-full h-full object-cover" alt="">
             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        $contacts = Contact::all();
+        return view('admin.contact.create', compact('contacts'));
     }
 
     /**
@@ -35,7 +37,32 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'number' => 'required',
+                'message' => 'required',
+            ]);
+
+            $contact = new Contact;
+
+            $contact->name = $request->name;
+            $contact->email = $request->email;
+            $contact->number = $request->number;
+            $contact->message = $request->message;
+
+            $contact->save();
+
+            $subject = "Contact from" . $contact->name;
+            mail("m.hafiz1825@gmail.com", $subject, $contact->message);
+
+            $return = redirect()->route('contact.index')->with('success', 'Message sent!');
+        } catch (Exception $e) {
+            $return = redirect()->route('contact.index')->with('error', 'Something is wrong, please try again' . $e);
+        }
+
+        return $return;
     }
 
     /**
@@ -55,7 +82,7 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(Request $request)
     {
         //
     }
@@ -67,7 +94,7 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request)
     {
         //
     }
@@ -78,7 +105,7 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(Request $request)
     {
         //
     }

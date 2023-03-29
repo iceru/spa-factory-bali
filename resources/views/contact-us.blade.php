@@ -73,22 +73,34 @@
                     <div class="font-serif text-3xl text-primary mb-6">
                         Contact Us
                     </div>
-                    <div>
+                    @if ($message = Session::get('success'))
+                        <div class="w-full mt-4 bg-green-100 border border-green-400 p-4 rounded-md text-green-700">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+                    @if ($message = Session::get('errpr'))
+                        <div class="w-full mt-4 bg-red-100 border border-red-400 p-4 rounded-md text-red-700">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+                    <form action="{{ route('contact.store') }}" method="POST">
+                        @csrf
                         <x-text-input
-                            class="bg-transparent border-0 border-b mb-6 border-primary rounded-none pl-0 w-full outline-none"
+                            class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
                             placeholder="Nama" name="name" />
                         <x-text-input
-                            class="bg-transparent border-0 border-b mb-6 border-primary rounded-none pl-0 w-full outline-none"
+                            class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
                             placeholder="Email" name="email" type="email" />
                         <x-text-input
-                            class="bg-transparent border-0 border-b mb-6 border-primary rounded-none pl-0 w-full outline-none"
-                            placeholder="Phone" name="phone" type="tel" />
-                        <textarea class="bg-transparent border-0 border-b border-primary w-full pl-0 outline-none mb-6" rows="6"
-                            placeholder="Pesan"></textarea>
+                            class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
+                            placeholder="Phone" name="number" type="tel" />
+                        <textarea class="bg-transparent border-0 border-b !border-primary w-full pl-0 outline-none mb-6" rows="6"
+                            placeholder="Pesan" name="message"></textarea>
                         <x-button
-                            class="text-primary border-primary !border font-semibold hover:bg-primary hover:text-white">
+                            class="text-primary !border-primary !border font-semibold hover:bg-primary hover:text-white"
+                            type="submit">
                             Kirim</x-button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -52,6 +52,11 @@
                     Home Sliders
                 </a>
             </li>
+            <li>
+                <a href="/admin/contact">
+                    Contact Us
+                </a>
+            </li>
         </ul>
     </nav>
 </div>

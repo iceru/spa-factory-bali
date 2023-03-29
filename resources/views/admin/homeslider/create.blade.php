@@ -46,7 +46,7 @@
 
     <x-slot name="table">
         <div class="font-bold text-2xl text-secondary">
-            Home SLiders Data
+            Home Sliders Data
         </div>
         <div class="my-6 w-full border-b border-gray-200"></div>
         <table class="table-auto border-collapse border">

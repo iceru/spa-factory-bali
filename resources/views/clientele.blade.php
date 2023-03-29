@@ -52,9 +52,9 @@
                     wonder of products.
                 </div>
             </div>
-            <div class="flex flex-wrap gap-8" x-data="{ open: 'hotel' }">
+            <div class="flex flex-wrap lg:flex-nowrap gap-8" x-data="{ open: 'hotel' }">
                 <ul
-                    class="w-full lg:w-1/4 clientele__catalog sticky top-0 flex lg:block overflow-auto whitespace-nowrap">
+                    class="w-full lg:w-1/4 clientele__catalog sticky top-0 flex lg:block overflow-auto whitespace-nowrap lg:whitespace-normal">
                     <li x-on:click="open = 'hotel'" class="mr-6 lg:mr-0" :class="open == 'hotel' ? 'active' : ''">
                         Hotel Amenities
                     </li>
