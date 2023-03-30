@@ -115,8 +115,8 @@
                         <td class="p-3 border">
                             <img src="{{ Storage::url($article->image) }}" width="200" alt="{{ $article->title }}">
                         </td>
-                        <td class="p-3 border">{{ $article->subtext }}</td>
-                        <td class="p-3 border">{!! $article->text !!}</td>
+                        <td class="p-3 border">{!! $article->subtext !!}</td>
+                        <td class="p-3 border">{!! substr($article->text, 0, 200) !!}</td>
                         <td class="p-3 border">
                             {{ $article->author }}
                         </td>

@@ -55,7 +55,10 @@
         </div>
     </div>
 
-    <div class="section bg-radial text-white" data-aos="fade-down" data-aos-duration="800">
+    <div class="section bg-radial text-white relative" data-aos="fade-down" data-aos-duration="800">
+        <div class="absolute top-1/2 transform -translate-y-1/2 left-4">
+            <img src="/images/bg-flower.png" class="w-[80%]" alt="">
+        </div>
         <div class="text-center mb-3 font-serif text-3xl" data-aos="fade-down" data-aos-delay="400">
             Our Products
         </div>

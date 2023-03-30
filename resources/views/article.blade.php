@@ -64,7 +64,10 @@
         </div>
     </div>
 
-    <div class="container pb-20 px-4 lg:px-0">
+    <div class="container pb-20 mb-10 px-4 lg:px-0 relative">
+        <div class="absolute right-0 bottom-0">
+            <img src="/images/bg-flower-green.png" class="w-[80%] ml-auto" alt="">
+        </div>
         <div class="text-3xl font-serif text-primary mb-8">
             Latest Post
         </div>

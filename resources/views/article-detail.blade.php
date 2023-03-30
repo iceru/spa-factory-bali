@@ -14,12 +14,21 @@
         </div>
     </div>
 
-    <div class="container mb-12">
-        <div class="mb-4">
-            <img src="{{ Storage::url($article->image) }}" alt="">
+    <div class="container mb-12 flex flex-wrap">
+        <div class="w-2/3">
+            <div class="mb-4">
+                <img src="{{ Storage::url($article->image) }}" alt="">
+            </div>
+            <div class="">
+                {!! $article->text !!}
+            </div>
         </div>
-        <div class="text-lg">
-            {!! $article->text !!}
+        <div class="w-1/3 pl-8">
+            <div class="sticky top-4">
+                <div class="font-serif text-primary text-3xl">
+                    More to Read
+                </div>
+            </div>
         </div>
     </div>
 </x-guest-layout>
