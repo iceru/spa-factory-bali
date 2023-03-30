@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\Contact;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -54,12 +56,11 @@ class ContactController extends Controller
 
             $contact->save();
 
-            $subject = "Contact from" . $contact->name;
-            mail("m.hafiz1825@gmail.com", $subject, $contact->message);
+            Mail::to("m.hafiz1825@gmail.com")->send(new ContactMail($request));
 
             $return = redirect()->route('contact.index')->with('success', 'Message sent!');
         } catch (Exception $e) {
-            $return = redirect()->route('contact.index')->with('error', 'Something is wrong, please try again' . $e);
+            $return = redirect()->route('contact.index')->with('error', 'Something is wrong, please try again' . $e->getMessage());
         }
 
         return $return;

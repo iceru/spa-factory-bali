@@ -25,7 +25,7 @@
                     Clientele
                 </a>
             </li>
-            <li>
+            <li class="{{ Route::currentRouteName() === 'article' ? 'active' : '' }}">
                 <a href="/e-library">E-Library</a>
             </li>
             <li class="{{ Route::currentRouteName() === 'contact.index' ? 'active' : '' }}">

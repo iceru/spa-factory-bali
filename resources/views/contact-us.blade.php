@@ -78,7 +78,7 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                    @if ($message = Session::get('errpr'))
+                    @if ($message = Session::get('error'))
                         <div class="w-full mt-4 bg-red-100 border border-red-400 p-4 rounded-md text-red-700">
                             <p>{{ $message }}</p>
                         </div>

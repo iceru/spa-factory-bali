@@ -36,6 +36,8 @@ Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.in
 
 Route::get('/e-library', [ArticleController::class, 'index'])->name('article');
 
+Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
 
 Route::middleware('auth')->group(function () {
@@ -57,9 +59,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/products/edit/{product}', [ProductsController::class, 'edit'])->name('products.edit');
         Route::patch('/products/update/{product}', [ProductsController::class, 'update'])->name('products.update');
         Route::delete('/products/delete/{product}', [ProductsController::class, 'destroy'])->name('products.delete');
-
-        Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
-        Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
         Route::get('/homeslider', [HomeSliderController::class, 'create'])->name('homeslider.create');
         Route::post('/homeslider/store', [HomeSliderController::class, 'store'])->name('homeslider.store');
