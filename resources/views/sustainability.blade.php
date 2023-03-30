@@ -1,11 +1,11 @@
 <x-guest-layout>
-    <div class="bg-light py-16 lg:py-24 mt-24 lg:mt-32">
+    <div class="bg-light py-16 lg:py-24 mt-24 lg:mt-32" x-data="{ open: false }">
         <div class="container grid lg:grid-cols-2 gap-12 px-4">
             <div>
                 <div class="mb-4 font-serif text-4xl text-primary">
                     Sustainability
                 </div>
-                <div class="text-body text-justify">
+                <div class="text-body text-justify mb-4">
                     The Sustainable Development Goals are the blueprint to achieve a better and more sustainable future
                     for
                     all.
@@ -13,12 +13,48 @@
                     environmental
                     degradation, peace and justice.
                 </div>
+                <x-button @click="open = true"
+                    class="text-primary border-primary hover:bg-primary hover:text-white !border font-bold">Request
+                    GRI Form
+                </x-button>
             </div>
             <div class="flex flex-col justify-center">
                 <img src="/images/sustainability.png" alt="Sustainable Development Goals">
             </div>
         </div>
+
+        <div x-cloak x-show="open == true">
+            <div class="fixed w-screen h-screen top-0 left-0 bg-black bg-opacity-40 z-30" @click="open = false"></div>
+            <div
+                class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 bg-body w-[50vw] rounded-lg shadow-lg z-40">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="font-serif text-primary text-3xl">
+                        Request GRI Form
+                    </div>
+                    <div class="cursor-pointer" @click="open = false">
+                        <img src="/images/close-gri.png" alt="Close">
+                    </div>
+                </div>
+                <form>
+                    <x-text-input
+                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 border-primary rounded-none bg-transparent w-full"
+                        placeholder="Full Name" name="name" />
+                    <x-text-input
+                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 border-primary rounded-none bg-transparent w-full"
+                        placeholder="Email" type="email" name="email" />
+                    <x-text-input
+                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 border-primary rounded-none bg-transparent w-full"
+                        placeholder="Phone Number" type="tel" name="number" />
+                    <x-button id="gri-submit"
+                        class="text-primary border-primary hover:bg-primary hover:text-white !border">
+                        Send
+                    </x-button>
+                </form>
+            </div>
+        </div>
     </div>
+
+
     <div class="section ">
         <div class="max-w-[1200px] m-auto" x-data="{ open: 'all' }">
             <div class="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-16">

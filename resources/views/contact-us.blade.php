@@ -87,15 +87,15 @@
                         @csrf
                         <x-text-input
                             class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
-                            placeholder="Nama" name="name" />
+                            placeholder="Full Name" name="name" />
                         <x-text-input
                             class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
                             placeholder="Email" name="email" type="email" />
                         <x-text-input
                             class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
-                            placeholder="Phone" name="number" type="tel" />
+                            placeholder="Phone Number" name="number" type="tel" />
                         <textarea class="bg-transparent border-0 border-b !border-primary w-full pl-0 outline-none mb-6" rows="6"
-                            placeholder="Pesan" name="message"></textarea>
+                            placeholder="Messages" name="message"></textarea>
                         <x-button
                             class="text-primary !border-primary !border font-semibold hover:bg-primary hover:text-white"
                             type="submit">

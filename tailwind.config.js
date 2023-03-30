@@ -52,6 +52,7 @@ module.exports = {
             },
             backgroundImage: {
                 'header': "url('../../public/images/bg-header.jpg')",
+                'body': "url('../../public/images/bg-body.png')",
                 'quote': "url('../../public/images/bg-quote-2.png')",
                 'about': "url('../../public/images/bg-about.png')",
                 'radial': "radial-gradient(78.57% 1211.34% at 35.59% 68.86%, #3A5A40 0%, #588157 96.37%)",
