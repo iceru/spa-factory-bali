@@ -97,11 +97,13 @@
             <thead>
                 <tr>
                     <th class="p-3 border">Title</th>
+                    <th class="p-3 border">Slug</th>
                     <th class="p-3 border">Image</th>
                     <th class="p-3 border">Sub Text</th>
                     <th class="p-3 border">Text</th>
                     <th class="p-3 border">Author</th>
                     <th class="p-3 border">Type</th>
+                    <th class="p-3 border">Created at</th>
                     <th class="p-3 border">Action</th>
                 </tr>
             </thead>
@@ -109,6 +111,7 @@
                 @foreach ($articles as $article)
                     <tr>
                         <td class="p-3 border">{{ $article->title }}</td>
+                        <td class="p-3 border">{{ $article->slug }}</td>
                         <td class="p-3 border">
                             <img src="{{ Storage::url($article->image) }}" width="200" alt="{{ $article->title }}">
                         </td>

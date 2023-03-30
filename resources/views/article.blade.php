@@ -14,7 +14,7 @@
                 <div class="mb-4">
                     {!! $item->text !!}
                 </div>
-                <a href="">
+                <a href="{{ route('article.detail', $item->slug) }}">
                     <div class="flex items-center">
                         <div>
                             Read More

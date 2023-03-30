@@ -35,8 +35,8 @@ Route::get('/clientele', [ClientController::class, 'index'])->name('client.index
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 
 Route::get('/e-library', [ArticleController::class, 'index'])->name('article');
+Route::get('/e-library/{article}', [ArticleController::class, 'show'])->name('article.detail');
 
-Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
 
@@ -77,6 +77,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/e-library/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
         Route::patch('/e-library/update/{article}', [ArticleController::class, 'update'])->name('article.update');
         Route::delete('/e-library/delete/{article}', [ArticleController::class, 'destroy'])->name('article.delete');
+
+        Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
     });
 });
 

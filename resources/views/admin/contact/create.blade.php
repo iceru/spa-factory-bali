@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-bold text-2xl text-secondary">
-        Clients Data
+        Contact Form Data
     </div>
     @if ($message = Session::get('success'))
         <div class="w-full mt-4 bg-green-100 border border-green-400 p-4 rounded-md text-green-700">

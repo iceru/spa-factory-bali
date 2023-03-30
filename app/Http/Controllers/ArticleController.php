@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
 use Exception;
+use App\Models\Article;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -62,6 +63,7 @@ class ArticleController extends Controller
             }
 
             $article->title = $request->title;
+            $article->slug = Str::slug($request->title);
             $article->text = $request->text;
             $article->subtext = $request->subtext;
             $article->author = Auth::user()->name;
@@ -87,7 +89,8 @@ class ArticleController extends Controller
      */
     public function show(Request $request)
     {
-        //
+        $article = Article::where('slug', $request->article)->first();
+        return view('article-detail', compact('article'));
     }
 
     /**
@@ -134,6 +137,7 @@ class ArticleController extends Controller
         }
 
         $article->title = $request->title;
+        $article->slug = Str::slug($request->title);
         $article->text = $request->text;
         $article->subtext = $request->subtext;
         $article->author = Auth::user()->name;
