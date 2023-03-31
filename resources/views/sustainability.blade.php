@@ -141,7 +141,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="mt-12">
+            <div class="mt-12" id="detail">
                 <div x-cloak x-show.important="open == 'all'">
                     <img src="/images/sustain-all.png" class="w-full" alt="">
                 </div>
@@ -155,7 +155,150 @@
                         @endforeach
                     </div>
                 @endforeach
+                <div x-show="open == 12">
+
+                    <div id="map" class="h-[70vh] mt-4"></div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        const myCustomColour = '#588157'
+
+        const markerHtmlStyles = `
+        background-color: ${myCustomColour};
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        left: -1.5rem;
+        top: -1.5rem;
+        position: relative;
+        border-radius: 2rem 2rem 0;
+        transform: rotate(45deg);
+        border: 2px solid #FFFFFF`
+
+        const customIcon = L.divIcon({
+            className: "my-custom-pin",
+            iconAnchor: [0, 16],
+            labelAnchor: [-6, 0],
+            popupAnchor: [0, -36],
+            html: `<span style="${markerHtmlStyles}" />`
+        })
+        const map = L.map('map', {
+            center: [-2.600029, 118.015776],
+            zoom: 5,
+        });
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        const acehMarker = L.marker([4.7082999072184055, 96.7747731617], {
+            icon: customIcon
+        }).addTo(map);
+        const humbangMarker = L.marker([2.3671944001509573, 98.61259464718282], {
+            icon: customIcon
+        }).addTo(map);
+        const solokMarker = L.marker([-0.9261140491974267, 100.79096528881126], {
+            icon: customIcon
+        }).addTo(map);
+        const solok2 = L.marker([-0.998796271104017, 100.88368875855421], {
+            icon: customIcon
+        }).addTo(map);
+        const solok3 = L.marker([-0.9907139211089883, 100.94373812322867], {
+            icon: customIcon
+        }).addTo(map);
+        const sintangMarker = L.marker([0.05985835748876844, 111.49146412724187], {
+            icon: customIcon
+        }).addTo(map);
+        const kidulMarker = L.marker([-7.9816017238180725, 110.63342654505128], {
+            icon: customIcon
+        }).addTo(map);
+        const bantulMarker = L.marker([-7.887195532679497, 110.30801476723916], {
+            icon: customIcon
+        }).addTo(map);
+        const keduMarker = L.marker([-7.259441921713689, 110.13192172645564], {
+            icon: customIcon
+        }).addTo(map);
+        const tawangmanguMarker = L.marker([-7.664003170063631, 111.13580194296293], {
+            icon: customIcon
+        }).addTo(map);
+        const tawangmangu2 = L.marker([-7.674362294232823, 111.15886048098295], {
+            icon: customIcon
+        }).addTo(map);
+        const semarangMarker = L.marker([-7.006327874884746, 110.43526091798493], {
+            icon: customIcon
+        }).addTo(map);
+        const garutMarker = L.marker([-7.2179817942713616, 107.90311664302058], {
+            icon: customIcon
+        }).addTo(map);
+        const morowaliMarker = L.marker([-2.7838901948757715, 121.94855947127031], {
+            icon: customIcon
+        }).addTo(map);
+        const banyuwangiMarker = L.marker([-8.221920525528311, 114.31777969717018], {
+            icon: customIcon
+        }).addTo(map);
+        const karangasem = L.marker([-8.436163973666769, 115.60816166133505], {
+            icon: customIcon
+        }).addTo(map);
+        const karangasem2 = L.marker([-8.336853929404592, 115.53839843305542], {
+            icon: customIcon
+        }).addTo(map);
+        const amed = L.marker([-8.343459639877379, 115.64185926731695], {
+            icon: customIcon
+        }).addTo(map);
+        const tabanan = L.marker([-8.387598885555217, 115.05746688392848], {
+            icon: customIcon
+        }).addTo(map);
+        const tabanan2 = L.marker([-8.40288285920005, 114.98605575220621], {
+            icon: customIcon
+        }).addTo(map);
+        const gianyar = L.marker([-8.41162883816791, 115.27078413309098], {
+            icon: customIcon
+        }).addTo(map);
+        const klungkung = L.marker([-8.55526341492659, 115.42226953624753], {
+            icon: customIcon
+        }).addTo(map);
+        const bangli = L.marker([-8.29864879846668, 115.34567904731064], {
+            icon: customIcon
+        }).addTo(map);
+        const jimbaran = L.marker([-8.791203287408736, 115.1640978270128], {
+            icon: customIcon
+        }).addTo(map);
+
+        const popupTemplate = (name, place, image, spacing) => {
+            return `<div class="mb-2 text-center">${name} ${spacing ? '<br />' : ''} (${place})</div>
+            <div class="flex gap-2 justify-center"><img class="h-20 mx-auto" src="/images/map/${image}"></div>`
+        }
+
+        acehMarker.bindPopup(popupTemplate('Nutmeg EO', 'Aceh', 'aceh.png', false));
+        humbangMarker.bindPopup(popupTemplate('Benzoin EO', 'Humbang Hasundutan, North Sumatera', 'humbang.png', true));
+        solokMarker.bindPopup(popupTemplate('Organic Ginger EO', 'Solok, West Sumatera', 'solok-ginger.png', true));
+        solok2.bindPopup(popupTemplate('Organic Lemongrass EO', 'Solok, West Sumatera', 'solok-lemon.png', true));
+        solok3.bindPopup(popupTemplate('Organic Citronella EO', 'Solok, West Sumatera', 'solok-citro.png', true));
+        sintangMarker.bindPopup(popupTemplate('Illipe Butter', 'Sintang, West Kalimantan', 'sintang.png', true));
+        kidulMarker.bindPopup(popupTemplate('Cajeput EO', 'Gunung Kidul, Yogyakarta', 'kidul.png', true));
+        bantulMarker.bindPopup(popupTemplate('Coriander EO', 'Bantul, Yogyakarta', 'bantul.png', true));
+        keduMarker.bindPopup(popupTemplate('Key Lime EO', 'Kedu, Central Java', 'kedu.png', true));
+        tawangmanguMarker.bindPopup(popupTemplate('Rosemary EO', 'Tawangmangu, Central Java',
+            'tawangmangu.png', true));
+        tawangmangu2.bindPopup(popupTemplate('Palmarosa EO', 'Tawangmangu, Central Java',
+            'tawangmangu-palmarosa.png', true));
+        semarangMarker.bindPopup(popupTemplate('Rice Husk Paper', 'Semarang, Central Java', 'semarang.png', true));
+        garutMarker.bindPopup(popupTemplate('Vetiver EO', 'Garut, West Java', 'garut.png', true));
+        banyuwangiMarker.bindPopup(popupTemplate('Moringa Oil', 'Banyuwangi, East Java', 'banyuwangi.png', true));
+        morowaliMarker.bindPopup(popupTemplate('Patchouli EO', 'Morowali Utara, Central Sulawesi', 'morowali.png', true));
+        karangasem.bindPopup(popupTemplate('Calendula Extract', 'Karangasem, Bali', 'karangasem-calendula.png', true));
+        karangasem2.bindPopup(popupTemplate('Aloe Vera Extract', 'Karangasem, Bali', 'karangasem.png', true));
+        amed.bindPopup(popupTemplate('Sea Salt', 'Amed, Bali', 'amed.png', true));
+        tabanan.bindPopup(popupTemplate('Cocoa Butter', 'Tabanan, Bali', 'tabanan.png', true));
+        tabanan.bindPopup(popupTemplate('Cold Pressed Cocount Oil', 'Tabanan, Bali', 'tabanan-coconut.png', true));
+        gianyar.bindPopup(popupTemplate('Piper Betle Extract', 'Gianyar, Bali', 'gianyar.png', true));
+        klungkung.bindPopup(popupTemplate('Prickly Pear Extract', 'Klungkung, Bali', 'klungkung.png', true));
+        bangli.bindPopup(popupTemplate('Bamboo Packaging', 'Bangli, Bali', 'bangli.png', true));
+        jimbaran.bindPopup(popupTemplate('Coconut Leaf Box', 'Jimbaran, Bali', 'jimbaran.png', true));
+    </script>
+
 </x-guest-layout>
