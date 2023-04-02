@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-bold text-2xl text-secondary">
-        Input Article Data
+        Input E-Library Data
     </div>
     @if ($message = Session::get('error'))
         <div class="w-full mt-4 bg-red-100 border border-red-400 p-4 rounded-md text-red-700">
@@ -90,7 +90,7 @@
 
     <x-slot name="table">
         <div class="font-bold text-2xl text-secondary">
-            Articles Data
+            E-Library Data
         </div>
         <div class="my-6 w-full border-b border-gray-200"></div>
         <table class="table-auto border-collapse border">

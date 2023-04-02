@@ -39,10 +39,11 @@
 
             <div class="w-full lg:w-3/5">
                 <x-input-select name="type" :options="$options" nameOption="name" valueOption="value"
-                    selectedOption="$article->type" />
+                    :selectedOption="$article->type" />
                 <x-input-error :messages="$errors->get('type')" class="mt-2" />
             </div>
         </div>
+
 
         <div class="flex flex-wrap items-center mb-6">
             <x-input-label for="current_image" :value="__('Current Image')" class="mr-4 w-full lg:w-1/5 text-lg" />

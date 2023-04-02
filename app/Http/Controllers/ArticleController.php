@@ -90,7 +90,8 @@ class ArticleController extends Controller
     public function show(Request $request)
     {
         $article = Article::where('slug', $request->article)->first();
-        return view('article-detail', compact('article'));
+        $more = Article::where('slug', '!=', $request->article)->take(4)->get();
+        return view('article-detail', compact('article', 'more'));
     }
 
     /**
