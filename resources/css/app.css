@@ -31,3 +31,39 @@ textarea:focus {
         calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color) !important;
     box-shadow: none !important;
 }
+
+.dataTables_wrapper {
+    select {
+        width: 60px;
+        margin: 0 6px;
+    }
+
+    #table_length,
+    #table_filter {
+        margin-bottom: 1rem;
+    }
+
+    .dataTables_info {
+        margin-top: 1rem;
+    }
+
+    .dataTables_paginate {
+        margin-top: 1rem;
+        .paginate_button {
+            border: 1px solid transparent;
+            padding: 4px 12px;
+            margin: 0 0.25rem;
+            &.current {
+                background: none;
+                background-color: #588157;
+                color: white !important;
+            }
+
+            &:hover {
+                background: none !important;
+                color: #588157 !important;
+                border: 1px solid #588157;
+            }
+        }
+    }
+}

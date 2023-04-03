@@ -56,7 +56,7 @@ class ClientController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'logo' => 'required|image',
+            'logo' => 'nullable',
             'images' => 'required',
             'images.*' => 'required',
             'featured' => 'required',
@@ -78,10 +78,12 @@ class ClientController extends Controller
             }
         }
 
-        $path = $request->file('logo')->store('public/client-logo');
+        if ($request->hasFile('logo')) {
+            $path = $request->file('logo')->store('public/client-logo');
+            $client->logo = $path;
+        }
 
         $client->name = $request->name;
-        $client->logo = $path;
         $client->images = json_encode($imageFiles);
         $client->featured = $request->featured;
         $client->link = $request->link;

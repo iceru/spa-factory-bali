@@ -36,6 +36,11 @@
     <script src='https://cdn.tiny.cloud/1/w6cvfb6bgswq49z8hbl7msw8t7r9cw5auu24heasdln1q2fy/tinymce/5/tinymce.min.js'
         referrerpolicy="origin"></script>
 
+    {{-- Datatables --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -119,6 +124,10 @@
             };
             input.click();
         }
+    });
+
+    $(document).ready(function() {
+        $('#table').DataTable();
     });
 </script>
 

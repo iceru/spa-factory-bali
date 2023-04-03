@@ -1,7 +1,6 @@
 <x-guest-layout>
     <header class="home__header pb-20 pt-36">
-        <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center bg-black bg-opacity-70"
-            data-aos="fade-right">
+        <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center" data-aos="fade-right">
             <div class="home__cta-text text-white p-0 lg:p-10 pr-6 mb-8 lg:mb-0 lg:w-2/5">
                 <div class="font-serif text-4xl mb-2" data-aos="fade-right">
                     Spa Factory Bali™

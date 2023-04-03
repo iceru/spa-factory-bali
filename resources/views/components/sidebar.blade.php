@@ -57,6 +57,11 @@
                     Contact Us
                 </a>
             </li>
+            <li>
+                <a href="/profile">
+                    My Profile
+                </a>
+            </li>
         </ul>
     </nav>
 </div>

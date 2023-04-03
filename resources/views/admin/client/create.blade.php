@@ -79,9 +79,10 @@
             Clients Data
         </div>
         <div class="my-6 w-full border-b border-gray-200"></div>
-        <table class="table-auto border-collapse border">
+        <table class="table-auto border-collapse border" id="table">
             <thead>
                 <tr>
+                    <th class="p-3 border">No.</th>
                     <th class="p-3 border">Name</th>
                     <th class="p-3 border">Logo</th>
                     <th class="p-3 border">Images</th>
@@ -94,9 +95,14 @@
             <tbody>
                 @foreach ($clients as $client)
                     <tr>
+                        <td class="p-3 border">{{ $loop->iteration }}</td>
                         <td class="p-3 border">{{ $client->name }}</td>
                         <td class="p-3 border">
-                            <img src="{{ Storage::url($client->logo) }}" width="200" alt="{{ $client->name }}">
+                            @if ($client->logo)
+                                <img src="{{ Storage::url($client->logo) }}" width="200" alt="{{ $client->name }}">
+                            @else
+                                No Logo
+                            @endif
                         </td>
                         <td class="p-3 border">
                             @foreach (json_decode($client->images) as $image)
