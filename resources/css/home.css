@@ -72,7 +72,7 @@
     &::before {
         content: "";
         height: 2px;
-        width: 100%;
+        width: 90%;
         z-index: 0;
         position: absolute;
         top: 58%;
@@ -123,6 +123,13 @@
             filter: grayscale(0);
             border: 2px solid white;
         }
+    }
+}
+
+.about__process-large {
+    ul {
+        padding-left: 1rem;
+        list-style-type: disc;
     }
 }
 

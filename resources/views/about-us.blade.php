@@ -74,14 +74,14 @@
                 In line with the trend of ‘Farm to Beauty’, Spa Factory Bali Provides transparency – traceability of
                 production process and supply chain to ensure the purity and quality of active ingredients used.
             </div>
-            <div class="flex flex-col lg:flex-row my-8 justify-between about__traceWrapper" data-aos="fade-down"
+            <div class="flex flex-col lg:flex-row my-8 mb-12 justify-between about__traceWrapper" data-aos="fade-down"
                 data-aos-delay="900">
                 <div class="z-10 about__process mb-16 text-center lg:mb-0 active" id="process-1">
                     <div class="flex text-white mb-4 font-serif items-center justify-center">
                         <div class="mr-3">
                             <img src="/images/about/icon-leaf.png" alt="">
                         </div>
-                        Process Name
+                        Sacha Inci Plantation
                     </div>
                     <div>
                         <img src="/images/about/process-1.jpg" alt=""
@@ -93,7 +93,7 @@
                         <div class="mr-3">
                             <img src="/images/about/icon-industry.png" alt="">
                         </div>
-                        Process Name
+                        Oil Extraction
                     </div>
                     <div>
                         <img src="/images/about/process-2.jpg" alt=""
@@ -103,9 +103,21 @@
                 <div class="z-10 about__process mb-16 lg:mb-0" id="process-3">
                     <div class="flex text-white mb-4 font-serif items-center justify-center">
                         <div class="mr-3">
+                            <img src="/images/about/icon-industry.png" alt="">
+                        </div>
+                        Cosmetic Manufacturing
+                    </div>
+                    <div>
+                        <img src="/images/about/about-1.jpg" alt=""
+                            class="w-40 h-40 object-cover rounded-full about__process-image mx-auto">
+                    </div>
+                </div>
+                <div class="z-10 about__process mb-16 lg:mb-0" id="process-3">
+                    <div class="flex text-white mb-4 font-serif items-center justify-center">
+                        <div class="mr-3">
                             <img src="/images/about/icon-lotion.png" alt="">
                         </div>
-                        Process Name
+                        Finished Product
                     </div>
                     <div>
                         <img src="/images/about/about-1.jpg" alt=""
@@ -114,20 +126,33 @@
                 </div>
             </div>
             <div data-aos="fade-down">
-                <div class="process-1 about__process-large relative h-[60vh] lg:h-[600px]">
-                    <div class="absolute h-[100%] lg:h-1/2 w-full bg-gradient-to-b from-black left-0 top-0"
-                        data-aos="fade" data-aos-delay="200">
+                <div class="process-1 about__process-large relative">
+                    <div class="font-serif text-2xl mb-2 text-white" data-aos="fade-right" data-aos-delay="400">
+                        Sacha Inci Plantation
                     </div>
-                    <div class="absolute top-8 left-8 z-10 pr-8">
-                        <div class="font-serif text-2xl mb-2 text-white" data-aos="fade-right" data-aos-delay="400">
-                            Process Name
-                        </div>
-                        <div class="text-white" data-aos="fade-right" data-aos-delay="800">
-                            Lorem ipsum dolor sit amet consectetur. Volutpat lectus semper praesent sit viverra
-                            pellentesque augue maecenas blandit. At diam tellus ultricies dolor odio dictumst sem
-                            cursus. Rutrum ac neque sit quisque vitae ac arcu. Tristique mattis in vitae etiam feugiat
-                            vitae.
-                        </div>
+                    <div class="text-white mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Originated from the Amazon rainforest in Peru, Sacha Inchi (Plukenetia volubilis) was
+                                recently cultivated in Indonesia.
+                            </li>
+                            <li>
+                                The plant reaches a height of 2 metres with heart-shaped leaves. It is a vine that needs
+                                a support structure to produce seeds throughout the year.
+                            </li>
+                            <li>
+                                The seeds of inchi have a high protein and oil content. The oil is rich in the essential
+                                fatty acids omega-3 linolenic acid, omega-6 linolenic acid and omega-9. For cosmetics
+                                purpose, the oil is suitable for deep moisturising and anti-aging treatment.
+                            </li>
+                            <li>
+                                We work with a group of farmers in Tabanan, Bali who cultivate sacha inchi in their
+                                garden organically.
+                            </li>
+                            <li>
+                                The harvest of the ripen fruits are sun-dried and seeds are peeled from the pulp.
+                            </li>
+                        </ul>
                     </div>
                     <img src="/images/about/process-1.jpg" class="h-full w-full object-cover" alt="">
                 </div>
