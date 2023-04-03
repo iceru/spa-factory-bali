@@ -13,7 +13,8 @@
             <div class="grid grid-cols-3 gap-2 lg:gap-4">
                 <div class="mt-6">
                     @foreach ($clients->slice(0, 2) as $client)
-                        <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2">
+                        <div
+                            class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-40">
                             <img src="{{ Storage::url($client->logo) }}"
                                 class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}"
                                 alt="{{ $client->name }}">
@@ -21,17 +22,18 @@
                     @endforeach
                 </div>
                 <div>
-                    @foreach ($clients->slice(2, 4) as $client)
-                        <div class="odd:bg-secondary even:bg-primary flex justify-center items-center p-4 mb-4">
+                    @foreach ($clients->slice(2, 2) as $client)
+                        <div class="odd:bg-secondary even:bg-primary flex justify-center items-center p-4 mb-4 h-40">
                             <img src="{{ Storage::url($client->logo) }}"
                                 class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}"
                                 alt="{{ $client->name }}">
                         </div>
                     @endforeach
                 </div>
-                <div>
+                <div class="mt-6">
                     @foreach ($clients->slice(4, 6) as $client)
-                        <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-4 mb-4">
+                        <div
+                            class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-40">
                             <img src="{{ Storage::url($client->logo) }}"
                                 class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}"
                                 alt="{{ $client->name }}">
@@ -74,7 +76,7 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold">
+                                <div class="mt-2 text-body font-bold hover:text-primary transition">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -88,7 +90,7 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold">
+                                <div class="mt-2 text-body font-bold hover:text-primary transition">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -102,7 +104,7 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold">
+                                <div class="mt-2 text-body font-bold hover:text-primary transition">
                                     {{ $item->name }}
                                 </div>
                             </a>

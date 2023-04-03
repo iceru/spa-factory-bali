@@ -15,7 +15,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::where('featured', 'yes')->get();
         $hotel = Client::whereHas('product', function ($query) {
             return $query->where('title', 'Hotel Amenities');
         })->get();
