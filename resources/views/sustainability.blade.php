@@ -37,14 +37,19 @@
                 </div>
                 <form>
                     <x-text-input
-                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 border-primary rounded-none bg-transparent w-full"
+                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
                         placeholder="Full Name" name="name" />
                     <x-text-input
-                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 border-primary rounded-none bg-transparent w-full"
+                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
                         placeholder="Email" type="email" name="email" />
                     <x-text-input
-                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 border-primary rounded-none bg-transparent w-full"
-                        placeholder="Phone Number" type="tel" name="number" />
+                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
+                        placeholder="Company" name="company" />
+                    <x-text-input
+                        class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
+                        placeholder="Job Title" name="job_title" />
+                    <textarea class="bg-transparent border-0 border-b !border-primary w-full pl-0 outline-none mb-6" rows="6"
+                        placeholder="Usage for" name="usage"></textarea>
                     <x-button id="gri-submit"
                         class="text-primary border-primary hover:bg-primary hover:text-white !border">
                         Send
@@ -55,8 +60,8 @@
     </div>
 
 
-    <div class="section ">
-        <div class="max-w-[1200px] m-auto" x-data="{ open: 'all' }">
+    <div class="section">
+        <div class="container" x-data="{ open: 'all' }">
             <div class="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-16">
                 <div class="order-2 lg:order-1 w-full">
                     <div x-cloak x-show.important="open == 'all'">
