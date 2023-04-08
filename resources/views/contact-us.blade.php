@@ -2,14 +2,14 @@
     <div class="bg-light py-16 mt-24">
         <div class="container px-4 grid lg:flex gap-12 items-center">
             <div>
-                <div class="mb-4 font-serif text-4xl text-primary">
+                <div class="mb-4 font-serif text-4xl text-primary" data-aos="fade-right">
                     Contact Us
                 </div>
-                <div class="text-body text-justify">
+                <div class="text-body text-justify" data-aos="fade-right" data-aos-delay="400">
                     Get in touch with us for any questions or concerns - we're here to help!
                 </div>
             </div>
-            <div>
+            <div data-aos="fade-left">
                 <img src='/images/contact-us.png' alt="Contact Us" />
             </div>
         </div>

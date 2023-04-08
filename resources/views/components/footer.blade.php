@@ -64,13 +64,13 @@
                 Connect With Us
             </div>
             <div class="flex gap-6 items-center">
-                <a href="#">
+                <a href="https://www.instagram.com/spafactorybali/" target="_blank">
                     <img src="/images/instagram.png" class="h-5 object-contain" alt="Instagram">
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/profile.php?id=100009991650608&ref=pymk&fref=pymk" target="_blank">
                     <img src="/images/facebook.png" class="h-5 object-contain" alt="Facebook">
                 </a>
-                <a href="#">
+                <a href="https://twitter.com/spa_factory" target="_blank">
                     <img src="/images/twitter.png" class="h-5 object-contain" alt="Twitter">
                 </a>
             </div>

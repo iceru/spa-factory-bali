@@ -2,10 +2,10 @@
     <div class="bg-light py-16 lg:py-24 mt-24 lg:mt-32" x-data="{ open: false }">
         <div class="container grid lg:grid-cols-2 gap-12 px-4">
             <div>
-                <div class="mb-4 font-serif text-4xl text-primary">
+                <div class="mb-4 font-serif text-4xl text-primary" data-aos="fade-right">
                     Sustainability
                 </div>
-                <div class="text-body text-justify mb-4">
+                <div class="text-body text-justify mb-4" data-aos="fade-right" data-aos-delay="400">
                     The Sustainable Development Goals are the blueprint to achieve a better and more sustainable future
                     for
                     all.
@@ -14,11 +14,12 @@
                     degradation, peace and justice.
                 </div>
                 <x-button @click="open = true"
-                    class="text-primary border-primary hover:bg-primary hover:text-white !border font-bold">Request
+                    class="text-primary border-primary hover:bg-primary hover:text-white !border font-bold"
+                    data-aos="fade-right" data-aos-delay="800">Request
                     GRI Form
                 </x-button>
             </div>
-            <div class="flex flex-col justify-center">
+            <div class="flex flex-col justify-center" data-aos="fade-left" data-aos-delay="400">
                 <img src="/images/sustainability.png" alt="Sustainable Development Goals">
             </div>
         </div>
@@ -64,11 +65,11 @@
         <div class="container" x-data="{ open: 'all' }">
             <div class="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-16">
                 <div class="order-2 lg:order-1 w-full">
-                    <div x-cloak x-show.important="open == 'all'">
-                        <div class="font-serif text-3xl mb-4">
+                    <div x-cloak x-show.important="open == 'all'" class="flex flex-col justify-center h-full">
+                        <div class="font-serif text-3xl mb-4" data-aos="fade-right">
                             Sustainability in Spa Factory Bali : “Farm To Beauty”
                         </div>
-                        <div class="text-body text-justify">
+                        <div class="text-body text-justify" data-aos="fade-right" data-aos-delay="400">
                             Spa Factory Bali have come to a realization that beauty products may be effective and
                             convenient
                             to
@@ -113,7 +114,7 @@
                                 </div>
                             </div>
                             <div style="background-color: {{ $sustain->bg_color }}"
-                                class="text-white py-14 px-4 lg:p-4 flex flex-col justify-center w-full">
+                                class="text-white py-14 px-4 lg:p-4 flex flex-col justify-center w-full lg:pr-12">
                                 <div class="absolute top-4 right-2 lg:right-12 lg:top-12 cursor-pointer"
                                     @click="open = 'all'">
                                     <img src="/images/x-icon.png" alt="X">
@@ -125,15 +126,17 @@
                                     {!! $sustain->description !!}
                                 </div>
                                 <div class="mt-4">
-                                    <x-button>Gallery</x-button>
+                                    <x-button-link link="#detail">Gallery</x-button-link>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-                <div class="flex flex-col lg:flex-row justify-end order-1 lg:order-2">
-                    @foreach ($sustains as $sustain)
-                        <div class="sustain__sgd-item flex lg:flex-col items-center justify-start lg:justify-between font-bold p-6 gap-4 lg:gap-12 text-white cursor-pointer"
+                <div class="flex flex-col lg:flex-row justify-end order-1 lg:order-2" data-aos="fade-left">
+                    @foreach ($sustains as $key => $sustain)
+                        <div class="sustain__sgd-item flex lg:flex-col items-center justify-start lg:justify-between 
+                        font-bold p-6 gap-4 lg:gap-12 text-white cursor-pointer"
+                            data-aos="fade-left" data-aos-delay="{{ ($key + 1) * 300 }}"
                             style="background-color: {{ $sustain->bg_color }}" @click="open = {{ $sustain->number }}"
                             x-cloak x-show.important="open != {{ $sustain->number }}">
                             <div class="text-3xl ml-0.5">
@@ -150,20 +153,19 @@
                 <div x-cloak x-show.important="open == 'all'">
                     <img src="/images/sustain-all.png" class="w-full" alt="">
                 </div>
+                <div x-show="open == 12" class="mb-4">
+                    <div id="map" class="h-[70vh]"></div>
+                </div>
                 @foreach ($sustains as $sustain)
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" x-cloak
-                        x-show.important="open == {{ $sustain->number }}" :class="open == 12 ? 'hidden' : ''">
+                        x-show.important="open == {{ $sustain->number }}">
                         @foreach (json_decode($sustain->images) as $image)
-                            <div>
+                            <div class="sustain__image">
                                 <img src="{{ Storage::url('sustainability-images/' . $image) }}" alt="">
                             </div>
                         @endforeach
                     </div>
                 @endforeach
-                <div x-show="open == 12">
-
-                    <div id="map" class="h-[70vh] mt-4"></div>
-                </div>
             </div>
         </div>
     </div>
