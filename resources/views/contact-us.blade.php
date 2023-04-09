@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="bg-light py-16 mt-24">
+    <div class="bg-light py-16 pt-44">
         <div class="container px-4 grid lg:flex gap-12 items-center">
             <div>
                 <div class="mb-4 font-serif text-4xl text-primary" data-aos="fade-right">

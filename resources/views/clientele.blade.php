@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="bg-light py-16 mt-24">
+    <div class="bg-light py-16 pt-44">
         <div class="container grid lg:grid-cols-2 gap-12 items-center px-4">
             <div>
                 <div class="mb-4 font-serif text-4xl text-primary" data-aos="fade-right">
@@ -14,7 +14,7 @@
             <div class="grid grid-cols-3 gap-2 lg:gap-4">
                 <div class="mt-6">
                     @foreach ($clients->slice(0, 2) as $key => $client)
-                        <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-40"
+                        <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-28 lg:h-40"
                             data-aos="{{ $key === 0 ? 'fade-down' : 'fade-up' }}"
                             data-aos-delay="{{ ($key + 1) * 300 }}">
                             <img src="{{ Storage::url($client->logo) }}"
@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     @foreach ($clients->slice(2, 2) as $key => $client)
-                        <div class="odd:bg-secondary even:bg-primary flex justify-center items-center p-4 mb-4 h-40"
+                        <div class="odd:bg-secondary even:bg-primary flex justify-center items-center p-4 mb-4 h-28 lg:h-40"
                             data-aos="{{ $key === 2 ? 'fade-down' : 'fade-up' }}"
                             data-aos-delay="{{ ($key + 1) * 300 }}">
                             <img src="{{ Storage::url($client->logo) }}"
@@ -36,7 +36,7 @@
                 </div>
                 <div class="mt-6">
                     @foreach ($clients->slice(4, 6) as $key => $client)
-                        <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-40"
+                        <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-28 lg:h-40"
                             data-aos="{{ $key === 4 ? 'fade-down' : 'fade-up' }}"
                             data-aos-delay="{{ ($key + 1) * 300 }}">
                             <img src="{{ Storage::url($client->logo) }}"
