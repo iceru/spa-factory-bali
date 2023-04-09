@@ -1,7 +1,7 @@
 <x-guest-layout>
     <header class="home__header pb-20 pt-36">
         <div class="home__cta flex flex-col px-4 py-10 lg:p-0 lg:flex-row container items-center" data-aos="fade-right">
-            <div class="home__cta-text text-white p-0 lg:p-10 pr-6 mb-8 lg:mb-0 lg:w-2/5">
+            <div class="home__cta-text text-white p-0 !pl-0 lg:p-10 pr-6 mb-8 lg:mb-0 lg:w-2/5">
                 <div class="font-serif text-4xl mb-2" data-aos="fade-right">
                     Spa Factory Bali™
                 </div>
@@ -12,7 +12,7 @@
                     Contact Us
                 </x-button-link>
             </div>
-            <div class="home__cta-img w-full lg:w-3/5">
+            <div class="home__cta-img w-full lg:w-3/5 pl-10">
                 <div id="home-sliders">
                     @foreach ($sliders as $slider)
                         <img src="{{ Storage::url($slider->image) }}" class="w-full" alt="Spa Factory Bali">
@@ -134,13 +134,13 @@
     <div class="section container grid lg:grid-cols-2 gap-9">
         <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 h-1/2" data-aos="fade-right">
             @foreach ($clients as $client)
-                <div href="/clientele/#{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
+                <a href="/clientele?type={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->product->title))) }}&client={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
                     class="block odd:bg-secondary even:bg-primary">
                     <div class=" flex justify-center items-center h-full ">
                         <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}"
                             class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}">
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
         <div>
