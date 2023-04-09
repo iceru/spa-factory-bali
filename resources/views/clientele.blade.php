@@ -77,7 +77,7 @@
                     <div class=" grid grid-cols-3 gap-4 client__content" id="hotel-amenities" data-aos="fade-left"
                         data-aos-delay="400">
                         @foreach ($hotel as $item)
-                            <a href="{{ $item->link }}"
+                            <a href="{{ $item->link }}" class="client__item"
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
@@ -93,7 +93,7 @@
                     <div class=" grid grid-cols-3 gap-4 client__content" id="spa" data-aos="fade-left"
                         data-aos-delay="400">
                         @foreach ($spa as $item)
-                            <a href="{{ $item->link }}"
+                            <a href="{{ $item->link }}" class="client__item"
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
@@ -109,7 +109,7 @@
                     <div class=" grid grid-cols-3 gap-4 client__content" id="beauty-skincare" data-aos="fade-left"
                         data-aos-delay="400">
                         @foreach ($beauty as $item)
-                            <a href="{{ $item->link }}"
+                            <a href="{{ $item->link }}" class="client__item"
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
