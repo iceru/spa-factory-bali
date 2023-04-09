@@ -84,7 +84,7 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold hover:text-primary transition">
+                                <div class="mt-2 text-body font-bold hover:text-primary transition client__text">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -100,7 +100,7 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold hover:text-primary transition">
+                                <div class="mt-2 text-body font-bold hover:text-primary transition client__text">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -116,7 +116,7 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold hover:text-primary transition">
+                                <div class="mt-2 text-body font-bold hover:text-primary transition client__text">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -154,7 +154,7 @@
                 $(`#${client}`).addClass("active");
                 setTimeout(function() {
                     $(`#${client}`).removeClass('active');
-                }, 5000)
+                }, 9000)
 
             } else {
                 $('#tab-hotel').addClass('active');
