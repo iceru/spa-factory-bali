@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="section bg-linear" data-aos="fade-down">
-        <div class="container">
+        <div class="container" x-data="{ open: 'process1' }">
             <div class="font-serif text-white mb-4 text-2xl text-center" data-aos="fade-down" data-aos-delay="300">
                 Transparent and Traceable Production Process
             </div>
@@ -76,7 +76,9 @@
             </div>
             <div class="flex flex-col lg:flex-row my-8 mb-12 justify-between about__traceWrapper" data-aos="fade-down"
                 data-aos-delay="900">
-                <div class="z-10 about__process mb-16 text-center lg:mb-0 active" id="process-1">
+                <div class="lastLine"></div>
+                <div class="z-10 about__process mb-8 text-center lg:mb-0 cursor-pointer"
+                    :class="open == 'process1' ? 'active' : ''" @click="open = 'process1'">
                     <div class="flex text-white mb-4 font-serif items-center justify-center">
                         <div class="mr-3">
                             <img src="/images/about/icon-leaf.png" alt="">
@@ -84,23 +86,25 @@
                         Sacha Inci Plantation
                     </div>
                     <div>
-                        <img src="/images/about/process-1.jpg" alt=""
+                        <img src="/images/about/Plantation1.jpg" alt=""
                             class="w-40 h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
-                <div class="z-10 about__process mb-16 lg:mb-0" id="process-2">
+                <div class="z-10 about__process mb-8 lg:mb-0 cursor-pointer" id="process-2"
+                    :class="open == 'process2' ? 'active' : ''" @click="open = 'process2'">
                     <div class="flex text-white mb-4 font-serif items-center justify-center">
                         <div class="mr-3">
-                            <img src="/images/about/icon-industry.png" alt="">
+                            <img src="/images/about/icon-oil.png" class="h-6" alt="">
                         </div>
                         Oil Extraction
                     </div>
                     <div>
-                        <img src="/images/about/process-2.jpg" alt=""
+                        <img src="/images/about/oil-1.jpg" alt=""
                             class="w-40 h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
-                <div class="z-10 about__process mb-16 lg:mb-0" id="process-3">
+                <div class="z-10 about__process mb-8 lg:mb-0 cursor-pointer" :class="open == 'process3' ? 'active' : ''"
+                    @click="open = 'process3'">
                     <div class="flex text-white mb-4 font-serif items-center justify-center">
                         <div class="mr-3">
                             <img src="/images/about/icon-industry.png" alt="">
@@ -108,11 +112,12 @@
                         Cosmetic Manufacturing
                     </div>
                     <div>
-                        <img src="/images/about/about-1.jpg" alt=""
+                        <img src="/images/about/manufacture.jpg" alt=""
                             class="w-40 h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
-                <div class="z-10 about__process mb-16 lg:mb-0" id="process-3">
+                <div class="z-10 about__process cursor-pointer" :class="open == 'process4' ? 'active' : ''"
+                    @click="open = 'process4'">
                     <div class="flex text-white mb-4 font-serif items-center justify-center">
                         <div class="mr-3">
                             <img src="/images/about/icon-lotion.png" alt="">
@@ -120,13 +125,13 @@
                         Finished Product
                     </div>
                     <div>
-                        <img src="/images/about/about-1.jpg" alt=""
+                        <img src="/images/about/finished.jpg" alt=""
                             class="w-40 h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
             </div>
             <div data-aos="fade-down">
-                <div class="process-1 about__process-large relative">
+                <div class="about__process-large relative" x-cloak x-show="open == 'process1'">
                     <div class="font-serif text-2xl mb-2 text-white" data-aos="fade-right" data-aos-delay="400">
                         Sacha Inci Plantation
                     </div>
@@ -154,7 +159,107 @@
                             </li>
                         </ul>
                     </div>
-                    <img src="/images/about/process-1.jpg" class="h-full w-full object-cover" alt="">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="about__image-square">
+                            <img src="/images/about/Plantation1.jpg" alt="Sacha Inci Plantation">
+                        </div>
+                        <div class="grid gap-4">
+                            <div class="about__image-half">
+                                <img src="/images/about/Plantation2.jpg" alt="Sacha Inci Plantation">
+                            </div>
+                            <div class="about__image-half">
+                                <img src="/images/about/Plantation3.jpg" alt="Sacha Inci Plantation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 'process2'">
+                    <div class="font-serif text-2xl mb-2 text-white" data-aos="fade-right" data-aos-delay="400">
+                        Oil Extraction
+                    </div>
+                    <div class="text-white mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Dried sancha seeds need to be processed before the extraction by cracking open the
+                                shell.
+                            </li>
+                            <li>
+                                The nuts are then lightly roasted to reach approximately under 60° C before pressing.
+                            </li>
+                            <li>
+                                It is manually pressed using hydraulic pressing machines operated by Balinese ladies,
+                                thus resulting in crude oil.
+                            </li>
+                            <li>
+                                The oil needs to be rested and filtered to remove impurities.
+                            </li>
+                            <li>
+                                We work with UD Restu Bali in Tabanan for the oil extraction process not only for Sancha
+                                Inchi but also cold pressed Coconut oil (VCO), Moringa oil (Moringa oleifera), Candlenut
+                                (Aleurites moluccanus) oil and our local walnut, Kenari (Canarium ovatum) oil.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="about__image-square">
+                            <img src="/images/about/oil-1.jpg" alt="Oil Extraction">
+                        </div>
+                        <div class="grid gap-4">
+                            <div class="about__image-half">
+                                <img src="/images/about/oil-2.jpg" alt="Oil Extraction">
+                            </div>
+                            <div class="about__image-half">
+                                <img src="/images/about/oil-3.jpg" alt="Oil Extraction">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 'process3'">
+                    <div class="font-serif text-2xl mb-2 text-white" data-aos="fade-right" data-aos-delay="400">
+                        Cosmetic Manufacturing
+                    </div>
+                    <div class="text-white mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Sacha inchi oil is an essential active ingredient in many facial products such as Face
+                                Serum, Daily Moisturiser, Night Cream and Mask.
+                            </li>
+                            <li>
+                                Formulated with other rich vegetable oil, herbal extract and essential oil for deep
+                                moisturising and anti-aging benefits. It well absorbed to restores and improve skin
+                                texture without sticky feeling.
+                            </li>
+                            <li>
+                                Handcrafted in our production facility by local women with high GMP standard.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="/images/about/manufacture.jpg" alt="Cosmetic Manufacturing">
+                    </div>
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 'process4'">
+                    <div class="font-serif text-2xl mb-2 text-white" data-aos="fade-right" data-aos-delay="400">
+                        Finished Product
+                    </div>
+                    <div class="text-white mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Sacha inchi is commonly used in facial products with regenerative benefit such as Face
+                                Moisturiser and Face Serum.
+
+                            </li>
+                            <li>
+                                Deep moisture the skin and well absorbed, without the heaviness and greasy feeling.
+                            </li>
+                            <li>
+                                Handcrafted in our production facility by local women with high GMP standard.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="/images/about/finished.jpg" alt="Finished Product">
+                    </div>
                 </div>
             </div>
         </div>

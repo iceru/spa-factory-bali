@@ -81,31 +81,49 @@
         background-color: white;
     }
 
+    .lastLine {
+        display: none;
+    }
+
     @media screen and (max-width: 992px) {
         &::before {
-            height: 35%;
-            width: 30%;
+            height: 26%;
+            width: 35%;
             background-color: transparent;
             border: 2px solid white;
             right: 10%;
             left: auto;
             transform: none;
-            top: 15%;
+            top: 13%;
             border-left: 0;
         }
 
         &::after {
             content: "";
             position: absolute;
-            height: 35%;
-            width: 30%;
+            height: 26%;
+            width: 35%;
             background-color: transparent;
             border: 2px solid white;
             right: auto;
-            left: 15%;
+            left: 10%;
             transform: none;
-            bottom: 15%;
+            top: 39%;
             border-right: 0;
+        }
+
+        .lastLine {
+            display: block;
+            position: absolute;
+            height: 26%;
+            width: 35%;
+            background-color: transparent;
+            border: 2px solid white;
+            left: auto;
+            right: 10%;
+            transform: none;
+            bottom: 8%;
+            border-left: 0;
         }
     }
 }
@@ -230,5 +248,35 @@
 
     .client__text {
         color: rgba(88, 129, 87, 1);
+    }
+}
+
+.about__image-square {
+    position: relative;
+    padding-top: 100%;
+    width: 100%;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.about__image-half {
+    position: relative;
+    padding-top: 50%;
+    width: 100%;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
