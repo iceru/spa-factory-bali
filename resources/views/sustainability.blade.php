@@ -36,24 +36,36 @@
                         <img src="/images/close-gri.png" alt="Close">
                     </div>
                 </div>
-                <form>
+                <div class="w-full mb-4 bg-red-100 border border-red-400 p-4 rounded-md text-red-700" id="error-msg"
+                    style="display: none">
+                </div>
+                <div class="w-full mb-4 bg-green-100 border border-green-400 p-4 rounded-md text-green-700"
+                    id="success-msg" style="display: none">
+                </div>
+                <form action="">
+                    @csrf
                     <x-text-input
                         class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
-                        placeholder="Full Name" name="name" />
+                        placeholder="Full Name" name="name" id="name" />
                     <x-text-input
                         class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
-                        placeholder="Email" type="email" name="email" />
+                        placeholder="Email" type="email" name="email" id="email" />
                     <x-text-input
                         class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
-                        placeholder="Company" name="company" />
+                        placeholder="Company" name="company" id="company" />
                     <x-text-input
                         class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
-                        placeholder="Job Title" name="job_title" />
+                        placeholder="Job Title" name="job_title" id="job_title" />
                     <textarea class="bg-transparent border-0 border-b !border-primary w-full pl-0 outline-none mb-6" rows="6"
-                        placeholder="Usage for" name="usage"></textarea>
+                        placeholder="Usage for" name="usage" id="usage_for"></textarea>
                     <x-button id="gri-submit"
-                        class="text-primary border-primary hover:bg-primary hover:text-white !border">
-                        Send
+                        class="!bg-primary text-white border-primary hover:!bg-transparent hover:text-primary !border">
+                        <div class="submit">
+                            Send
+                        </div>
+                        <div class="load hidden ">
+                            <img src="/images/load.gif" class="h-6" alt="Loading">
+                        </div>
                     </x-button>
                 </form>
             </div>
@@ -171,6 +183,49 @@
     </div>
 
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $("#gri-submit").click(function(e) {
+            $('.submit').addClass('hidden');
+            $('.load').removeClass('hidden');
+            e.preventDefault();
+
+            const name = $("#name").val();
+            const company = $("#company").val();
+            const job_title = $("#job_title").val();
+            const usage_for = $("#usage_for").val();
+            const email = $("#email").val();
+
+            $.ajax({
+                type: 'POST',
+                url: "/gri/store",
+                data: {
+                    name: name,
+                    email: email,
+                    company: company,
+                    usage_for: usage_for,
+                    job_title: job_title,
+                },
+                success: function(res) {
+                    debugger;
+                    $('#success-msg').css('display', 'block');
+                    $('#success-msg').html(res.success);
+                    $('.submit').removeClass('hidden');
+                    $('.load').addClass('hidden');
+                },
+                error: function(res) {
+                    $('#error-msg').css('display', 'block');
+                    $('#error-msg').html(res.responseJSON.error);
+                    $('.submit').removeClass('hidden');
+                    $('.load').addClass('hidden');
+                }
+            });
+
+        });
         const myCustomColour = '#588157'
 
         const markerHtmlStyles = `

@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GriController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductsController;
@@ -38,6 +39,8 @@ Route::get('/e-library', [ArticleController::class, 'index'])->name('article');
 Route::get('/e-library/{article}', [ArticleController::class, 'show'])->name('article.detail');
 
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+
+Route::post('/gri/store', [GriController::class, 'store'])->name('gri.store');
 
 
 Route::middleware('auth')->group(function () {
