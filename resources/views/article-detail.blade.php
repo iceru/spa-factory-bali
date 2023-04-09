@@ -1,7 +1,7 @@
 <x-guest-layout>
-    <div class="mt-24 pt-16 pb-12 mb-8 bg-light">
+    <div class="pt-40 pb-12 mb-8 bg-light">
         <div class="container px-4">
-            <div class="text-center font-serif text-4xl text-secondary mb-4">
+            <div class="text-center font-serif text-4xl text-primary mb-4">
                 {{ $article->title }}
             </div>
             <div class="mb-4 text-center">
@@ -17,7 +17,7 @@
     <div class="container mb-12 flex flex-wrap px-4">
         <div class="w-full lg:w-2/3">
             <div class="mb-4">
-                <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}">
+                <img src="{{ Storage::url($article->image) }}" class="w-full" alt="{{ $article->title }}">
             </div>
             <div class="">
                 {!! $article->text !!}
