@@ -19,10 +19,10 @@
         <div class="container">
             <div class="grid lg:grid-cols-2">
                 <div class="mb-12 lg:mb-0">
-                    <div class="font-serif text-primary text-3xl mb-4">
+                    <div class="font-serif text-primary text-3xl mb-4" data-aos="fade-right" data-aos-delay="400">
                         Spa Factory Bali
                     </div>
-                    <div class="mb-4 flex justify-between">
+                    <div class="mb-4 flex justify-between" data-aos="fade-right" data-aos-delay="800">
                         <div class="flex">
                             <div class="mr-2.5 mt-1.5">
                                 <img src="/images/contact/icon-home.png" alt="">
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     </div>
-                    <div style="width: 100%">
+                    <div style="width: 100%" data-aos="fade-right" data-aos-delay="1200">
                         <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
                             marginwidth="0"
                             src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Spa%20Factory%20Bali,%20Jl.%20Pura%20Pengulapan,%20Ungasan,%20Badung%20Regency,%20Bali+(Spa%20Factory%20Bali)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="lg:pl-10">
-                    <div class="font-serif text-3xl text-primary mb-6">
+                    <div class="font-serif text-3xl text-primary mb-6" data-aos="fade-left" data-aos-delay="400">
                         Contact Us
                     </div>
                     @if ($message = Session::get('success'))
@@ -83,7 +83,8 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                    <form action="{{ route('contact.store') }}" method="POST">
+                    <form action="{{ route('contact.store') }}" method="POST" data-aos="fade-down"
+                        data-aos-delay="800">
                         @csrf
                         <x-text-input
                             class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
