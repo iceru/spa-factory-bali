@@ -41,15 +41,15 @@
         </div>
     </div>
     <div class="section container grid lg:grid-cols-2 items-center">
-        <div class="text-justify text-body  lg:pr-16 order-2 lg:order-1" data-aos="fade-right" data-aos-delay="800"
-            data-aos-offset="-400">
+        <div class="text-justify text-body  lg:pr-16 order-2 lg:order-1" data-aos="fade-right" data-aos-delay="400"
+            data-aos-offset="0">
             Spa Factory Bali is the optimal choice for a company who decides to launch a new product line and may not
             have the fundamental materials to produce it autogenously as it may incur in overpriced production or a lack
             of business foresight in understanding the risk. In this process, products are made over a mutually agreed
             period of time and feasible for businesses who want a steady, reliable source as a limited part of their
             manufacturing process.
         </div>
-        <div class="mb-6 lg:mb-0 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="800">
+        <div class="mb-6 lg:mb-0 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="400" data-aos-offset="0">
             <img src="/images/home-about.png" alt="Proses Produksi Spa Factory Bali" />
         </div>
     </div>

@@ -72,6 +72,7 @@
         AOS.init({
             once: true,
             duration: 600,
+            offset: 80,
         });
     </script>
 

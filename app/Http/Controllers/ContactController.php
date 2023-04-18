@@ -56,7 +56,7 @@ class ContactController extends Controller
 
             $contact->save();
 
-            Mail::to("m.hafiz1825@gmail.com")->send(new ContactMail($request));
+            Mail::to("salesglobal@spafactorybali.biz")->send(new ContactMail($request));
 
             $return = redirect()->route('contact.index')->with('success', 'Message sent!');
         } catch (Exception $e) {

@@ -7,11 +7,8 @@
                 </div>
                 <div class="text-body text-justify mb-4" data-aos="fade-right" data-aos-delay="400">
                     The Sustainable Development Goals are the blueprint to achieve a better and more sustainable future
-                    for
-                    all.
-                    They address the global challenges we face, including poverty, inequality, climate change,
-                    environmental
-                    degradation, peace and justice.
+                    for all. They address the global challenges we face, including poverty, inequality, climate change,
+                    environmental degradation, peace and justice.
                 </div>
                 <x-button @click="open = true"
                     class="text-primary border-primary hover:bg-primary hover:text-white !border font-bold"
@@ -42,7 +39,7 @@
                 <div class="w-full mb-4 bg-green-100 border border-green-400 p-4 rounded-md text-green-700"
                     id="success-msg" style="display: none">
                 </div>
-                <form action="">
+                <div>
                     @csrf
                     <x-text-input
                         class="mb-6 !border-b border-t-0 border-l-0 border-r-0 pl-0 !border-primary rounded-none bg-transparent w-full"
@@ -67,7 +64,7 @@
                             <img src="/images/load.gif" class="h-6" alt="Loading">
                         </div>
                     </x-button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -82,46 +79,35 @@
                             Sustainability in Spa Factory Bali : “Farm To Beauty”
                         </div>
                         <div class="text-body text-justify" data-aos="fade-right" data-aos-delay="400">
-                            Spa Factory Bali have come to a realization that beauty products may be effective and
-                            convenient
-                            to
-                            use, but we should also consider the implications of such innovations. As with most
-                            consumables,
-                            cosmetics also leave behind an environmental impact that we must consider to avoid.
-                            <br> <br>
-                            Sustainability means taking into account social, environmental and economical aspects
-                            throughout
-                            the
-                            whole production chain of a product to ensure an altogether positive impact. When it comes
-                            to
-                            natural cosmetics and beauty products, sustainability does not only refer to the way
-                            ingredients
-                            are
-                            sourced or how the product is produced, but also to the materials used during its production
-                            and
-                            post-production.
-                            <br> <br>
-                            “Farm to beauty” approach is an essential part of Spa Factory Bali Label criteria, which is
-                            in
-                            line
-                            with the sustainable actions and strategies carried out from the blueprint. We aspire to
-                            greatly
-                            contribute to the transition towards the use of more sustainable ingredients and materials
-                            for
-                            the
-                            production of natural and organic cosmetics.
+                            Spa Factory Bali has come to a realisation that beauty products may be effective and
+                            convenient to use, but we should also consider the implications of such innovations. As with
+                            most consumables, cosmetics also leave behind an environmental impact that we must consider
+                            to avoid.
+                            <br><br>
+                            Sustainability means taking into account <strong>social, environmental and economic
+                                aspects</strong>
+                            throughout the whole production chain of a product to ensure an altogether positive impact.
+                            When it comes to natural cosmetics and beauty products, sustainability does not only refer
+                            to the way ingredients are sourced or how the product is produced, but also to the materials
+                            used during its production and post-production.
+                            <br><br>
+                            “Farm to beauty” approach is an essential part of Spa Factory Bali label criteria, which is
+                            in line with the sustainable actions and strategies carried out from the blueprint. We
+                            aspire to greatly contribute to the transition towards the use of more sustainable
+                            ingredients and materials for the production of natural and organic cosmetics.
+
                         </div>
                     </div>
                     @foreach ($sustains as $sustain)
                         <div class="flex w-full h-full relative" x-cloak
                             x-show.important="open == {{ $sustain->number }}">
-                            <div class="sustain__sgd-item flex-col items-center justify-between font-bold p-6 gap-12
+                            <div class="sustain__sdg-item flex-col items-center justify-between font-bold p-6 gap-12
                         text-white cursor-pointer border-2 border-white hidden lg:flex"
                                 style="background-color: {{ $sustain->bg_color }}">
                                 <div class="text-3xl ml-0.5">
                                     {{ $sustain->number }}
                                 </div>
-                                <div class="text-lg flex items-center justify-center w-4 sustain__sgd-text">
+                                <div class="text-lg flex items-center justify-center w-4 sustain__sdg-text">
                                     {{ $sustain->title }}
                                 </div>
                             </div>
@@ -132,9 +118,9 @@
                                     <img src="/images/x-icon.png" alt="X">
                                 </div>
                                 <div class="font-serif text-3xl mb-4">
-                                    SGD {{ $sustain->number }} - {{ $sustain->title }}
+                                    SDG {{ $sustain->number }} - {{ $sustain->title }}
                                 </div>
-                                <div class="text-white text-justify sustain__sgd-desc">
+                                <div class="text-white text-justify sustain__sdg-desc">
                                     {!! $sustain->description !!}
                                 </div>
                                 <div class="mt-4">
@@ -146,7 +132,7 @@
                 </div>
                 <div class="flex flex-col lg:flex-row justify-end order-1 lg:order-2" data-aos="fade-left">
                     @foreach ($sustains as $key => $sustain)
-                        <div class="sustain__sgd-item flex lg:flex-col items-center justify-start lg:justify-between 
+                        <div class="sustain__sdg-item flex lg:flex-col items-center justify-start lg:justify-between 
                         font-bold p-6 gap-4 lg:gap-12 text-white cursor-pointer"
                             data-aos="fade-left" data-aos-delay="{{ ($key + 1) * 300 }}"
                             style="background-color: {{ $sustain->bg_color }}" @click="open = {{ $sustain->number }}"
@@ -154,7 +140,7 @@
                             <div class="text-3xl ml-0.5">
                                 {{ $sustain->number }}
                             </div>
-                            <div class="text-lg flex items-center justify-center lg:w-4 sustain__sgd-text">
+                            <div class="text-lg flex items-center justify-center lg:w-4 sustain__sdg-text">
                                 {{ $sustain->title }}
                             </div>
                         </div>
@@ -211,7 +197,6 @@
                     job_title: job_title,
                 },
                 success: function(res) {
-                    debugger;
                     $('#success-msg').css('display', 'block');
                     $('#success-msg').html(res.success);
                     $('.submit').removeClass('hidden');

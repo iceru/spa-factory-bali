@@ -14,7 +14,7 @@ class SustainabilityController extends Controller
      */
     public function index()
     {
-        $sustains = Sustainability::all();
+        $sustains = Sustainability::orderBy('number')->get();
         return view('sustainability', compact('sustains'));
     }
 

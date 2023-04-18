@@ -1,6 +1,6 @@
 {
   "public/images/about/about-header.JPG": {
-    "file": "assets/about-header-118d9445.JPG",
+    "file": "assets/about-header-36100bb1.JPG",
     "src": "public/images/about/about-header.JPG"
   },
   "public/images/bg-body.png": {
@@ -16,7 +16,7 @@
     "src": "public/images/bg-quote-2.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-cd43398b.css",
+    "file": "assets/app-dc1662d6.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },

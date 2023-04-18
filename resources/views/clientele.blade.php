@@ -59,7 +59,7 @@
                     wonder of products.
                 </div>
             </div>
-            <div class="flex flex-wrap lg:flex-nowrap gap-8" x-data="{ open: 'hotel' }">
+            <div class="flex flex-wrap lg:flex-nowrap gap-8">
                 <ul
                     class="w-full lg:w-1/4 clientele__catalog sticky top-0 flex lg:block overflow-auto whitespace-nowrap lg:whitespace-normal">
                     <li class="mr-6 lg:mr-0 client__tab" id="tab-hotel-amenities" data-aos="fade-down">
@@ -84,7 +84,8 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold group-hover:text-primary transition client__text">
+                                <div
+                                    class="mt-2 text-body group-hover:text-primary group-hover:font-semibold transition client__text">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -100,7 +101,8 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold group-hover:text-primary transition client__text">
+                                <div
+                                    class="mt-2 text-body group-hover:text-primary group-hover:font-semibold transition client__text">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -116,7 +118,8 @@
                                         <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
                                     @endforeach
                                 </div>
-                                <div class="mt-2 text-body font-bold group-hover:text-primary transition client__text">
+                                <div
+                                    class="mt-2 text-body group-hover:text-primary group-hover:font-semibold transition client__text">
                                     {{ $item->name }}
                                 </div>
                             </a>
@@ -155,13 +158,7 @@
                 setTimeout(function() {
                     $(`#${client}`).removeClass('active');
                 }, 9000)
-
-            } else {
-                $('#tab-hotel-amenities').addClass('active');
-                $('.client__content:first').show();
             }
-
-
         });
 
         $('.client__tab').click(function() {

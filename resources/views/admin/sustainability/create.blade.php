@@ -21,7 +21,7 @@
         </div>
 
         <div class="flex items-center mb-6">
-            <x-input-label for="number" :value="__('SGD Number')" class="mr-4 w-1/5 text-lg" />
+            <x-input-label for="number" :value="__('SDG Number')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
                 <x-text-input id="number" class="block w-full" type="number" name="number" required />

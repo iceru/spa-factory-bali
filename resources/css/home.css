@@ -72,7 +72,7 @@
     &::before {
         content: "";
         height: 2px;
-        width: 90%;
+        width: 85%;
         z-index: 0;
         position: absolute;
         top: 58%;
@@ -87,43 +87,53 @@
 
     @media screen and (max-width: 992px) {
         &::before {
-            height: 26%;
-            width: 35%;
+            height: 2px;
+            width: 60%;
             background-color: transparent;
-            border: 2px solid white;
-            right: 10%;
-            left: auto;
-            transform: none;
-            top: 13%;
+            border-bottom: 2px solid white;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 30%;
             border-left: 0;
         }
 
         &::after {
             content: "";
             position: absolute;
-            height: 26%;
-            width: 35%;
+            height: 10%;
+            width: 55%;
             background-color: transparent;
             border: 2px solid white;
-            right: auto;
-            left: 10%;
-            transform: none;
+            right: 20%;
+            left: auto;
             top: 39%;
-            border-right: 0;
+            border-top: 0;
+            border-left: 0;
         }
 
         .lastLine {
             display: block;
             position: absolute;
-            height: 26%;
-            width: 35%;
+            height: 2px;
+            width: 60%;
             background-color: transparent;
-            border: 2px solid white;
-            left: auto;
-            right: 10%;
-            transform: none;
-            bottom: 8%;
+            border-bottom: 2px solid white;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            bottom: 12%;
             border-left: 0;
+        }
+
+        .topLine {
+            content: "";
+            position: absolute;
+            height: 6%;
+            width: 2px;
+            background-color: transparent;
+            border-left: 2px solid white;
+            right: auto;
+            left: 25%;
+            top: 49%;
         }
     }
 }
@@ -151,7 +161,7 @@
     }
 }
 
-.sustain__sgd-text {
+.sustain__sdg-text {
     @media screen and (min-width: 992px) {
         writing-mode: vertical-rl;
         transform: rotate(180deg);
@@ -159,7 +169,7 @@
     }
 }
 
-.sustain__sgd-desc {
+.sustain__sdg-desc {
     ul {
         list-style-type: disc;
         padding-left: 1.5rem;
