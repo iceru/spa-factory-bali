@@ -146,18 +146,26 @@
             const type = getUrlVars()["type"];
             const client = getUrlVars()["client"];
             $('.client__content').hide();
-            if (type && client) {
+
+            if (type) {
                 $(`#${type}`).show();
                 $(`#tab-${type}`).addClass('active');
+                setTimeout(() => {
+                    $('html, body').animate({
+                        scrollTop: $(`#tab-${type}`).offset().top - 80
+                    }, 500);
+                }, 200);
+            }
+            if (client) {
+                $(`#${client}`).addClass("active");
+                setTimeout(function() {
+                    $(`#${client}`).removeClass('active');
+                }, 9000)
                 setTimeout(() => {
                     $('html, body').animate({
                         scrollTop: $(`#${client}`).offset().top - 80
                     }, 500);
                 }, 200);
-                $(`#${client}`).addClass("active");
-                setTimeout(function() {
-                    $(`#${client}`).removeClass('active');
-                }, 9000)
             }
         });
 

@@ -138,7 +138,7 @@
             <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false"
                 x-cloak x-show="modal"></div>
             <div x-cloak x-show="modal"
-                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[80vw] max-h-[90vh] overflow-auto h-auto bg-body p-10 rounded-xl z-20">
+                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-10 rounded-xl z-20">
                 <div class="absolute right-10 top-10 cursor-pointer z-10" @click="modal = false">
                     <img src="/images/close-gri.png" alt="Close">
                 </div>

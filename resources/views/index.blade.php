@@ -67,17 +67,20 @@
         </div>
         <div class="grid lg:grid-cols-3 container gap-12">
             @foreach ($products as $key => $product)
-                <div class="drop-shadow-xl" data-aos="fade-right" data-aos-delay="{{ ($key + 1) * 400 }}">
-                    <img src="{{ Storage::url($product->image) }}" class="w-full" alt="{{ $product->title }}" />
-                    <div class="bg-white bg-opacity-30 pt-4 pb-8 px-6">
-                        <div class="text-center font-bold text-lg mb-2">
-                            {{ $product->title }}
-                        </div>
-                        <div class="text-center">
-                            {!! $product->description !!}
+                <a href="/clientele?type={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $product->title))) }}"
+                    class="block">
+                    <div class="drop-shadow-xl" data-aos="fade-right" data-aos-delay="{{ ($key + 1) * 400 }}">
+                        <img src="{{ Storage::url($product->image) }}" class="w-full" alt="{{ $product->title }}" />
+                        <div class="bg-white bg-opacity-30 pt-4 pb-8 px-6">
+                            <div class="text-center font-bold text-lg mb-2">
+                                {{ $product->title }}
+                            </div>
+                            <div class="text-center">
+                                {!! $product->description !!}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>
