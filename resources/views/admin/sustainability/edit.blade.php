@@ -54,8 +54,8 @@
             <div class="w-1/5 mr-4">
             </div>
             @foreach (json_decode($sustainability->images) as $image)
-                <img src="{{ Storage::url('/sustainability-images/' . $image) }}" class="mr-4" width="200"
-                    alt="{{ $sustainability->name }}">
+                <img loading="lazy" src="{{ Storage::url('/sustainability-images/' . $image) }}" class="mr-4"
+                    width="200" alt="{{ $sustainability->name }}">
             @endforeach
         </div>
 

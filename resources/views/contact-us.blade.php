@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div data-aos="fade-left">
-                <img src='/images/contact-us.png' alt="Contact Us" />
+                <img loading="lazy" src='/images/contact-us.png' alt="Contact Us" />
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
                     <div class="mb-4 flex justify-between" data-aos="fade-right" data-aos-delay="800">
                         <div class="flex">
                             <div class="mr-2.5 mt-1.5">
-                                <img src="/images/contact/icon-home.png" alt="">
+                                <img loading="lazy" src="/images/contact/icon-home.png" alt="">
                             </div>
                             <div>
                                 Jl. Pura Pengulapan, No 3 <br>
@@ -36,7 +36,7 @@
                         <div>
                             <div class="flex">
                                 <div class="mr-2.5 mt-1.5">
-                                    <img src="/images/contact/icon-phone.png" alt="">
+                                    <img loading="lazy" src="/images/contact/icon-phone.png" alt="">
                                 </div>
                                 <div>
                                     <a href="tel:+6281238003803" class="hover:text-primary">
@@ -49,7 +49,7 @@
                             </div>
                             <div class="flex mt-2">
                                 <div class="mr-2.5 mt-1.5">
-                                    <img src="/images/contact/icon-mail.png" alt="">
+                                    <img loading="lazy" src="/images/contact/icon-mail.png" alt="">
                                 </div>
                                 <div>
                                     <a href="mailto:sales@spafactorybali.biz" class="hover:text-primary">

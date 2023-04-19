@@ -99,14 +99,15 @@
                         <td class="p-3 border">{{ $client->name }}</td>
                         <td class="p-3 border">
                             @if ($client->logo)
-                                <img src="{{ Storage::url($client->logo) }}" width="200" alt="{{ $client->name }}">
+                                <img loading="lazy" src="{{ Storage::url($client->logo) }}" width="200"
+                                    alt="{{ $client->name }}">
                             @else
                                 No Logo
                             @endif
                         </td>
                         <td class="p-3 border">
                             @foreach (json_decode($client->images) as $image)
-                                <img src="{{ Storage::url('/client-images/' . $image) }}" width="200"
+                                <img loading="lazy" src="{{ Storage::url('/client-images/' . $image) }}" width="200"
                                     alt="{{ $client->name }}">
                             @endforeach
                         </td>

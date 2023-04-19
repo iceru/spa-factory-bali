@@ -1,7 +1,7 @@
 <footer class="bg-primary py-12 px-4 lg:px-0">
     <div class="container lg:grid lg:grid-cols-4 flex flex-wrap text-white">
         <div class="footer__logo w-full mb-6 lg:mb-0">
-            <img src="/images/logo-white.png" class="h-28 w-auto object-contain" alt="Spa Factory Bali">
+            <img loading="lazy" src="/images/logo-white.png" class="h-28 w-auto object-contain" alt="Spa Factory Bali">
         </div>
         <div class="footer__section w-1/2 md:w-1/3 mb-6 lg:mb-0">
             <ul>
@@ -65,13 +65,13 @@
             </div>
             <div class="flex gap-6 items-center">
                 <a href="https://www.instagram.com/spafactorybali/" target="_blank">
-                    <img src="/images/instagram.png" class="h-5 object-contain" alt="Instagram">
+                    <img loading="lazy" src="/images/instagram.png" class="h-5 object-contain" alt="Instagram">
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=100009991650608&ref=pymk&fref=pymk" target="_blank">
-                    <img src="/images/facebook.png" class="h-5 object-contain" alt="Facebook">
+                    <img loading="lazy" src="/images/facebook.png" class="h-5 object-contain" alt="Facebook">
                 </a>
                 <a href="https://twitter.com/spa_factory" target="_blank">
-                    <img src="/images/twitter.png" class="h-5 object-contain" alt="Twitter">
+                    <img loading="lazy" src="/images/twitter.png" class="h-5 object-contain" alt="Twitter">
                 </a>
             </div>
         </div>

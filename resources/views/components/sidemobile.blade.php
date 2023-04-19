@@ -1,6 +1,6 @@
 <div class="sidemobile__wrapper bg-linear p-6 min-h-screen w-2/3">
     <div class="logo mb-10">
-        <img src="/images/logo-white.png" alt="">
+        <img loading="lazy" src="/images/logo-white.png" alt="">
     </div>
     <nav class="sidemobile__menu text-white font-semibold mb-10 uppercase">
         <ul class="gap-8 grid">
@@ -38,13 +38,13 @@
     </nav>
     <div class="flex gap-6 items-center">
         <a href="#">
-            <img src="/images/instagram.png" class="h-6 object-contain" alt="Instagram">
+            <img loading="lazy" src="/images/instagram.png" class="h-6 object-contain" alt="Instagram">
         </a>
         <a href="#">
-            <img src="/images/facebook.png" class="h-6 object-contain" alt="Facebook">
+            <img loading="lazy" src="/images/facebook.png" class="h-6 object-contain" alt="Facebook">
         </a>
         <a href="#">
-            <img src="/images/twitter.png" class="h-6 object-contain" alt="Twitter">
+            <img loading="lazy" src="/images/twitter.png" class="h-6 object-contain" alt="Twitter">
         </a>
     </div>
 </div>

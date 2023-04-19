@@ -15,7 +15,8 @@
             <div class="home__cta-img w-full md:w-[60%] lg:pl-10 md:pl-4">
                 <div id="home-sliders">
                     @foreach ($sliders as $slider)
-                        <img src="{{ Storage::url($slider->image) }}" class="w-full" alt="Spa Factory Bali">
+                        <img loading="lazy" src="{{ Storage::url($slider->image) }}" class="w-full"
+                            alt="Spa Factory Bali">
                     @endforeach
                 </div>
             </div>
@@ -50,13 +51,13 @@
             manufacturing process.
         </div>
         <div class="mb-6 md:mb-0 order-1 md:order-2" data-aos="fade-left" data-aos-delay="400" data-aos-offset="0">
-            <img src="/images/home-about.png" alt="Proses Produksi Spa Factory Bali" />
+            <img loading="lazy" src="/images/home-about.png" alt="Proses Produksi Spa Factory Bali" />
         </div>
     </div>
 
     <div class="section bg-radial text-white relative" data-aos="fade-down" data-aos-duration="800">
         <div class="absolute top-1/2 transform -translate-y-1/2 left-4">
-            <img src="/images/bg-flower.png" class="w-[80%]" alt="">
+            <img loading="lazy" src="/images/bg-flower.png" class="w-[80%]" alt="">
         </div>
         <div class="text-center mb-3 font-serif text-3xl" data-aos="fade-down" data-aos-delay="400">
             Our Products
@@ -70,7 +71,8 @@
                 <a href="/clientele?type={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $product->title))) }}"
                     class="block">
                     <div class="drop-shadow-xl" data-aos="fade-right" data-aos-delay="{{ ($key + 1) * 400 }}">
-                        <img src="{{ Storage::url($product->image) }}" class="w-full" alt="{{ $product->title }}" />
+                        <img loading="lazy" src="{{ Storage::url($product->image) }}" class="w-full"
+                            alt="{{ $product->title }}" />
                         <div class="bg-white bg-opacity-30 pt-4 pb-8 px-6">
                             <div class="text-center font-bold text-lg mb-2">
                                 {{ $product->title }}
@@ -99,21 +101,21 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="flex justify-center" data-aos="fade-right" data-aos-delay="800">
-                    <img src="/images/bpom.png" class="h-40 w-full object-contain"
+                    <img loading="lazy" src="/images/bpom.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
                 </div>
                 <div class="flex justify-center" data-aos="fade-right" data-aos-delay="400">
-                    <img src="/images/halal.png" class="h-40 w-full object-contain"
+                    <img loading="lazy" src="/images/halal.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
                 </div>
 
                 <div class="flex justify-center" data-aos="fade-left" data-aos-delay="400">
-                    <img src="/images/SERT.png" class="h-40 w-full object-contain"
+                    <img loading="lazy" src="/images/SERT.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
                 </div>
 
                 <div class="flex justify-center" data-aos="fade-left" data-aos-delay="800">
-                    <img src="/images/rspo.png" class="h-40 w-full object-contain"
+                    <img loading="lazy" src="/images/rspo.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
                 </div>
 
@@ -124,7 +126,7 @@
     <div class="section text-white bg-quote bg-no-repeat bg-cover">
         <div class="container grid md:grid-flow-col items-center gap-6">
             <div class="flex justify-center lg:block" data-aos="fade-right" data-aos-duration="400">
-                <img src="/images/home-quote-2.png" class="w-28" alt="Nature">
+                <img loading="lazy" src="/images/home-quote-2.png" class="w-28" alt="Nature">
             </div>
             <div class="text-justify font-serif text-xl lg:text-2xl" data-aos="fade-right" data-aos-delay="400">
                 Our ultimate resources, combined with an esteemed development team works collaboratively with our
@@ -140,7 +142,7 @@
                 <a href="/clientele?type={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->product->title))) }}&client={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
                     class="block odd:bg-secondary even:bg-primary">
                     <div class=" flex justify-center items-center h-full ">
-                        <img src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}"
+                        <img loading="lazy" src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}"
                             class="min-h-[164px] object-contain {{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}">
                     </div>
                 </a>

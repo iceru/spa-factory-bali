@@ -17,7 +17,7 @@
                         <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-28 md:h-48 lg:h-40"
                             data-aos="{{ $key === 0 ? 'fade-down' : 'fade-up' }}"
                             data-aos-delay="{{ ($key + 1) * 300 }}">
-                            <img src="{{ Storage::url($client->logo) }}"
+                            <img loading="lazy" src="{{ Storage::url($client->logo) }}"
                                 class=" {{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}"
                                 alt="{{ $client->name }}">
                         </div>
@@ -28,7 +28,7 @@
                         <div class="odd:bg-secondary even:bg-primary flex justify-center items-center p-4 mb-4 h-28 md:h-48 lg:h-40"
                             data-aos="{{ $key === 2 ? 'fade-down' : 'fade-up' }}"
                             data-aos-delay="{{ ($key + 1) * 300 }}">
-                            <img src="{{ Storage::url($client->logo) }}"
+                            <img loading="lazy" src="{{ Storage::url($client->logo) }}"
                                 class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}"
                                 alt="{{ $client->name }}">
                         </div>
@@ -39,7 +39,7 @@
                         <div class="even:bg-secondary odd:bg-primary flex justify-center items-center p-2 lg:p-4 mb-2 h-28 md:h-48 lg:h-40"
                             data-aos="{{ $key === 4 ? 'fade-down' : 'fade-up' }}"
                             data-aos-delay="{{ ($key + 1) * 300 }}">
-                            <img src="{{ Storage::url($client->logo) }}"
+                            <img loading="lazy" src="{{ Storage::url($client->logo) }}"
                                 class="{{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}"
                                 alt="{{ $client->name }}">
                         </div>
@@ -81,7 +81,8 @@
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
+                                        <img loading="lazy" src="{{ Storage::url('client-images/' . $image) }}"
+                                            alt="">
                                     @endforeach
                                 </div>
                                 <div
@@ -98,7 +99,8 @@
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
+                                        <img loading="lazy" src="{{ Storage::url('client-images/' . $image) }}"
+                                            alt="">
                                     @endforeach
                                 </div>
                                 <div
@@ -115,7 +117,8 @@
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <img src="{{ Storage::url('client-images/' . $image) }}" alt="">
+                                        <img loading="lazy" src="{{ Storage::url('client-images/' . $image) }}"
+                                            alt="">
                                     @endforeach
                                 </div>
                                 <div

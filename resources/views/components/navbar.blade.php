@@ -3,10 +3,10 @@
         <div class="nav__logo ">
             <a href="/">
                 @if ($type === 'index' or $type === 'about' or $type === 'auth' or $type === 'article')
-                    <img src="/images/logo.png" class="h-16 lg:h-20 object-contain brightness-0 invert"
+                    <img loading="lazy" src="/images/logo.png" class="h-16 lg:h-20 object-contain brightness-0 invert"
                         alt="Spa Factory Bali">
                 @else
-                    <img src="/images/logo.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali">
+                    <img loading="lazy" src="/images/logo.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali">
                 @endif
             </a>
         </div>
@@ -34,11 +34,11 @@
         </ul>
         @if ($type === 'index' or $type === 'about' or $type === 'auth' or $type === 'article')
             <div class="hamburger lg:hidden">
-                <img src="/images/hamburger.png" alt="Menu" />
+                <img loading="lazy" src="/images/hamburger.png" alt="Menu" />
             </div>
         @else
             <div class="hamburger lg:hidden">
-                <img src="/images/hamburger-green.png" alt="Menu" />
+                <img loading="lazy" src="/images/hamburger-green.png" alt="Menu" />
             </div>
         @endif
     </div>

@@ -50,7 +50,7 @@
 
             <div class="w-full lg:w-4/5">
                 <div>
-                    <img src="{{ Storage::url($article->image) }}" alt="">
+                    <img loading="lazy" src="{{ Storage::url($article->image) }}" alt="">
                 </div>
             </div>
         </div>

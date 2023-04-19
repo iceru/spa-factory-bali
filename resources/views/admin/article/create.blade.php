@@ -113,7 +113,8 @@
                         <td class="p-3 border">{{ $article->title }}</td>
                         <td class="p-3 border">{{ $article->slug }}</td>
                         <td class="p-3 border">
-                            <img src="{{ Storage::url($article->image) }}" width="200" alt="{{ $article->title }}">
+                            <img loading="lazy" src="{{ Storage::url($article->image) }}" width="200"
+                                alt="{{ $article->title }}">
                         </td>
                         <td class="p-3 border">{!! substr($article->subtext, 0, 50) !!}</td>
                         <td class="p-3 border">{!! substr($article->text, 0, 50) !!}</td>

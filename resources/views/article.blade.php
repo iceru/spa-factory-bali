@@ -2,7 +2,8 @@
     @foreach ($banner as $item)
         <div class="relative h-[75vh] max-h-[750px]">
             <div class="h-full">
-                <img src="{{ Storage::url($item->image) }}" class="w-full h-full object-cover" alt="">
+                <img loading="lazy" src="{{ Storage::url($item->image) }}" class="w-full h-full object-cover"
+                    alt="">
             </div>
 
             <div class="absolute bottom-0 w-full bg-gradient-to-t from-secondary h-1/2"></div>
@@ -22,7 +23,7 @@
                         <div>
                             Read More
                         </div>
-                        <img src="/images/read-more.png" alt="Arrow Right" class="ml-2">
+                        <img loading="lazy" src="/images/read-more.png" alt="Arrow Right" class="ml-2">
                     </div>
                 </a>
             </div>
@@ -34,7 +35,8 @@
                 @foreach ($featured->slice(0, 1) as $item)
                     <div class="text-white w-full lg:w-[55%] mb-8 lg:mb-0">
                         <a href="{{ route('article.detail', $item->slug) }}">
-                            <img src="{{ Storage::url($item->image) }}" class="mb-6 w-full" alt="{{ $item->title }}">
+                            <img loading="lazy" src="{{ Storage::url($item->image) }}" class="mb-6 w-full"
+                                alt="{{ $item->title }}">
                         </a>
 
                         <a href="{{ route('article.detail', $item->slug) }}">
@@ -55,7 +57,7 @@
                                 <div>
                                     Read More
                                 </div>
-                                <img src="/images/read-more.png" alt="Arrow Right" class="ml-2">
+                                <img loading="lazy" src="/images/read-more.png" alt="Arrow Right" class="ml-2">
                             </div>
                         </a>
                     </div>
@@ -65,8 +67,8 @@
                         <div href="{{ route('article.detail', $item->slug) }}"
                             class="text-white relative block h-[40vh] md:h-[25vh] lg:h-[40vh]">
                             <div class="absolute h-full w-full">
-                                <img src="{{ Storage::url($item->image) }}" class="h-full w-full object-cover"
-                                    alt="{{ $item->title }}">
+                                <img loading="lazy" src="{{ Storage::url($item->image) }}"
+                                    class="h-full w-full object-cover" alt="{{ $item->title }}">
                             </div>
                             <div class="absolute bg-black bg-opacity-50 top-0 left-0 w-full h-full"></div>
                             <div class="text-white relative z-10 p-4 h-full flex flex-col justify-end">
@@ -89,7 +91,8 @@
                                         <div>
                                             Read More
                                         </div>
-                                        <img src="/images/read-more.png" alt="Arrow Right" class="ml-2">
+                                        <img loading="lazy" src="/images/read-more.png" alt="Arrow Right"
+                                            class="ml-2">
                                     </div>
                                 </a>
                             </div>
@@ -102,7 +105,7 @@
 
     <div class="container pb-20 mb-10 px-4 lg:px-0 relative">
         <div class="absolute right-0 bottom-0 opacity-40">
-            <img src="/images/bg-flower-green.png" class="w-[80%] ml-auto" alt="">
+            <img loading="lazy" src="/images/bg-flower-green.png" class="w-[80%] ml-auto" alt="">
         </div>
         <div class="text-3xl font-serif text-primary mb-8">
             Latest Post
@@ -111,7 +114,7 @@
             <div class="flex items-center flex-wrap mb-8">
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
                     <a href="{{ route('article.detail', $item->slug) }}">
-                        <img src="{{ Storage::url($item->image) }}" alt="{{ $item->title }}">
+                        <img loading="lazy" src="{{ Storage::url($item->image) }}" alt="{{ $item->title }}">
                     </a>
 
                 </div>
@@ -134,7 +137,7 @@
                             <div>
                                 Read More
                             </div>
-                            <img src="/images/arrow-green.png" alt="Arrow Right" class="ml-2">
+                            <img loading="lazy" src="/images/arrow-green.png" alt="Arrow Right" class="ml-2">
                         </div>
                     </a>
                 </div>

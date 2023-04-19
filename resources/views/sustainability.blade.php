@@ -17,7 +17,7 @@
                 </x-button>
             </div>
             <div class="flex flex-col justify-center" data-aos="fade-left" data-aos-delay="400">
-                <img src="/images/sustainability.png" alt="Sustainable Development Goals">
+                <img loading="lazy" src="/images/sustainability.png" alt="Sustainable Development Goals">
             </div>
         </div>
 
@@ -30,7 +30,7 @@
                         Request GRI Form
                     </div>
                     <div class="cursor-pointer" @click="open = false">
-                        <img src="/images/close-gri.png" alt="Close">
+                        <img loading="lazy" src="/images/close-gri.png" alt="Close">
                     </div>
                 </div>
                 <div class="w-full mb-4 bg-red-100 border border-red-400 p-4 rounded-md text-red-700" id="error-msg"
@@ -61,7 +61,7 @@
                             Send
                         </div>
                         <div class="load hidden ">
-                            <img src="/images/load.gif" class="h-6" alt="Loading">
+                            <img loading="lazy" src="/images/load.gif" class="h-6" alt="Loading">
                         </div>
                     </x-button>
                 </div>
@@ -115,7 +115,7 @@
                                 class="text-white py-14 px-4 lg:p-4 flex flex-col justify-center w-full lg:pr-12">
                                 <div class="absolute top-4 right-2 lg:right-12 lg:top-12 cursor-pointer"
                                     @click="open = 'all'">
-                                    <img src="/images/x-icon.png" alt="X">
+                                    <img loading="lazy" src="/images/x-icon.png" alt="X">
                                 </div>
                                 <div class="font-serif text-3xl mb-4">
                                     SDG {{ $sustain->number }} - {{ $sustain->title }}
@@ -150,7 +150,7 @@
             </div>
             <div class="mt-12" id="detail">
                 <div x-cloak x-show.important="open == 'all'">
-                    <img src="/images/sustain-all.png" class="w-full" alt="">
+                    <img loading="lazy" src="/images/sustain-all.png" class="w-full" alt="">
                 </div>
                 <div x-show="open == 12" class="mb-4">
                     <div id="map" class="h-[70vh]"></div>
@@ -160,7 +160,8 @@
                         x-show.important="open == {{ $sustain->number }}">
                         @foreach (json_decode($sustain->images) as $image)
                             <div class="sustain__image">
-                                <img src="{{ Storage::url('sustainability-images/' . $image) }}" alt="">
+                                <img loading="lazy" src="{{ Storage::url('sustainability-images/' . $image) }}"
+                                    alt="">
                             </div>
                         @endforeach
                     </div>

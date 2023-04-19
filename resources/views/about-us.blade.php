@@ -12,7 +12,8 @@
     <div class="section">
         <div class="container grid lg:grid-cols-2 gap-4">
             <div class="p-0 lg:p-6 lg:pl-0">
-                <img src="/images/about/about-1.jpg" alt="About Spa Factory Bali" data-aos="fade-right" />
+                <img loading="lazy" src="/images/about/about-1.jpg" alt="About Spa Factory Bali"
+                    data-aos="fade-right" />
             </div>
             <div class="bg-diamond text-white flex flex-col justify-center p-8 " data-aos="fade-left">
                 <div class="font-serif text-2xl mb-3" data-aos="fade-left" data-aos-delay="400">
@@ -43,15 +44,16 @@
                 </p>
             </div>
             <div class="p-0 md:p-6 md:pr-0 order-1 md:order-2">
-                <img src="/images/about/about-2.png" class="w-full" alt="Empowering Women" data-aos="fade-left"
-                    data-aos-delay="400" />
+                <img loading="lazy" src="/images/about/about-2.png" class="w-full" alt="Empowering Women"
+                    data-aos="fade-left" data-aos-delay="400" />
             </div>
         </div>
     </div>
     <div class="section">
         <div class="container grid md:grid-cols-2 gap-4">
             <div class="p-0 md:p-6 md:pl-0">
-                <img src="/images/about/about-3.jpg" alt="About Spa Factory Bali" data-aos="fade-right" />
+                <img loading="lazy" src="/images/about/about-3.jpg" alt="About Spa Factory Bali"
+                    data-aos="fade-right" />
             </div>
             <div class="bg-diamond text-white flex flex-col justify-center p-8 " data-aos="fade-left">
                 <div class="font-serif text-2xl mb-3" data-aos="fade-left" data-aos-delay="400">
@@ -82,12 +84,12 @@
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
-                            <img src="/images/about/icon-leaf.png" class="h-6" alt="">
+                            <img loading="lazy" src="/images/about/icon-leaf.png" class="h-6" alt="">
                         </div> --}}
                         Sacha Inci Plantation
                     </div>
                     <div>
-                        <img src="/images/about/Plantation1.jpg" alt=""
+                        <img loading="lazy" src="/images/about/Plantation1.jpg" alt=""
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
@@ -96,12 +98,12 @@
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
-                            <img src="/images/about/icon-oil.png" class="h-6" alt="">
+                            <img loading="lazy" src="/images/about/icon-oil.png" class="h-6" alt="">
                         </div> --}}
                         Oil Extraction
                     </div>
                     <div>
-                        <img src="/images/about/oil-1.jpg" alt=""
+                        <img loading="lazy" src="/images/about/oil-1.jpg" alt=""
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
@@ -110,12 +112,12 @@
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
-                            <img src="/images/about/icon-industry.png" class="h-6" alt="">
+                            <img loading="lazy" src="/images/about/icon-industry.png" class="h-6" alt="">
                         </div> --}}
                         Cosmetic Manufacturing
                     </div>
                     <div>
-                        <img src="/images/about/manufacture.jpg" alt=""
+                        <img loading="lazy" src="/images/about/manufacture.jpg" alt=""
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
@@ -124,24 +126,24 @@
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-3 flex justify-center lg:mr-3">
-                            <img src="/images/about/icon-lotion.png" class="h-6" alt="">
+                            <img loading="lazy" src="/images/about/icon-lotion.png" class="h-6" alt="">
                         </div> --}}
                         Finished Product
                     </div>
                     <div>
-                        <img src="/images/about/finished.jpg" alt=""
+                        <img loading="lazy" src="/images/about/finished.jpg" alt=""
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
                 <div class="lastLine"></div>
                 <div class="topLine"></div>
             </div>
-            <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false" x-cloak
-                x-show="modal"></div>
+            <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false"
+                x-cloak x-show="modal"></div>
             <div x-cloak x-show="modal"
                 class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-10 rounded-xl z-20">
                 <div class="absolute right-10 top-10 cursor-pointer z-10" @click="modal = false">
-                    <img src="/images/close-gri.png" alt="Close">
+                    <img loading="lazy" src="/images/close-gri.png" alt="Close">
                 </div>
                 <div class="about__process-large relative" x-cloak x-show="open == 'process1'">
                     <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
@@ -173,14 +175,14 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="about__image-square">
-                            <img src="/images/about/Plantation1.jpg" alt="Sacha Inci Plantation">
+                            <img loading="lazy" src="/images/about/Plantation1.jpg" alt="Sacha Inci Plantation">
                         </div>
                         <div class="grid gap-4">
                             <div class="about__image-half">
-                                <img src="/images/about/Plantation2.jpg" alt="Sacha Inci Plantation">
+                                <img loading="lazy" src="/images/about/Plantation2.jpg" alt="Sacha Inci Plantation">
                             </div>
                             <div class="about__image-half">
-                                <img src="/images/about/Plantation3.jpg" alt="Sacha Inci Plantation">
+                                <img loading="lazy" src="/images/about/Plantation3.jpg" alt="Sacha Inci Plantation">
                             </div>
                         </div>
                     </div>
@@ -214,14 +216,14 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="about__image-square">
-                            <img src="/images/about/oil-1.jpg" alt="Oil Extraction">
+                            <img loading="lazy" src="/images/about/oil-1.jpg" alt="Oil Extraction">
                         </div>
                         <div class="grid gap-4">
                             <div class="about__image-half">
-                                <img src="/images/about/oil-2.jpg" alt="Oil Extraction">
+                                <img loading="lazy" src="/images/about/oil-2.jpg" alt="Oil Extraction">
                             </div>
                             <div class="about__image-half">
-                                <img src="/images/about/oil-3.jpg" alt="Oil Extraction">
+                                <img loading="lazy" src="/images/about/oil-3.jpg" alt="Oil Extraction">
                             </div>
                         </div>
                     </div>
@@ -247,7 +249,7 @@
                         </ul>
                     </div>
                     <div>
-                        <img src="/images/about/manufacture.jpg" alt="Cosmetic Manufacturing">
+                        <img loading="lazy" src="/images/about/manufacture.jpg" alt="Cosmetic Manufacturing">
                     </div>
                 </div>
                 <div class="about__process-large relative" x-cloak x-show="open == 'process4'">
@@ -270,7 +272,7 @@
                         </ul>
                     </div>
                     <div>
-                        <img src="/images/about/finished.jpg" alt="Finished Product">
+                        <img loading="lazy" src="/images/about/finished.jpg" alt="Finished Product">
                     </div>
                 </div>
             </div>
@@ -289,8 +291,8 @@
                 </p>
             </div>
             <div class="p-0 md:p-6 md:pr-0 order-1 md:order-2">
-                <img src="/images/about/about-4.png" class="w-full" alt="Following European Cosmetic Safety Guidance"
-                    data-aos="fade-left" data-aos-delay="400" />
+                <img loading="lazy" src="/images/about/about-4.png" class="w-full"
+                    alt="Following European Cosmetic Safety Guidance" data-aos="fade-left" data-aos-delay="400" />
             </div>
         </div>
     </div>

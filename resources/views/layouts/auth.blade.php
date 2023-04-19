@@ -34,7 +34,8 @@
             <div class="container grid lg:grid-cols-2 gap-8  items-center">
                 <div class="login__image relative " style="height: 50vw">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <img src="/images/logo-white.png" class="h-40 w-auto object-contain" alt="Spa Factory Bali">
+                        <img loading="lazy" src="/images/logo-white.png" class="h-40 w-auto object-contain"
+                            alt="Spa Factory Bali">
                     </div>
                 </div>
                 {{ $slot }}

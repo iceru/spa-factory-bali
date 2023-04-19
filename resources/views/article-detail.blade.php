@@ -17,7 +17,7 @@
     <div class="container mb-12 flex flex-wrap px-4">
         <div class="w-full lg:w-2/3">
             <div class="mb-4">
-                <img src="{{ Storage::url($article->image) }}" class="w-full" alt="{{ $article->title }}">
+                <img loading="lazy" src="{{ Storage::url($article->image) }}" class="w-full" alt="{{ $article->title }}">
             </div>
             <div class="">
                 {!! $article->text !!}
@@ -32,8 +32,8 @@
                     <div class="flex gap-4 mb-4 border-b border-gray-300 pb-4 ">
                         <div class="w-1/5 mt-1.5">
                             <a href="/e-library/{{ $item->slug }}">
-                                <img src="{{ Storage::url($item->image) }}" class="h-16 w-16 object-cover rounded"
-                                    alt="{{ $item->title }}">
+                                <img loading="lazy" src="{{ Storage::url($item->image) }}"
+                                    class="h-16 w-16 object-cover rounded" alt="{{ $item->title }}">
                             </a>
                         </div>
                         <div class="w-4/5">
