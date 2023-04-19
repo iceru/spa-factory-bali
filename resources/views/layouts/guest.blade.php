@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
-        Spa Factory Bali™ - A Pioneer in Bali's contract manufacturing for natural cosmetics.
+        Spa Factory Bali™
     </title>
     <meta name="description"
         content="Spa Factory Bali is a renowned, professional contract manufacturer in Bali with a production facility that complies with Good Manufacture Practice standards. ">
