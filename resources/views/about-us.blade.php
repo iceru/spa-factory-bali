@@ -80,9 +80,9 @@
                     :class="open == 'process1' ? 'active' : ''" @click="open = 'process1'; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
+                        {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
                             <img src="/images/about/icon-leaf.png" class="h-6" alt="">
-                        </div>
+                        </div> --}}
                         Sacha Inci Plantation
                     </div>
                     <div>
@@ -94,9 +94,9 @@
                     :class="open == 'process2' ? 'active' : ''" @click="open = 'process2'; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
+                        {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
                             <img src="/images/about/icon-oil.png" class="h-6" alt="">
-                        </div>
+                        </div> --}}
                         Oil Extraction
                     </div>
                     <div>
@@ -108,9 +108,9 @@
                     @click="open = 'process3'; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
+                        {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
                             <img src="/images/about/icon-industry.png" class="h-6" alt="">
-                        </div>
+                        </div> --}}
                         Cosmetic Manufacturing
                     </div>
                     <div>
@@ -122,9 +122,9 @@
                     @click="open = 'process4'; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        <div class="mb-3 flex justify-center lg:mr-3">
+                        {{-- <div class="mb-3 flex justify-center lg:mr-3">
                             <img src="/images/about/icon-lotion.png" class="h-6" alt="">
-                        </div>
+                        </div> --}}
                         Finished Product
                     </div>
                     <div>
@@ -135,8 +135,8 @@
                 <div class="lastLine"></div>
                 <div class="topLine"></div>
             </div>
-            <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false"
-                x-cloak x-show="modal"></div>
+            <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false" x-cloak
+                x-show="modal"></div>
             <div x-cloak x-show="modal"
                 class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-10 rounded-xl z-20">
                 <div class="absolute right-10 top-10 cursor-pointer z-10" @click="modal = false">
