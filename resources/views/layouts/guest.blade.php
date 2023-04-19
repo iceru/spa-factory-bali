@@ -5,13 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>
+        Spa Factory Bali™ A Pioneer in Bali's contract manufacturing for natural cosmetics.
+    </title>
+    <meta name="description"
+        content="Spa Factory Bali is a renowned, professional contract manufacturer in Bali with a production facility that complies with Good Manufacture Practice standards. ">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="keywords"
+        content="whats' new, spa bali, factory, asian spa, treatments, private label,
+        services, products, professional, hotels, gifts, amenities, aroma therapy,
+        supplies, wholesale, naturtal, setups, essential oils, retail, distribution">
+    <meta name="author" content="Spa Factory Bali">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>{{ config('app.name', 'Spa Factory Bali') }}</title>
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HY997DX1Y"></script>
