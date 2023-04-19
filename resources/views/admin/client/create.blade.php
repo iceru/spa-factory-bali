@@ -11,9 +11,9 @@
     <form action="{{ route('client.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="name" :value="__('Name')" class="w-full lg:w-1/5 text-lg" />
+            <x-input-label for="name" :value="__('Name')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-4/5 pl-4">
+            <div class="w-full lg:w-4/5">
                 <x-text-input id="name" class="block w-full" type="name" name="name" required
                     autocomplete="current-name" />
 
@@ -21,9 +21,9 @@
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="link" :value="__('Link')" class="w-full lg:w-1/5 text-lg" />
+            <x-input-label for="link" :value="__('Link')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-4/5 pl-4">
+            <div class="w-full lg:w-4/5">
                 <x-text-input id="link" class="block w-full" type="link" name="link" required />
 
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -31,17 +31,17 @@
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="logo" :value="__('Logo')" class="w-full lg:w-1/5 text-lg" />
-            <div class="w-full lg:w-4/5 pl-4">
+            <x-input-label for="logo" :value="__('Logo')" class="w-full lg:w-1/5 text-lg pr-4" />
+            <div class="w-full lg:w-4/5">
                 <input type="file" name="logo" id="logo">
                 <x-input-error :messages="$errors->get('logo')" class="mt-2" />
             </div>
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="images" :value="__('Images')" class="w-full lg:w-1/5 text-lg" />
+            <x-input-label for="images" :value="__('Images')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-4/5 pl-4">
+            <div class="w-full lg:w-4/5">
                 <input type="file" name="images[]" id="images" multiple>
 
                 <x-input-error :messages="$errors->get('images')" class="mt-2" />
@@ -49,18 +49,18 @@
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="featured" :value="__('Featured')" class="w-full lg:w-1/5 text-lg" />
+            <x-input-label for="featured" :value="__('Featured')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-4/5 pl-4">
+            <div class="w-full lg:w-4/5">
                 <x-input-select name="featured" :options="$options" nameOption="name" valueOption="value" />
                 <x-input-error :messages="$errors->get('featured')" class="mt-2" />
             </div>
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="products" :value="__('Product')" class="w-full lg:w-1/5 text-lg" />
+            <x-input-label for="products" :value="__('Product')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-4/5 pl-4">
+            <div class="w-full lg:w-4/5">
                 <x-input-select name="products" :options="$products" nameOption="title" valueOption="id" />
                 <x-input-error :messages="$errors->get('products')" class="mt-2" />
             </div>
