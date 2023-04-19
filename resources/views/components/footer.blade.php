@@ -46,7 +46,7 @@
                         Sitemap
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="/terms-of-service">
                         Terms of Service
                     </a>
@@ -55,7 +55,7 @@
                     <a href="/privacy-policy">
                         Privacy Policy
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
 
