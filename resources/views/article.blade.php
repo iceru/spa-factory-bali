@@ -32,9 +32,9 @@
         <div class="container px-4 lg:px-0">
             <div class="flex flex-wrap lg:flex-nowrap gap-4">
                 @foreach ($featured->slice(0, 1) as $item)
-                    <div class="text-white lg:w-[55%]">
+                    <div class="text-white w-full lg:w-[55%] mb-8 lg:mb-0">
                         <a href="{{ route('article.detail', $item->slug) }}">
-                            <img src="{{ Storage::url($item->image) }}" class="mb-6" alt="{{ $item->title }}">
+                            <img src="{{ Storage::url($item->image) }}" class="mb-6 w-full" alt="{{ $item->title }}">
                         </a>
 
                         <a href="{{ route('article.detail', $item->slug) }}">
@@ -60,10 +60,10 @@
                         </a>
                     </div>
                 @endforeach
-                <div class="grid gap-4 lg:w-[45%]">
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-1 lg:w-[45%]">
                     @foreach ($featured->slice(1, 3) as $item)
                         <div href="{{ route('article.detail', $item->slug) }}"
-                            class="text-white relative block h-[40vh]">
+                            class="text-white relative block h-[40vh] md:h-[25vh] lg:h-[40vh]">
                             <div class="absolute h-full w-full">
                                 <img src="{{ Storage::url($item->image) }}" class="h-full w-full object-cover"
                                     alt="{{ $item->title }}">
@@ -101,7 +101,7 @@
     </div>
 
     <div class="container pb-20 mb-10 px-4 lg:px-0 relative">
-        <div class="absolute right-0 bottom-0">
+        <div class="absolute right-0 bottom-0 opacity-40">
             <img src="/images/bg-flower-green.png" class="w-[80%] ml-auto" alt="">
         </div>
         <div class="text-3xl font-serif text-primary mb-8">
@@ -109,13 +109,13 @@
         </div>
         @foreach ($latest as $item)
             <div class="flex items-center flex-wrap mb-8">
-                <div class="w-full lg:w-1/3 mb-6 lg:mb-0">
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
                     <a href="{{ route('article.detail', $item->slug) }}">
                         <img src="{{ Storage::url($item->image) }}" alt="{{ $item->title }}">
                     </a>
 
                 </div>
-                <div class="w-full lg:w-2/3 lg:pl-6">
+                <div class="w-full md:w-2/3 md:pl-6">
                     <a href="{{ route('article.detail', $item->slug) }}">
                         <div class="font-bold text-2xl mb-2">
                             {{ $item->title }}

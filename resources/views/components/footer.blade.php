@@ -3,7 +3,7 @@
         <div class="footer__logo w-full mb-6 lg:mb-0">
             <img src="/images/logo-white.png" class="h-28 w-auto object-contain" alt="Spa Factory Bali">
         </div>
-        <div class="footer__section w-1/2 mb-6 lg:mb-0">
+        <div class="footer__section w-1/2 md:w-1/3 mb-6 lg:mb-0">
             <ul>
                 <li class="text-xl font-bold">
                     Company
@@ -36,7 +36,7 @@
             </ul>
         </div>
 
-        <div class="footer__section w-1/2 mb-6 lg:mb-0">
+        <div class="footer__section w-1/2 md:w-1/3 mb-6 lg:mb-0">
             <ul>
                 <li class="text-xl font-bold">
                     Sites
@@ -59,7 +59,7 @@
             </ul>
         </div>
 
-        <div class="footer__section">
+        <div class="footer__section md:w-1/3">
             <div class="text-xl font-bold mb-4">
                 Connect With Us
             </div>

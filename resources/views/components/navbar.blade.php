@@ -11,28 +11,28 @@
             </a>
         </div>
         <ul class="nav__menu-list items-center text-primary hidden lg:flex">
-            <li class="{{ Route::currentRouteName() === 'index' ? 'active' : '' }}">
+            <li class="{{ $type === 'index' ? 'active' : '' }}">
                 <a href="/">Home</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'about' ? 'active' : '' }}">
+            <li class="{{ $type === 'about' ? 'active' : '' }}">
                 <a href="/about-us">About Us</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'sustain.index' ? 'active' : '' }}">
+            <li class="{{ $type === 'sustain.index' ? 'active' : '' }}">
                 <a href="/sustainability">Sustainability</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'client.index' ? 'active' : '' }}">
+            <li class="{{ $type === 'client.index' ? 'active' : '' }}">
                 <a href="/clientele">
                     Clientele
                 </a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'article' ? 'active' : '' }}">
+            <li class="{{ $type === 'article' ? 'active' : '' }}">
                 <a href="/e-library">E-Library</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'contact.index' ? 'active' : '' }}">
+            <li class="{{ $type === 'contact.index' ? 'active' : '' }}">
                 <a href="/contact-us">Contact Us</a>
             </li>
         </ul>
-        @if (Route::currentRouteName() === 'index' or Route::currentRouteName() === 'about' or $type === 'auth')
+        @if ($type === 'index' or $type === 'about' or $type === 'auth' or $type === 'article')
             <div class="hamburger lg:hidden">
                 <img src="/images/hamburger.png" alt="Menu" />
             </div>

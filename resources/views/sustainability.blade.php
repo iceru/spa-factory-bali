@@ -130,7 +130,8 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="flex flex-col lg:flex-row justify-end order-1 lg:order-2" data-aos="fade-left">
+                <div class="flex flex-col lg:flex-row justify-end order-1 lg:order-2 md:w-full lg:w-auto"
+                    data-aos="fade-left">
                     @foreach ($sustains as $key => $sustain)
                         <div class="sustain__sdg-item flex lg:flex-col items-center justify-start lg:justify-between 
                         font-bold p-6 gap-4 lg:gap-12 text-white cursor-pointer"

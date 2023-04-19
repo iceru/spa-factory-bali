@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="about__header flex flex-col p-4 lg:px-0 lg:py-8 justify-end" data-aos="fade-down">
+    <div class="about__header flex flex-col p-4 lg:px-0 md:py-8 justify-end" data-aos="fade-down">
         <div class="text-white container z-10 relative">
             <div class="lg:w-2/4">
                 <p class="lg:text-lg" data-aos="fade-right" data-aos-delay="400">Our Message is Simple:</p>
@@ -30,8 +30,8 @@
         </div>
     </div>
     <div class="section">
-        <div class="container grid lg:grid-cols-2 gap-4">
-            <div class="flex flex-col justify-center p-0 lg:p-4 pl-0 order-2 lg:order-1">
+        <div class="container grid md:grid-cols-2 gap-4">
+            <div class="flex flex-col justify-center p-0 md:p-4 pl-0 order-2 md:order-1">
                 <div class="font-serif text-2xl mb-3 text-primary" data-aos="fade-right">
                     Empowering Women
                 </div>
@@ -42,14 +42,15 @@
                     living, hence, we facilitate them to bring their child with them to work.
                 </p>
             </div>
-            <div class="p-0 lg:p-6 lg:pr-0 order-1 lg:order-2">
-                <img src="/images/about/about-2.png" alt="Empowering Women" data-aos="fade-left" data-aos-delay="400" />
+            <div class="p-0 md:p-6 md:pr-0 order-1 md:order-2">
+                <img src="/images/about/about-2.png" class="w-full" alt="Empowering Women" data-aos="fade-left"
+                    data-aos-delay="400" />
             </div>
         </div>
     </div>
     <div class="section">
-        <div class="container grid lg:grid-cols-2 gap-4">
-            <div class="p-0 lg:p-6 lg:pl-0">
+        <div class="container grid md:grid-cols-2 gap-4">
+            <div class="p-0 md:p-6 md:pl-0">
                 <img src="/images/about/about-3.jpg" alt="About Spa Factory Bali" data-aos="fade-right" />
             </div>
             <div class="bg-diamond text-white flex flex-col justify-center p-8 " data-aos="fade-left">
@@ -276,8 +277,8 @@
         </div>
     </div>
     <div class="section">
-        <div class="container grid lg:grid-cols-2 gap-4">
-            <div class="flex flex-col justify-center p-0 lg:p-4 pl-0 order-2 lg:order-1">
+        <div class="container grid md:grid-cols-2 gap-4">
+            <div class="flex flex-col justify-center p-0 md:p-4 pl-0 order-2 md:order-1">
                 <div class="font-serif text-2xl mb-3 text-primary " data-aos="fade-right">
                     Following European Cosmetic Safety Guidance
                 </div>
@@ -287,7 +288,7 @@
                     derivative ingredients.
                 </p>
             </div>
-            <div class="p-0 lg:p-6 lg:pr-0 order-1 lg:order-2">
+            <div class="p-0 md:p-6 md:pr-0 order-1 md:order-2">
                 <img src="/images/about/about-4.png" class="w-full" alt="Following European Cosmetic Safety Guidance"
                     data-aos="fade-left" data-aos-delay="400" />
             </div>
