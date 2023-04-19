@@ -20,7 +20,7 @@
             </li>
             <li>
                 <a href="/e-library" class="mb-4 block">E-Library</a>
-                <ul class="list-disc grid gap-4 pl-10">
+                <ul class="list-disc grid gap-4">
                     @foreach ($articles as $article)
                         <li>
                             <a href="/e-library">{{ $article->title }}</a>
