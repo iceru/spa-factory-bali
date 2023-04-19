@@ -8,9 +8,9 @@
         @method('PATCH')
         <input type="hidden" name="id" value="{{ $article->id }}">
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="title" :value="__('Title')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="title" :value="__('Title')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <x-text-input id="title" class="block w-full" type="text" name="title" required
                     value="{{ $article->title }}" />
 
@@ -18,26 +18,26 @@
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="subtext" :value="__('Sub Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="subtext" :value="__('Sub Text')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <textarea name="subtext" id="subtext" cols="20" rows="10">{{ $article->subtext }}</textarea>
                 <x-input-error :messages="$errors->get('subtext')" class="mt-2" />
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="text" :value="__('Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="text" :value="__('Text')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <textarea name="text" id="text" cols="20" rows="10">{{ $article->text }}</textarea>
                 <x-input-error :messages="$errors->get('text')" class="mt-2" />
             </div>
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="type" :value="__('Type')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="type" :value="__('Type')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <x-input-select name="type" :options="$options" nameOption="name" valueOption="value"
                     :selectedOption="$article->type" />
                 <x-input-error :messages="$errors->get('type')" class="mt-2" />
@@ -46,9 +46,9 @@
 
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="current_image" :value="__('Current Image')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="current_image" :value="__('Current Image')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <div>
                     <img src="{{ Storage::url($article->image) }}" alt="">
                 </div>
@@ -56,18 +56,18 @@
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="image" :value="__('Image')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="image" :value="__('Image')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <input type="file" name="image" id="image">
 
                 <x-input-error :messages="$errors->get('image')" class="mt-2" />
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="created_at" :value="__('Created at')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="created_at" :value="__('Created at')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <x-text-input id="datepicker" class="block w-full" type="created_at" name="created_at" required
                     value="{{ \Carbon\Carbon::create($article->created_at)->format('d-m-Y') }}" />
 

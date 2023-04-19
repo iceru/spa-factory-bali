@@ -290,3 +290,10 @@
         object-fit: cover;
     }
 }
+
+.article__subtext {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

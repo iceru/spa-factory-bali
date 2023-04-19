@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Index;
 use App\Models\Client;
-use App\Models\HomeSlider;
+use App\Models\Article;
 use App\Models\Products;
+use App\Models\HomeSlider;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -22,6 +23,18 @@ class IndexController extends Controller
         $sliders = HomeSlider::orderBy('order')->get();
         return view('index', compact('products', 'clients', 'sliders'));
     }
+
+    public function sitemap()
+    {
+        $articles = Article::orderBy('updated_at', 'DESC')->get();
+        return response()->view('sitemap', compact('articles'))->header('Content-Type', 'text/xml');
+    }
+    public function sitemapView()
+    {
+        $articles = Article::orderBy('updated_at', 'DESC')->get();
+        return view('sitemap-view', compact('articles'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

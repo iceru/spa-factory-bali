@@ -75,7 +75,7 @@
 <script>
     tinymce.init({
         selector: 'textarea',
-        plugins: 'link image imagetools paste forecolor lists',
+        plugins: 'link image imagetools paste forecolor lists table',
         paste_as_text: true,
         toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
         a11y_advanced_options: true,
@@ -102,6 +102,23 @@
         automatic_uploads: true,
         images_upload_url: '/upload/image',
         file_picker_types: 'image',
+        style_formats: [{
+                title: 'Image Left',
+                selector: 'img',
+                styles: {
+                    'float': 'left',
+                    'margin': '0 10px 0 10px'
+                }
+            },
+            {
+                title: 'Image Right',
+                selector: 'img',
+                styles: {
+                    'float': 'right',
+                    'margin': '0 0 10px 10px'
+                }
+            }
+        ],
         file_picker_callback: function(cb, value, meta) {
             var input = document.createElement('input');
             input.setAttribute('type', 'file');

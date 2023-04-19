@@ -16,9 +16,9 @@
     <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="title" :value="__('Title')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="title" :value="__('Title')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <x-text-input id="title" class="block w-full" type="text" name="title" required
                     value="{{ old('title') }}" />
 
@@ -26,26 +26,26 @@
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="subtext" :value="__('Sub Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="subtext" :value="__('Sub Text')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <textarea name="subtext" id="subtext" cols="20" rows="10">{{ old('subtext') }}</textarea>
                 <x-input-error :messages="$errors->get('subtext')" class="mt-2" />
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="text" :value="__('Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="text" :value="__('Text')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <textarea name="text" id="text" cols="20" rows="10">{{ old('text') }}</textarea>
                 <x-input-error :messages="$errors->get('text')" class="mt-2" />
             </div>
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="type" :value="__('Type')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="type" :value="__('Type')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <x-input-select name="type" :options="$options" nameOption="name" valueOption="value" />
                 <x-input-error :messages="$errors->get('type')" class="mt-2" />
             </div>
@@ -53,18 +53,18 @@
 
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="image" :value="__('Image')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="image" :value="__('Image')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <input type="file" name="image" id="image">
 
                 <x-input-error :messages="$errors->get('image')" class="mt-2" />
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="created_at" :value="__('Created at')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="created_at" :value="__('Created at')" class="w-full lg:w-1/5 text-lg" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5 pl-4">
                 <x-text-input id="datepicker" class="block w-full" type="created_at" name="created_at" required
                     value="{{ old('created_at') }}" />
 
@@ -115,8 +115,8 @@
                         <td class="p-3 border">
                             <img src="{{ Storage::url($article->image) }}" width="200" alt="{{ $article->title }}">
                         </td>
-                        <td class="p-3 border">{!! $article->subtext !!}</td>
-                        <td class="p-3 border">{!! substr($article->text, 0, 200) !!}</td>
+                        <td class="p-3 border">{!! substr($article->subtext, 0, 50) !!}</td>
+                        <td class="p-3 border">{!! substr($article->text, 0, 50) !!}</td>
                         <td class="p-3 border">
                             {{ $article->author }}
                         </td>

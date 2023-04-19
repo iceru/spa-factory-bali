@@ -24,6 +24,9 @@ use App\Http\Controllers\SustainabilityController;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/sitemap.xml', [IndexController::class, 'sitemap'])->name('sitemap');
+Route::get('/sitemap', [IndexController::class, 'sitemapView'])->name('sitemap-view');
+
 
 Route::get('/about-us', function () {
     return view('about-us');
