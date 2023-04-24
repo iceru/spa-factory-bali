@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        Spa Factory Bali™
+    @endsection
     <header class="home__header pb-20 pt-36">
         <div class="home__cta flex flex-col px-4 py-10 lg:p-0 md:flex-row container items-center" data-aos="fade-right">
             <div class="home__cta-text text-white p-0 !pl-0 lg:p-10 mb-8 lg:mb-0 md:w-[40%] lg:pr-4">

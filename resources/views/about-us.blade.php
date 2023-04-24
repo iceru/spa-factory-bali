@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        About Us - Spa Factory Bali™
+    @endsection
     <div class="about__header flex flex-col p-4 lg:px-0 md:py-8 justify-end" data-aos="fade-down">
         <div class="text-white container z-10 relative">
             <div class="lg:w-2/4">

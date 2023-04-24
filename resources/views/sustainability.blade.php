@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        Sustainability - Spa Factory Bali™
+    @endsection
     <div class="bg-light py-16 pt-36 lg:py-24 lg:pt-52" x-data="{ open: false }">
         <div class="container grid lg:grid-cols-2 gap-12 px-4">
             <div>

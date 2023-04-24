@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        {{ $article->title }} - Spa Factory Bali™
+    @endsection
     <div class="pt-40 pb-8 mb-8 bg-light">
         <div class="container px-4">
             <div class="text-center font-serif text-4xl text-primary mb-4">

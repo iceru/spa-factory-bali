@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        Sitemap - Spa Factory Bali™
+    @endsection
     <div class="p-10 pl-4 pt-40 container">
         <div class="font-serif text-primary text-3xl mb-8">
             Sitemap

@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        Clientele - Spa Factory Bali™
+    @endsection
     <div class="bg-light py-16 pt-44">
         <div class="container grid lg:grid-cols-2 gap-12 items-center px-4">
             <div>

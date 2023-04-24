@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        Contact Us - Spa Factory Bali™
+    @endsection
     <div class="bg-light py-16 pt-44">
         <div class="container px-4 grid lg:flex gap-12 items-center">
             <div>

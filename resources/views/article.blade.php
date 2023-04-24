@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @section('title')
+        E-Library - Spa Factory Bali™
+    @endsection
     @foreach ($banner as $item)
         <div class="relative h-[75vh] max-h-[750px]">
             <div class="h-full">
