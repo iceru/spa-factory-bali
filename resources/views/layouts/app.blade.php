@@ -40,6 +40,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 
+    {{-- Chart --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -144,7 +146,7 @@
     });
 
     $(document).ready(function() {
-        $('#table').DataTable();
+        $('table').DataTable();
     });
 </script>
 
