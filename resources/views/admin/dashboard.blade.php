@@ -81,8 +81,8 @@
     <script>
         // function userDevicesChart(data) {
 
-        //     var primary = '#16857E'
-        //     var secondary = '#58C082';
+        //     var primary = '#3A5A40'
+        //     var secondary = '#588157';
         //     var blue = '#4c57d3';
         //     var pink = '#f186b0';
         //     debugger;
@@ -119,8 +119,8 @@
 
         function userTopReferrers(data) {
             debugger;
-            const primary = '#16857E'
-            const secondary = '#58C082';
+            const secondary = '#3A5A40'
+            const primary = '#588157';
             const blue = '#4c57d3';
             const pink = '#f186b0';
 
@@ -163,8 +163,8 @@
         }
 
         function totalVisitorsChart(data) {
-            const secondary = '#58C082';
-            const primary = '#16857E'
+            const primary = '#588157';
+            const secondary = '#3A5A40'
 
             let total_visitors = {!! json_encode($totalVisitors) !!}
             if (data) {

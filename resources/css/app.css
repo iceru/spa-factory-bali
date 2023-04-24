@@ -54,7 +54,8 @@ textarea:focus {
         margin: 0 6px;
     }
 
-    #table_length,
+    .dataTables_length,
+    .dataTables_filter #table_length,
     #table_filter {
         margin-bottom: 1rem;
     }

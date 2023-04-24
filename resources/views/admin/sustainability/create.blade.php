@@ -103,10 +103,10 @@
                             {{ $sustainability->bg_color }}
                         </td>
                         <td class="p-3 border">{!! $sustainability->description !!}</td>
-                        <td class="p-3 border">
+                        <td class="p-3 border grid grid-cols-2 gap-2">
                             @foreach (json_decode($sustainability->images) as $image)
                                 <img loading="lazy" src="{{ Storage::url('/sustainability-images/' . $image) }}"
-                                    class="mb-2" width="200" alt="{{ $sustainability->name }}">
+                                    class="mb-2" width="300" alt="{{ $sustainability->name }}">
                             @endforeach
                         </td>
                         <td class="p-3 border">
