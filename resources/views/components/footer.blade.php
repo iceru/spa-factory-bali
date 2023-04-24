@@ -60,7 +60,7 @@
         </div>
 
         <div class="footer__section md:w-1/3">
-            <div class="text-xl font-bold mb-4">
+            <div class="text-xl font-bold mb-4 whitespace-nowrap">
                 Connect With Us
             </div>
             <div class="flex gap-6 items-center">
