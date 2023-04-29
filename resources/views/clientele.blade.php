@@ -89,7 +89,7 @@
                                     @endforeach
                                 </div>
                                 <div
-                                    class="mt-2 text-body group-hover:text-primary group-hover:font-semibold transition client__text">
+                                    class="mt-1 text-sm text-body group-hover:text-primary group-hover:font-semibold transition client__text">
                                     {{ $item->name }}
                                 </div>
                             </a>

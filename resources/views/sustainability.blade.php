@@ -126,9 +126,6 @@
                                 <div class="text-white text-justify sustain__sdg-desc">
                                     {!! $sustain->description !!}
                                 </div>
-                                <div class="mt-4">
-                                    <x-button-link link="#detail">Gallery</x-button-link>
-                                </div>
                             </div>
                         </div>
                     @endforeach

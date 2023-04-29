@@ -103,7 +103,7 @@
                         <x-button
                             class="text-primary !border-primary !border font-semibold hover:bg-primary hover:text-white"
                             type="submit">
-                            Kirim</x-button>
+                            Send</x-button>
                     </form>
                 </div>
             </div>

@@ -77,7 +77,7 @@
                 Transparent and Traceable Production Process
             </div>
             <div class="text-white text-center" data-aos="fade-down" data-aos-delay="600">
-                In line with the trend of ‘Farm to Beauty’, Spa Factory Bali Provides transparency – traceability of
+                In line with the trend of ‘Farm to Beauty’, Spa Factory Bali Provides transparency and traceability of
                 production process and supply chain to ensure the purity and quality of active ingredients used.
             </div>
             <div class="grid grid-cols-2 lg:grid-cols-4 mt-8 justify-between about__traceWrapper" data-aos="fade-down"
