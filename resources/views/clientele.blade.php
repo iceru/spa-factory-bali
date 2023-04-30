@@ -68,7 +68,8 @@
                     <li class="mr-6 lg:mr-0 client__tab" id="tab-hotel-amenities" data-aos="fade-down">
                         Hotel Amenities
                     </li>
-                    <li class="mr-6 lg:mr-0 client__tab" id="tab-spa" data-aos="fade-down" data-aos-delay="400">
+                    <li class="mr-6 lg:mr-0 client__tab" id="tab-professional-retail-spa-products" data-aos="fade-down"
+                        data-aos-delay="400">
                         Professional & Retail Spa Products
                     </li>
                     <li class="mr-6 lg:mr-0 client__tab" id="tab-beauty-skincare" data-aos="fade-right"
@@ -80,55 +81,63 @@
                     <div class=" grid grid-cols-3 gap-4 client__content" id="hotel-amenities" data-aos="fade-left"
                         data-aos-delay="400">
                         @foreach ($hotel as $item)
-                            <a href="{{ $item->link }}" class="client__item group"
+                            <div class="client__item block"
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <img loading="lazy" src="{{ Storage::url('client-images/' . $image) }}"
-                                            alt="">
+                                        <a href="{{ Storage::url('client-images/' . $image) }}"
+                                            class="product-image block absolute lef-t0 top-0 w-full h-full z-10">
+                                            <img src="{{ Storage::url('client-images/' . $image) }}"
+                                                alt="{{ $item->name }}">
+                                            <div
+                                                class="absolute bg-black bg-opacity-0 hover:bg-opacity-20 transition top-0 left-0 w-full h-full">
+                                            </div>
+                                        </a>
                                     @endforeach
                                 </div>
-                                <div
-                                    class="mt-1 text-sm text-body group-hover:text-primary group-hover:font-semibold transition client__text">
+                                <a href="{{ $item->link }}"
+                                    class="mt-1 text-sm text-body hover:text-primary hover:font-semibold transition client__text">
                                     {{ $item->name }}
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
-                    <div class=" grid grid-cols-3 gap-4 client__content" id="spa" data-aos="fade-left"
-                        data-aos-delay="400">
+                    <div class=" grid grid-cols-3 gap-6 client__content" id="professional-retail-spa-products"
+                        data-aos="fade-left" data-aos-delay="400">
                         @foreach ($spa as $item)
-                            <a href="{{ $item->link }}" class="client__item group"
+                            <div class="client__item block"
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <img loading="lazy" src="{{ Storage::url('client-images/' . $image) }}"
-                                            alt="">
+                                        <a href="{{ Storage::url('client-images/' . $image) }}" class="product-image">
+                                            <img src="{{ Storage::url('client-images/' . $image) }}"
+                                                alt="{{ $item->name }}"></a>
                                     @endforeach
                                 </div>
-                                <div
-                                    class="mt-2 text-body group-hover:text-primary group-hover:font-semibold transition client__text">
+                                <a href="{{ $item->link }}"
+                                    class="mt-1 text-sm text-body hover:text-primary hover:font-semibold transition client__text">
                                     {{ $item->name }}
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
                     <div class=" grid grid-cols-3 gap-4 client__content" id="beauty-skincare" data-aos="fade-left"
                         data-aos-delay="400">
                         @foreach ($beauty as $item)
-                            <a href="{{ $item->link }}" class="client__item group"
+                            <div class="client__item block"
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <img loading="lazy" src="{{ Storage::url('client-images/' . $image) }}"
-                                            alt="">
+                                        <a href="{{ Storage::url('client-images/' . $image) }}" class="product-image">
+                                            <img src="{{ Storage::url('client-images/' . $image) }}"
+                                                alt="{{ $item->name }}"></a>
                                     @endforeach
                                 </div>
-                                <div
-                                    class="mt-2 text-body group-hover:text-primary group-hover:font-semibold transition client__text">
+                                <a href="{{ $item->link }}"
+                                    class="mt-1 text-sm text-body hover:text-primary hover:font-semibold transition client__text">
                                     {{ $item->name }}
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -153,6 +162,10 @@
             const client = getUrlVars()["client"];
             $('.client__content').hide();
 
+            $('.product-image').magnificPopup({
+                type: 'image'
+            });
+
             if (type) {
                 $(`#${type}`).show();
                 $(`#tab-${type}`).addClass('active');
@@ -173,7 +186,7 @@
                     }, 500);
                 }, 200);
             }
-        });
+        })
 
         $('.client__tab').click(function() {
             $('.client__tab').removeClass('active');
@@ -181,6 +194,12 @@
             $(this).addClass('active');
             const activeTab = $(this).attr('id').replace("tab-", '#');
             $(activeTab).fadeIn();
+
+            var currentUrl = window.location.href;
+            var url = new URL(currentUrl);
+            url.searchParams.set("type", $(this).attr('id').replace("tab-", '')); // setting your param
+            history.pushState({}, "", url)
+
             return false;
         });
     </script>

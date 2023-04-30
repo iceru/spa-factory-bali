@@ -46,16 +46,6 @@
                         Sitemap
                     </a>
                 </li>
-                {{-- <li>
-                    <a href="/terms-of-service">
-                        Terms of Service
-                    </a>
-                </li>
-                <li>
-                    <a href="/privacy-policy">
-                        Privacy Policy
-                    </a>
-                </li> --}}
             </ul>
         </div>
 

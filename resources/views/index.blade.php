@@ -72,7 +72,7 @@
         <div class="grid md:grid-cols-3 gap-4 container lg:gap-12">
             @foreach ($products as $key => $product)
                 <a href="/clientele?type={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $product->title))) }}"
-                    class="block">
+                    class="block hover:scale-105 transition duration-300">
                     <div class="drop-shadow-xl" data-aos="fade-right" data-aos-delay="{{ ($key + 1) * 400 }}">
                         <img loading="lazy" src="{{ Storage::url($product->image) }}" class="w-full"
                             alt="{{ $product->title }}" />
