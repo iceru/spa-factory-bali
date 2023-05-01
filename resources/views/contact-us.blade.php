@@ -43,10 +43,10 @@
                                 </div>
                                 <div>
                                     <a href="tel:+6281238003803" class="hover:text-primary">
-                                        +62 81 238 003 803
+                                        +62 361 4480255
                                     </a> <br>
                                     <a href="tel:+6285100198213" class="hover:text-primary">
-                                        +62 85 100 198 213
+                                        +62 81 238 003 803
                                     </a>
                                 </div>
                             </div>

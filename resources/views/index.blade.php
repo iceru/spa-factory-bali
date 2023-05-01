@@ -103,9 +103,12 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="flex justify-center" data-aos="fade-right" data-aos-delay="800">
+                <div class="flex flex-col justify-center items-center" data-aos="fade-right" data-aos-delay="800">
                     <img loading="lazy" src="/images/bpom.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
+                    <div class="text-body text-sm text-center mt-2 leading-tight">
+                        BPOM: B-PW. 03.01.44.441.03.21.01.1398 - 1403
+                    </div>
                 </div>
                 <div class="flex justify-center" data-aos="fade-right" data-aos-delay="400">
                     <img loading="lazy" src="/images/halal.png" class="h-40 w-full object-contain"
@@ -117,9 +120,12 @@
                         alt="mutu certification international" />
                 </div>
 
-                <div class="flex justify-center" data-aos="fade-left" data-aos-delay="800">
+                <div class="flex flex-col items-center justify-center" data-aos="fade-left" data-aos-delay="800">
                     <img loading="lazy" src="/images/rspo.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
+                    <div class="text-body text-sm text-center mt-1 leading-tight">
+                        RSPO: 9-4991-23-000-00
+                    </div>
                 </div>
 
             </div>
@@ -143,7 +149,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 h-1/2" data-aos="fade-right">
             @foreach ($clients as $client)
                 <a href="/clientele?type={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->product->title))) }}&client={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $client->name))) }}"
-                    class="block odd:bg-secondary even:bg-primary">
+                    class="block odd:bg-secondary even:bg-primary hover:opacity-80 transition">
                     <div class=" flex justify-center items-center h-full ">
                         <img loading="lazy" src="{{ Storage::url($client->logo) }}" alt="{{ $client->name }}"
                             class="min-h-[164px] object-contain {{ $client->name !== 'Boemi Botanicals' ? 'brightness-0 invert' : '' }}">
