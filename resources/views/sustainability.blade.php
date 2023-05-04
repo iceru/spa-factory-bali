@@ -155,17 +155,63 @@
                 <div x-show="open == 12" class="mb-4">
                     <div id="map" class="h-[70vh]"></div>
                 </div>
-                @foreach ($sustains as $sustain)
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" x-cloak
-                        x-show.important="open == {{ $sustain->number }}">
-                        @foreach (json_decode($sustain->images) as $image)
-                            <div class="sustain__image">
-                                <img loading="lazy" src="{{ Storage::url('sustainability-images/' . $image) }}"
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" x-cloak x-show.important="open == 5">
+                    @foreach ($sdgImages5 as $image)
+                        <div>
+                            <div class="sustain__image mb-1">
+                                <img loading="lazy"
+                                    src="{{ Storage::url('sustainability-images/' . $image->image) }}"
                                     alt="">
                             </div>
-                        @endforeach
-                    </div>
-                @endforeach
+                            <div class="text-body">
+                                {{ $image->title }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" x-cloak x-show.important="open == 8">
+                    @foreach ($sdgImages8 as $image)
+                        <div>
+                            <div class="sustain__image mb-1">
+                                <img loading="lazy"
+                                    src="{{ Storage::url('sustainability-images/' . $image->image) }}"
+                                    alt="">
+                            </div>
+                            <div class="text-body">
+                                {{ $image->title }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" x-cloak x-show.important="open == 12">
+                    @foreach ($sdgImages12 as $image)
+                        <div>
+                            <div class="sustain__image mb-1">
+                                <img loading="lazy"
+                                    src="{{ Storage::url('sustainability-images/' . $image->image) }}"
+                                    alt="">
+                            </div>
+                            <div class="text-body">
+                                {{ $image->title }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" x-cloak x-show.important="open == 17">
+                    @foreach ($sdgImages17 as $image)
+                        <div>
+                            <div class="sustain__image mb-1">
+                                <img loading="lazy"
+                                    src="{{ Storage::url('sustainability-images/' . $image->image) }}"
+                                    alt="">
+                            </div>
+                            <div class="text-body">
+                                {{ $image->title }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

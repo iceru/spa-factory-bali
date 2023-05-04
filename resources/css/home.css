@@ -155,6 +155,33 @@
     }
 }
 
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+    &.right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    &.left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+
+    &.up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    &.down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+}
+
 .about__process {
     .about__process-image {
         transition: all 0.2s ease;
@@ -165,8 +192,7 @@
         animation: pulse-white 2s infinite;
     }
 
-    &.active,
-    &:hover {
+    &.active {
         .about__process-image {
             animation: pulse-white 2s infinite;
         }
@@ -246,13 +272,16 @@
         &.active,
         &:hover {
             color: #588157;
-            font-weight: 700;
 
             .line {
                 width: 100%;
                 transition: all 0.5s ease;
                 transition-delay: 0s !important;
             }
+        }
+
+        &.active {
+            font-weight: 700;
         }
     }
 }

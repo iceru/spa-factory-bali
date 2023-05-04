@@ -4,18 +4,18 @@
     @endsection
     <header class="home__header pb-20 pt-36">
         <div class="home__cta flex flex-col px-4 py-10 lg:p-0 md:flex-row container items-center" data-aos="fade-right">
-            <div class="home__cta-text text-white p-0 !pl-0 lg:p-10 mb-8 lg:mb-0 md:w-[40%] lg:pr-4">
+            <div class="home__cta-text text-white p-0 !pl-0 lg:p-10 mb-8 lg:mb-0 md:w-[45%] lg:pr-10">
                 <div class="font-serif text-4xl mb-2" data-aos="fade-right">
                     Spa Factory Bali™
                 </div>
-                <div class="text-xl mb-4" data-aos="fade-right" data-aos-duration="700">
+                <div class="text-xl mb-4 lg:w-[80%]" data-aos="fade-right" data-aos-duration="700">
                     A Pioneer in Bali's contract manufacturing for natural cosmetics.
                 </div>
                 <x-button-link link="/contact-us" data-aos="fade-right" data-aos-duration="1000">
                     Contact Us
                 </x-button-link>
             </div>
-            <div class="home__cta-img w-full md:w-[60%] lg:pl-10 md:pl-4">
+            <div class="home__cta-img w-full md:w-[55%] lg:pl-16 md:pl-4 flex justify-end">
                 <div id="home-sliders">
                     @foreach ($sliders as $slider)
                         <img loading="lazy" src="{{ Storage::url($slider->image) }}" class="w-full"
@@ -72,11 +72,11 @@
         <div class="grid md:grid-cols-3 gap-4 container lg:gap-12">
             @foreach ($products as $key => $product)
                 <a href="/clientele?type={{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $product->title))) }}"
-                    class="block hover:scale-105 transition duration-300">
+                    class="block group transition duration-300">
                     <div class="drop-shadow-xl" data-aos="fade-right" data-aos-delay="{{ ($key + 1) * 400 }}">
                         <img loading="lazy" src="{{ Storage::url($product->image) }}" class="w-full"
                             alt="{{ $product->title }}" />
-                        <div class="bg-white bg-opacity-30 pt-4 pb-8 px-6">
+                        <div class="bg-white bg-opacity-30 pt-4 pb-8 px-6 group-hover:bg-opacity-40 transition">
                             <div class="text-center font-bold text-lg mb-2">
                                 {{ $product->title }}
                             </div>

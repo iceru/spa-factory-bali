@@ -82,13 +82,24 @@
             </div>
             <div class="grid grid-cols-2 lg:grid-cols-4 mt-8 justify-between about__traceWrapper" data-aos="fade-down"
                 data-aos-delay="900">
+
+                <i
+                    class="arrow right absolute left-[25%] top-[56%] -translate-x-1/2 -translate-y-1/2 hidden lg:block"></i>
+                <i
+                    class="arrow right absolute left-[50%] top-[56%] -translate-x-1/2 -translate-y-1/2 hidden lg:block"></i>
+                <i
+                    class="arrow right absolute left-[75%] top-[56%] -translate-x-1/2 -translate-y-1/2 hidden lg:block"></i>
+
+                <i
+                    class="arrow right absolute left-[50%] top-[28.5%] -translate-x-1/2 -translate-y-1/2 block lg:hidden"></i>
+                <i
+                    class="arrow left absolute left-[50%] top-[47.5%] -translate-x-1/2 -translate-y-1/2 block lg:hidden"></i>
+                <i
+                    class="arrow right absolute left-[50%] top-[86.25%] -translate-x-1/2 -translate-y-1/2 block lg:hidden"></i>
                 <div class="z-10 about__process mb-12 text-center lg:mb-0 cursor-pointer"
                     :class="open == 1 ? 'active' : ''" @click="open = 1; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
-                            <img loading="lazy" src="/images/about/icon-leaf.png" class="h-6" alt="">
-                        </div> --}}
                         Sacha Inci Plantation
                     </div>
                     <div>
@@ -101,9 +112,6 @@
                     :class="open == 2 ? 'active' : ''" @click="open = 2; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
-                            <img loading="lazy" src="/images/about/icon-oil.png" class="h-6" alt="">
-                        </div> --}}
                         Oil Extraction
                     </div>
                     <div>
@@ -115,9 +123,6 @@
                     @click="open = 3; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
-                            <img loading="lazy" src="/images/about/icon-industry.png" class="h-6" alt="">
-                        </div> --}}
                         Cosmetic Manufacturing
                     </div>
                     <div>
@@ -129,9 +134,6 @@
                     @click="open = 4; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
-                        {{-- <div class="mb-3 flex justify-center lg:mr-3">
-                            <img loading="lazy" src="/images/about/icon-lotion.png" class="h-6" alt="">
-                        </div> --}}
                         Finished Product
                     </div>
                     <div>
@@ -145,12 +147,13 @@
             <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false"
                 x-cloak x-show="modal"></div>
             <div x-cloak x-show="modal"
-                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-10 px-20 rounded-xl z-20">
-                <div class="absolute right-10 top-10 cursor-pointer z-10" @click="modal = false">
+                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-6 lg:p-10 lg:px-20 rounded-xl z-20">
+                <div class="absolute top-7 right-4 lg:right-10 lg:top-10 cursor-pointer z-10 w-6 lg:w-auto"
+                    @click="modal = false">
                     <img loading="lazy" src="/images/close-gri.png" alt="Close">
                 </div>
-                <div class="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer" x-cloak x-show="open != 1"
-                    @click="open -= 1">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-40 lg:opacity-100" x-cloak
+                    x-show="open != 1" @click="open -= 1">
                     <img loading="lazy" src="/images/chevron-right.png" alt="Arrow Right" class="w-8 rotate-180">
                 </div>
                 <div class="about__process-large relative" x-cloak x-show="open == 1">
@@ -181,7 +184,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid lg:grid-cols-2 gap-4">
                         <div class="about__image-square">
                             <img loading="lazy" src="/images/about/Plantation1.jpg" alt="Sacha Inci Plantation">
                         </div>
@@ -222,7 +225,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid lg:grid-cols-2 gap-4">
                         <div class="about__image-square">
                             <img loading="lazy" src="/images/about/oil-1.jpg" alt="Oil Extraction">
                         </div>
@@ -283,8 +286,8 @@
                         <img loading="lazy" src="/images/about/finished.jpg" alt="Finished Product">
                     </div>
                 </div>
-                <div class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer" x-cloak x-show="open != 4"
-                    @click="open += 1">
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-40 lg:opacity-100" x-cloak
+                    x-show="open != 4" @click="open += 1">
                     <img loading="lazy" src="/images/chevron-right.png" alt="Arrow Right" class="w-8">
                 </div>
             </div>

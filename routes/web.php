@@ -10,6 +10,7 @@ use App\Http\Controllers\GriController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SdgImageController;
 use App\Http\Controllers\SustainabilityController;
 
 /*
@@ -71,6 +72,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/homeslider/edit/{homeslider}', [HomeSliderController::class, 'edit'])->name('homeslider.edit');
         Route::patch('/homeslider/update/{homeslider}', [HomeSliderController::class, 'update'])->name('homeslider.update');
         Route::delete('/homeslider/delete/{homeslider}', [HomeSliderController::class, 'destroy'])->name('homeslider.delete');
+
+        Route::get('/sdgImage', [SdgImageController::class, 'create'])->name('sdgImage.create');
+        Route::post('/sdgImage/store', [SdgImageController::class, 'store'])->name('sdgImage.store');
+        Route::get('/sdgImage/edit/{sdgImage}', [SdgImageController::class, 'edit'])->name('sdgImage.edit');
+        Route::patch('/sdgImage/update/{sdgImage}', [SdgImageController::class, 'update'])->name('sdgImage.update');
+        Route::delete('/sdgImage/delete/{sdgImage}', [SdgImageController::class, 'destroy'])->name('sdgImage.delete');
 
         Route::get('/sustainability', [SustainabilityController::class, 'create'])->name('sustainability.create');
         Route::post('/sustainability/store', [SustainabilityController::class, 'store'])->name('sustainability.store');

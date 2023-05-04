@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\SdgImage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Sustainability extends Model
 {
@@ -16,4 +17,9 @@ class Sustainability extends Model
         'images',
         'bg_color'
     ];
+
+    public function sdgImage()
+    {
+        return $this->hasMany(SdgImage::class);
+    }
 }

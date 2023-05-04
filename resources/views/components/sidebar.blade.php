@@ -48,6 +48,11 @@
                 </a>
             </li>
             <li>
+                <a href="/admin/sdgImage">
+                    Sustainability Images
+                </a>
+            </li>
+            <li>
                 <a href="/admin/homeslider">
                     Home Sliders
                 </a>
