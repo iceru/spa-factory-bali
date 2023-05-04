@@ -98,7 +98,7 @@
                                         </a>
                                     @endforeach
                                 </div>
-                                <a href="{{ $item->link }}"
+                                <a href="{{ $item->link }}" target="_blank"
                                     class="mt-1 text-sm text-body hover:text-primary hover:font-semibold transition client__text">
                                     {{ $item->name }}
                                 </a>
@@ -117,7 +117,7 @@
                                                 alt="{{ $item->name }}"></a>
                                     @endforeach
                                 </div>
-                                <a href="{{ $item->link }}"
+                                <a href="{{ $item->link }}" target="_blank"
                                     class="mt-1 text-sm text-body hover:text-primary hover:font-semibold transition client__text">
                                     {{ $item->name }}
                                 </a>
@@ -136,7 +136,7 @@
                                                 alt="{{ $item->name }}"></a>
                                     @endforeach
                                 </div>
-                                <a href="{{ $item->link }}"
+                                <a href="{{ $item->link }}" target="_blank"
                                     class="mt-1 text-sm text-body hover:text-primary hover:font-semibold transition client__text">
                                     {{ $item->name }}
                                 </a>
