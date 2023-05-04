@@ -67,14 +67,17 @@
                     class="w-full lg:w-1/4 clientele__catalog sticky top-0 flex lg:block overflow-auto whitespace-nowrap lg:whitespace-normal">
                     <li class="mr-6 lg:mr-0 client__tab" id="tab-hotel-amenities" data-aos="fade-down">
                         Hotel Amenities
+                        <div class="line" data-aos="fade-right" data-aos-delay="400"></div>
                     </li>
                     <li class="mr-6 lg:mr-0 client__tab" id="tab-professional-retail-spa-products" data-aos="fade-down"
                         data-aos-delay="400">
                         Professional & Retail Spa Products
+                        <div class="line" data-aos="fade-right" data-aos-delay="800"></div>
                     </li>
                     <li class="mr-6 lg:mr-0 client__tab" id="tab-beauty-skincare" data-aos="fade-right"
                         data-aos-delay="800">
                         Beauty Skincare
+                        <div class="line" data-aos="fade-right" data-aos-delay="1200"></div>
                     </li>
                 </ul>
                 <div class="w-full lg:w-3/4 ">

@@ -72,7 +72,7 @@
         </div>
     </div>
     <div class="section bg-linear" data-aos="fade-down">
-        <div class="container" x-data="{ open: '', modal: false }">
+        <div class="container" x-data="{ open: 1, modal: false }">
             <div class="font-serif text-white mb-4 text-2xl text-center" data-aos="fade-down" data-aos-delay="300">
                 Transparent and Traceable Production Process
             </div>
@@ -83,7 +83,7 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 mt-8 justify-between about__traceWrapper" data-aos="fade-down"
                 data-aos-delay="900">
                 <div class="z-10 about__process mb-12 text-center lg:mb-0 cursor-pointer"
-                    :class="open == 'process1' ? 'active' : ''" @click="open = 'process1'; modal = true">
+                    :class="open == 1 ? 'active' : ''" @click="open = 1; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
@@ -93,11 +93,12 @@
                     </div>
                     <div>
                         <img loading="lazy" src="/images/about/Plantation1.jpg" alt=""
-                            class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
+                            class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto"
+                            :class="open == 1 ? 'pulsing' : ''">
                     </div>
                 </div>
                 <div class="z-10 about__process mb-12 lg:mb-0 cursor-pointer" id="process-2"
-                    :class="open == 'process2' ? 'active' : ''" @click="open = 'process2'; modal = true">
+                    :class="open == 2 ? 'active' : ''" @click="open = 2; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
@@ -110,8 +111,8 @@
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
-                <div class="z-10 about__process process-3 cursor-pointer" :class="open == 'process3' ? 'active' : ''"
-                    @click="open = 'process3'; modal = true">
+                <div class="z-10 about__process process-3 cursor-pointer" :class="open == 3 ? 'active' : ''"
+                    @click="open = 3; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-2 lg:mb-0 flex justify-center lg:mr-3">
@@ -124,8 +125,8 @@
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
-                <div class="z-10 about__process cursor-pointer" :class="open == 'process4' ? 'active' : ''"
-                    @click="open = 'process4'; modal = true">
+                <div class="z-10 about__process cursor-pointer" :class="open == 4 ? 'active' : ''"
+                    @click="open = 4; modal = true">
                     <div
                         class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
                         {{-- <div class="mb-3 flex justify-center lg:mr-3">
@@ -144,11 +145,15 @@
             <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false"
                 x-cloak x-show="modal"></div>
             <div x-cloak x-show="modal"
-                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-10 rounded-xl z-20">
+                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-10 px-20 rounded-xl z-20">
                 <div class="absolute right-10 top-10 cursor-pointer z-10" @click="modal = false">
                     <img loading="lazy" src="/images/close-gri.png" alt="Close">
                 </div>
-                <div class="about__process-large relative" x-cloak x-show="open == 'process1'">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer" x-cloak x-show="open != 1"
+                    @click="open -= 1">
+                    <img loading="lazy" src="/images/chevron-right.png" alt="Arrow Right" class="w-8 rotate-180">
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 1">
                     <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
                         Sacha Inci Plantation
                     </div>
@@ -190,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about__process-large relative" x-cloak x-show="open == 'process2'">
+                <div class="about__process-large relative" x-cloak x-show="open == 2">
                     <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
                         Oil Extraction
                     </div>
@@ -231,7 +236,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about__process-large relative" x-cloak x-show="open == 'process3'">
+                <div class="about__process-large relative" x-cloak x-show="open == 3">
                     <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
                         Cosmetic Manufacturing
                     </div>
@@ -255,7 +260,7 @@
                         <img loading="lazy" src="/images/about/manufacture.jpg" alt="Cosmetic Manufacturing">
                     </div>
                 </div>
-                <div class="about__process-large relative" x-cloak x-show="open == 'process4'">
+                <div class="about__process-large relative" x-cloak x-show="open == 4">
                     <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
                         Finished Product
                     </div>
@@ -277,6 +282,10 @@
                     <div>
                         <img loading="lazy" src="/images/about/finished.jpg" alt="Finished Product">
                     </div>
+                </div>
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer" x-cloak x-show="open != 4"
+                    @click="open += 1">
+                    <img loading="lazy" src="/images/chevron-right.png" alt="Arrow Right" class="w-8">
                 </div>
             </div>
         </div>
