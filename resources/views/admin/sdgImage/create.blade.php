@@ -76,6 +76,7 @@
                                 @method('DELETE')
                                 <x-primary-button
                                     class="!bg-red-500 hover:!bg-red-700 focus:!bg-red:700 active:!bg-red-700 text-sm"
+                                    onclick="return confirm('Item and related data will be deleted. Are you sure?');"
                                     type="submit">Delete
                                 </x-primary-button>
                             </form>
