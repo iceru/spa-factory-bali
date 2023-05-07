@@ -42,7 +42,7 @@
             <x-primary-button type="submit">
                 Submit
             </x-primary-button>
-            <a href="{{ route('homesdgImage.create') }}" class="btn bg-red-600 hover:bg-red-800 ml-4">
+            <a href="{{ route('sdgImage.create') }}" class="btn bg-red-600 hover:bg-red-800 ml-4">
                 Cancel
             </a>
         </div>
