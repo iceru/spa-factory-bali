@@ -84,7 +84,8 @@ class SdgImageController extends Controller
     public function edit(Request $request)
     {
         $sdgImage = SdgImage::where('id', $request->sdgImage)->firstOrFail();
-        return view('admin.sdgImage.edit', compact('sdgImage'));
+        $sustainabilities = Sustainability::orderBy('number')->get();
+        return view('admin.sdgImage.edit', compact('sdgImage', 'sustainabilities'));
     }
 
     /**

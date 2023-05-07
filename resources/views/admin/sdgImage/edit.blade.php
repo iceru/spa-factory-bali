@@ -11,7 +11,8 @@
         <div class="flex items-center mb-6">
             <x-input-label for="title" :value="__('Title')" class="mr-4 w-1/5 text-lg" />
             <div class="w-3/5">
-                <x-text-input id="title" class="block w-full" type="title" name="title" />
+                <x-text-input id="title" class="block w-full" type="title" name="title"
+                    value="{{ $sdgImage->title }}" />
                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
             </div>
 
@@ -20,7 +21,8 @@
             <x-input-label for="sustainability" :value="__('Sustainability')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
-                <x-input-select name="sustainability" :options="$sustainabilities" nameOption="number" valueOption="id" />
+                <x-input-select name="sustainability" :options="$sustainabilities" nameOption="number" valueOption="id"
+                    :selectedOption="$sdgImage->sustainability_id" />
                 <x-input-error :messages="$errors->get('sustainability')" class="mt-2" />
             </div>
         </div>
