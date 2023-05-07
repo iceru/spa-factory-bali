@@ -89,7 +89,7 @@
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
                                         <a href="{{ Storage::url('client-images/' . $image) }}"
-                                            class="product-image block absolute lef-t0 top-0 w-full h-full z-10">
+                                            class="product-image block absolute left-0 top-0 w-full h-full z-10">
                                             <img src="{{ Storage::url('client-images/' . $image) }}"
                                                 alt="{{ $item->name }}">
                                             <div
@@ -112,9 +112,14 @@
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <a href="{{ Storage::url('client-images/' . $image) }}" class="product-image">
+                                        <a href="{{ Storage::url('client-images/' . $image) }}"
+                                            class="product-image block absolute left-0 top-0 w-full h-full z-10">
                                             <img src="{{ Storage::url('client-images/' . $image) }}"
-                                                alt="{{ $item->name }}"></a>
+                                                alt="{{ $item->name }}">
+                                            <div
+                                                class="absolute bg-black bg-opacity-0 hover:bg-opacity-20 transition top-0 left-0 w-full h-full">
+                                            </div>
+                                        </a>
                                     @endforeach
                                 </div>
                                 <a href="{{ $item->link }}" target="_blank"
@@ -131,9 +136,14 @@
                                 id="{{ strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $item->name))) }}">
                                 <div class="client__image">
                                     @foreach ((array) json_decode($item->images)[0] as $image)
-                                        <a href="{{ Storage::url('client-images/' . $image) }}" class="product-image">
+                                        <a href="{{ Storage::url('client-images/' . $image) }}"
+                                            class="product-image block absolute left-0 top-0 w-full h-full z-10">
                                             <img src="{{ Storage::url('client-images/' . $image) }}"
-                                                alt="{{ $item->name }}"></a>
+                                                alt="{{ $item->name }}">
+                                            <div
+                                                class="absolute bg-black bg-opacity-0 hover:bg-opacity-20 transition top-0 left-0 w-full h-full">
+                                            </div>
+                                        </a>
                                     @endforeach
                                 </div>
                                 <a href="{{ $item->link }}" target="_blank"
