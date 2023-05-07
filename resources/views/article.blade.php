@@ -68,14 +68,13 @@
                 <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-1 lg:w-[45%]">
                     @foreach ($featured->slice(1, 3) as $item)
                         <div href="{{ route('article.detail', $item->slug) }}"
-                            class="text-white relative block h-[40vh] md:h-[25vh] lg:h-[40vh]">
+                            class="text-white relative block h-[40vh] md:h-[25vh] lg:h-[40vh] max-h-[320px]">
                             <div class="absolute h-full w-full">
                                 <img loading="lazy" src="{{ Storage::url($item->image) }}"
                                     class="h-full w-full object-cover" alt="{{ $item->title }}">
                             </div>
                             <div class="absolute bg-black bg-opacity-50 top-0 left-0 w-full h-full"></div>
                             <div class="text-white relative z-10 p-4 h-full flex flex-col justify-end">
-
                                 <a href="{{ route('article.detail', $item->slug) }}">
                                     <div class="font-bold text-2xl mb-2">
                                         {{ $item->title }}
