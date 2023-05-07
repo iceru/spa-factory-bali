@@ -152,9 +152,9 @@
                 <div x-cloak x-show.important="open == 'all'">
                     <img loading="lazy" src="/images/sustain-all.png" class="w-full" alt="">
                 </div>
-                <div x-show="open == 12" class="mb-4">
+                {{-- <div x-show="open == 12" class="mb-4">
                     <div id="map" class="h-[70vh]"></div>
-                </div>
+                </div> --}}
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" x-cloak x-show.important="open == 5">
                     @foreach ($sdgImages5 as $image)

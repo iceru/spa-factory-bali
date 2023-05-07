@@ -3,7 +3,7 @@
         Edit sdgImages - {{ $sdgImage->title }}
     </div>
     <div class="my-6 w-full border-b border-gray-200"></div>
-    <form action={{ route('homesdgImage.update', $sdgImage->id) }} method="POST" enctype="multipart/form-data">
+    <form action={{ route('sdgImage.update', $sdgImage->id) }} method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <input type="hidden" name="id" value="{{ $sdgImage->id }}">

@@ -205,7 +205,7 @@
                     <div class="text-body mb-4" data-aos="fade-right" data-aos-delay="800">
                         <ul>
                             <li>
-                                Dried sancha seeds need to be processed before the extraction by cracking open the
+                                Dried sacha seeds need to be processed before the extraction by cracking open the
                                 shell.
                             </li>
                             <li>
@@ -219,7 +219,7 @@
                                 The oil needs to be rested and filtered to remove impurities.
                             </li>
                             <li>
-                                We work with UD Restu Bali in Tabanan for the oil extraction process not only for Sancha
+                                We work with UD Restu Bali in Tabanan for the oil extraction process not only for Sacha
                                 Inchi but also cold pressed Coconut oil (VCO), Moringa oil (Moringa oleifera), Candlenut
                                 (Aleurites moluccanus) oil and our local walnut, Kenari (Canarium ovatum) oil.
                             </li>
