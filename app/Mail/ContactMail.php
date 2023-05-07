@@ -34,7 +34,7 @@ class ContactMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('contact@spafactorybali.biz', 'Spa Factory Bali'),
+            from: new Address('sales@spafactorybali.biz', 'Spa Factory Bali'),
             subject: 'Spa Factory Bali Web Message - ' . $this->contact->name,
         );
     }

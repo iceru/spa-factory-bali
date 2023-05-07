@@ -58,7 +58,7 @@ class GriController extends Controller
 
             $gri->save();
 
-            Mail::to("salesglobal@spafactorybali.biz")->send(new GriMail($request));
+            Mail::to("sales@spafactorybali.biz")->send(new GriMail($request));
 
             $return = response()->json(['success' => 'Message sent!']);
         } catch (Exception $e) {
