@@ -18,7 +18,7 @@ class ArticleController extends Controller
     public function index()
     {
         $banner = Article::where('type', 'banner')->take(1)->get();
-        $latest = Article::where('type', 'latest')->take(3)->get();
+        $latest = Article::where('type', 'latest')->get();
         $featured = Article::where('type', 'featured')->take(3)->get();
         return view('article', compact('banner', 'latest', 'featured'));
     }
