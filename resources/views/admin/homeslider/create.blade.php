@@ -46,7 +46,7 @@
 
     <x-slot name="table">
         <div class="font-bold text-2xl text-secondary">
-            Home SLiders Data
+            Home Sliders Data
         </div>
         <div class="my-6 w-full border-b border-gray-200"></div>
         <table class="table-auto border-collapse border">
@@ -73,6 +73,7 @@
                                 @method('DELETE')
                                 <x-primary-button
                                     class="!bg-red-500 hover:!bg-red-700 focus:!bg-red:700 active:!bg-red-700 text-sm"
+                                    onclick="return confirm('Item and related data will be deleted. Are you sure?');"
                                     type="submit">Delete
                                 </x-primary-button>
                             </form>

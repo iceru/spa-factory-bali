@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
 use Exception;
+use App\Models\Article;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +18,7 @@ class ArticleController extends Controller
     public function index()
     {
         $banner = Article::where('type', 'banner')->take(1)->get();
-        $latest = Article::where('type', 'latest')->take(3)->get();
+        $latest = Article::where('type', 'latest')->get();
         $featured = Article::where('type', 'featured')->take(3)->get();
         return view('article', compact('banner', 'latest', 'featured'));
     }
@@ -62,6 +63,7 @@ class ArticleController extends Controller
             }
 
             $article->title = $request->title;
+            $article->slug = Str::slug($request->title);
             $article->text = $request->text;
             $article->subtext = $request->subtext;
             $article->author = Auth::user()->name;
@@ -87,7 +89,9 @@ class ArticleController extends Controller
      */
     public function show(Request $request)
     {
-        //
+        $article = Article::where('slug', $request->article)->first();
+        $more = Article::where('slug', '!=', $request->article)->take(4)->get();
+        return view('article-detail', compact('article', 'more'));
     }
 
     /**
@@ -134,6 +138,7 @@ class ArticleController extends Controller
         }
 
         $article->title = $request->title;
+        $article->slug = Str::slug($request->title);
         $article->text = $request->text;
         $article->subtext = $request->subtext;
         $article->author = Auth::user()->name;

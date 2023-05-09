@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sustainability;
+use App\Models\SdgImage;
 use Illuminate\Http\Request;
+use App\Models\Sustainability;
 
 class SustainabilityController extends Controller
 {
@@ -14,8 +15,12 @@ class SustainabilityController extends Controller
      */
     public function index()
     {
-        $sustains = Sustainability::all();
-        return view('sustainability', compact('sustains'));
+        $sustains = Sustainability::orderBy('number')->get();
+        $sdgImages5 = SdgImage::where('sustainability_id', 2)->get();
+        $sdgImages8 = SdgImage::where('sustainability_id', 1)->get();
+        $sdgImages12 = SdgImage::where('sustainability_id', 4)->get();
+        $sdgImages17 = SdgImage::where('sustainability_id', 3)->get();
+        return view('sustainability', compact('sustains', 'sdgImages5', 'sdgImages8', 'sdgImages12', 'sdgImages17'));
     }
 
     /**

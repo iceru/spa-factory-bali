@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <title>{{ config('app.name', 'Spa Factory Bali') }}</title>
 
     <!-- Fonts -->
@@ -30,6 +35,13 @@
     <!-- Scripts -->
     <script src='https://cdn.tiny.cloud/1/w6cvfb6bgswq49z8hbl7msw8t7r9cw5auu24heasdln1q2fy/tinymce/5/tinymce.min.js'
         referrerpolicy="origin"></script>
+
+    {{-- Datatables --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+    {{-- Chart --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -65,7 +77,7 @@
 <script>
     tinymce.init({
         selector: 'textarea',
-        plugins: 'link image imagetools paste forecolor lists',
+        plugins: 'link image imagetools paste forecolor lists table',
         paste_as_text: true,
         toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
         a11y_advanced_options: true,
@@ -92,6 +104,23 @@
         automatic_uploads: true,
         images_upload_url: '/upload/image',
         file_picker_types: 'image',
+        style_formats: [{
+                title: 'Image Left',
+                selector: 'img',
+                styles: {
+                    'float': 'left',
+                    'margin': '0 10px 0 10px'
+                }
+            },
+            {
+                title: 'Image Right',
+                selector: 'img',
+                styles: {
+                    'float': 'right',
+                    'margin': '0 0 10px 10px'
+                }
+            }
+        ],
         file_picker_callback: function(cb, value, meta) {
             var input = document.createElement('input');
             input.setAttribute('type', 'file');
@@ -114,6 +143,10 @@
             };
             input.click();
         }
+    });
+
+    $(document).ready(function() {
+        $('table').DataTable();
     });
 </script>
 

@@ -19,9 +19,9 @@
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="link" :value="__('Link')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="link" :value="__('Link')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-text-input id="link" class="block w-full" type="link" name="link" required
                     value="{{ $client->link }}" />
 

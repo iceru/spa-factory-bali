@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeSlider;
+use App\Models\SdgImage;
 use Illuminate\Http\Request;
 
 class HomeSliderController extends Controller
@@ -84,7 +85,17 @@ class HomeSliderController extends Controller
     public function edit(Request $request)
     {
         $homeslider = HomeSlider::where('id', $request->homeslider)->firstOrFail();
-        return view('admin.homeslider.edit', compact('homeslider'));
+        $homesliders = HomeSlider::all();
+        $orders = collect([
+            ['name' => '1', 'value' => 1],
+        ]);
+        if ($homesliders->count() > 1) {
+            foreach ($homesliders as $x => $home) {
+                $orders->push(['name' => $x + 1, 'value' => $x + 1],);
+                $x++;
+            }
+        }
+        return view('admin.homeslider.edit', compact('homeslider', 'orders'));
     }
 
     /**
@@ -122,8 +133,11 @@ class HomeSliderController extends Controller
      * @param  \App\Models\HomeSlider  $homeSlider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomeSlider $homeSlider)
+    public function destroy(Request $request)
     {
-        //
+        $homeslider = HomeSlider::where('id', $request->homeslider)->first();
+        $homeslider->delete();
+
+        return redirect()->route('homeslider.create')->with('success', 'Home Slider deleted successfully');
     }
 }

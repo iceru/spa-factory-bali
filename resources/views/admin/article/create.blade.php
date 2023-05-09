@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="font-bold text-2xl text-secondary">
-        Input Article Data
+        Input E-Library Data
     </div>
     @if ($message = Session::get('error'))
         <div class="w-full mt-4 bg-red-100 border border-red-400 p-4 rounded-md text-red-700">
@@ -16,9 +16,9 @@
     <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="title" :value="__('Title')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="title" :value="__('Title')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-text-input id="title" class="block w-full" type="text" name="title" required
                     value="{{ old('title') }}" />
 
@@ -26,26 +26,26 @@
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="subtext" :value="__('Sub Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="subtext" :value="__('Sub Text')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <textarea name="subtext" id="subtext" cols="20" rows="10">{{ old('subtext') }}</textarea>
                 <x-input-error :messages="$errors->get('subtext')" class="mt-2" />
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="text" :value="__('Text')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="text" :value="__('Text')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <textarea name="text" id="text" cols="20" rows="10">{{ old('text') }}</textarea>
                 <x-input-error :messages="$errors->get('text')" class="mt-2" />
             </div>
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="type" :value="__('Type')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="type" :value="__('Type')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-input-select name="type" :options="$options" nameOption="name" valueOption="value" />
                 <x-input-error :messages="$errors->get('type')" class="mt-2" />
             </div>
@@ -53,18 +53,18 @@
 
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="image" :value="__('Image')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="image" :value="__('Image')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <input type="file" name="image" id="image">
 
                 <x-input-error :messages="$errors->get('image')" class="mt-2" />
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="created_at" :value="__('Created at')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="created_at" :value="__('Created at')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-text-input id="datepicker" class="block w-full" type="created_at" name="created_at" required
                     value="{{ old('created_at') }}" />
 
@@ -90,18 +90,20 @@
 
     <x-slot name="table">
         <div class="font-bold text-2xl text-secondary">
-            Articles Data
+            E-Library Data
         </div>
         <div class="my-6 w-full border-b border-gray-200"></div>
         <table class="table-auto border-collapse border">
             <thead>
                 <tr>
                     <th class="p-3 border">Title</th>
+                    <th class="p-3 border">Slug</th>
                     <th class="p-3 border">Image</th>
                     <th class="p-3 border">Sub Text</th>
                     <th class="p-3 border">Text</th>
                     <th class="p-3 border">Author</th>
                     <th class="p-3 border">Type</th>
+                    <th class="p-3 border">Created at</th>
                     <th class="p-3 border">Action</th>
                 </tr>
             </thead>
@@ -109,11 +111,13 @@
                 @foreach ($articles as $article)
                     <tr>
                         <td class="p-3 border">{{ $article->title }}</td>
+                        <td class="p-3 border">{{ $article->slug }}</td>
                         <td class="p-3 border">
-                            <img src="{{ Storage::url($article->image) }}" width="200" alt="{{ $article->title }}">
+                            <img loading="lazy" src="{{ Storage::url($article->image) }}" width="200"
+                                alt="{{ $article->title }}">
                         </td>
-                        <td class="p-3 border">{{ $article->subtext }}</td>
-                        <td class="p-3 border">{!! $article->text !!}</td>
+                        <td class="p-3 border">{!! substr($article->subtext, 0, 50) !!}</td>
+                        <td class="p-3 border">{!! substr($article->text, 0, 50) !!}</td>
                         <td class="p-3 border">
                             {{ $article->author }}
                         </td>
@@ -130,6 +134,7 @@
                                 @method('DELETE')
                                 <x-primary-button
                                     class="!bg-red-500 hover:!bg-red-700 focus:!bg-red:700 active:!bg-red-700 text-sm"
+                                    onclick="return confirm('Item and related data will be deleted. Are you sure?');"
                                     type="submit">Delete
                                 </x-primary-button>
                             </form>

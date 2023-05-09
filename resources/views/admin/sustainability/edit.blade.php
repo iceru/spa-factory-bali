@@ -18,7 +18,7 @@
         </div>
 
         <div class="flex items-center mb-6">
-            <x-input-label for="number" :value="__('SGD Number')" class="mr-4 w-1/5 text-lg" />
+            <x-input-label for="number" :value="__('SDG Number')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
                 <x-text-input id="number" class="block w-full" type="number" name="number"
@@ -54,8 +54,8 @@
             <div class="w-1/5 mr-4">
             </div>
             @foreach (json_decode($sustainability->images) as $image)
-                <img src="{{ Storage::url('/sustainability-images/' . $image) }}" class="mr-4" width="200"
-                    alt="{{ $sustainability->name }}">
+                <img loading="lazy" src="{{ Storage::url('/sustainability-images/' . $image) }}" class="mr-4"
+                    width="200" alt="{{ $sustainability->name }}">
             @endforeach
         </div>
 

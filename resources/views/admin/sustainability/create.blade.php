@@ -21,7 +21,7 @@
         </div>
 
         <div class="flex items-center mb-6">
-            <x-input-label for="number" :value="__('SGD Number')" class="mr-4 w-1/5 text-lg" />
+            <x-input-label for="number" :value="__('SDG Number')" class="mr-4 w-1/5 text-lg" />
 
             <div class="w-3/5">
                 <x-text-input id="number" class="block w-full" type="number" name="number" required />
@@ -103,10 +103,10 @@
                             {{ $sustainability->bg_color }}
                         </td>
                         <td class="p-3 border">{!! $sustainability->description !!}</td>
-                        <td class="p-3 border">
+                        <td class="p-3 border grid grid-cols-2 gap-2">
                             @foreach (json_decode($sustainability->images) as $image)
-                                <img src="{{ Storage::url('/sustainability-images/' . $image) }}" class="mb-2"
-                                    width="200" alt="{{ $sustainability->name }}">
+                                <img loading="lazy" src="{{ Storage::url('/sustainability-images/' . $image) }}"
+                                    class="mb-2" width="300" alt="{{ $sustainability->name }}">
                             @endforeach
                         </td>
                         <td class="p-3 border">
@@ -118,6 +118,7 @@
                                 @method('DELETE')
                                 <x-primary-button
                                     class="!bg-red-500 hover:!bg-red-700 focus:!bg-red:700 active:!bg-red-700 text-sm"
+                                    onclick="return confirm('Item and related data will be deleted. Are you sure?');"
                                     type="submit">Delete
                                 </x-primary-button>
                             </form>

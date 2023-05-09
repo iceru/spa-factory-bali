@@ -1,7 +1,7 @@
 <div class="p-6 bg-primary w-1/4 min-h-screen">
     <div class="flex gap-4 mb-8">
         <a href="/">
-            <img src="/images/logo-white.png" alt="Spa Factory Bali">
+            <img loading="lazy" src="/images/logo-white.png" alt="Spa Factory Bali">
         </a>
         <div class="text-white">
             <div class="text-xl mb-1">
@@ -48,8 +48,23 @@
                 </a>
             </li>
             <li>
+                <a href="/admin/sdgImage">
+                    Sustainability Images
+                </a>
+            </li>
+            <li>
                 <a href="/admin/homeslider">
                     Home Sliders
+                </a>
+            </li>
+            <li>
+                <a href="/admin/contact">
+                    Contact Us
+                </a>
+            </li>
+            <li>
+                <a href="/profile">
+                    My Profile
                 </a>
             </li>
         </ul>

@@ -2,39 +2,45 @@
     <div class="container flex justify-between items-center">
         <div class="nav__logo ">
             <a href="/">
-                @if (Route::currentRouteName() === 'index' or Route::currentRouteName() === 'about' or $type === 'auth')
-                    <img src="/images/logo.png" class="h-16 lg:h-20 object-contain brightness-0 invert"
+                @if ($type === 'index' or $type === 'about' or $type === 'auth' or $type === 'article')
+                    <img loading="lazy" src="/images/logo.png" class="h-16 lg:h-20 object-contain brightness-0 invert"
                         alt="Spa Factory Bali">
                 @else
-                    <img src="/images/logo.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali">
+                    <img loading="lazy" src="/images/logo.png" class="h-16 lg:h-20 object-contain" alt="Spa Factory Bali">
                 @endif
             </a>
         </div>
         <ul class="nav__menu-list items-center text-primary hidden lg:flex">
-            <li class="{{ Route::currentRouteName() === 'index' ? 'active' : '' }}">
+            <li class="{{ $type === 'index' ? 'active' : '' }}">
                 <a href="/">Home</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'about' ? 'active' : '' }}">
+            <li class="{{ $type === 'about' ? 'active' : '' }}">
                 <a href="/about-us">About Us</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'sustain.index' ? 'active' : '' }}">
+            <li class="{{ $type === 'sustain.index' ? 'active' : '' }}">
                 <a href="/sustainability">Sustainability</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'client.index' ? 'active' : '' }}">
+            <li class="{{ $type === 'client.index' ? 'active' : '' }}">
                 <a href="/clientele">
                     Clientele
                 </a>
             </li>
-            <li>
+            <li class="{{ $type === 'article' ? 'active' : '' }}">
                 <a href="/e-library">E-Library</a>
             </li>
-            <li class="{{ Route::currentRouteName() === 'contact.index' ? 'active' : '' }}">
+            <li class="{{ $type === 'contact.index' ? 'active' : '' }}">
                 <a href="/contact-us">Contact Us</a>
             </li>
         </ul>
-        <div class="hamburger lg:hidden">
-            <img src="/images/hamburger.png" alt="Menu" />
-        </div>
+        @if ($type === 'index' or $type === 'about' or $type === 'auth' or $type === 'article')
+            <div class="hamburger lg:hidden">
+                <img loading="lazy" src="/images/hamburger.png" alt="Menu" />
+            </div>
+        @else
+            <div class="hamburger lg:hidden">
+                <img loading="lazy" src="/images/hamburger-green.png" alt="Menu" />
+            </div>
+        @endif
     </div>
 
     <script>

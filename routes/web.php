@@ -6,9 +6,11 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GriController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SdgImageController;
 use App\Http\Controllers\SustainabilityController;
 
 /*
@@ -23,6 +25,9 @@ use App\Http\Controllers\SustainabilityController;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/sitemap.xml', [IndexController::class, 'sitemap'])->name('sitemap');
+Route::get('/sitemap', [IndexController::class, 'sitemapView'])->name('sitemap-view');
+
 
 Route::get('/about-us', function () {
     return view('about-us');
@@ -34,8 +39,12 @@ Route::get('/clientele', [ClientController::class, 'index'])->name('client.index
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 
-Route::get('/e-library', [ArticleController::class, 'index'])->name('article.index');
+Route::get('/e-library', [ArticleController::class, 'index'])->name('article');
+Route::get('/e-library/{article}', [ArticleController::class, 'show'])->name('article.detail');
 
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+
+Route::post('/gri/store', [GriController::class, 'store'])->name('gri.store');
 
 
 Route::middleware('auth')->group(function () {
@@ -58,12 +67,17 @@ Route::middleware('auth')->group(function () {
         Route::patch('/products/update/{product}', [ProductsController::class, 'update'])->name('products.update');
         Route::delete('/products/delete/{product}', [ProductsController::class, 'destroy'])->name('products.delete');
 
-
         Route::get('/homeslider', [HomeSliderController::class, 'create'])->name('homeslider.create');
         Route::post('/homeslider/store', [HomeSliderController::class, 'store'])->name('homeslider.store');
         Route::get('/homeslider/edit/{homeslider}', [HomeSliderController::class, 'edit'])->name('homeslider.edit');
         Route::patch('/homeslider/update/{homeslider}', [HomeSliderController::class, 'update'])->name('homeslider.update');
         Route::delete('/homeslider/delete/{homeslider}', [HomeSliderController::class, 'destroy'])->name('homeslider.delete');
+
+        Route::get('/sdgImage', [SdgImageController::class, 'create'])->name('sdgImage.create');
+        Route::post('/sdgImage/store', [SdgImageController::class, 'store'])->name('sdgImage.store');
+        Route::get('/sdgImage/edit/{sdgImage}', [SdgImageController::class, 'edit'])->name('sdgImage.edit');
+        Route::patch('/sdgImage/update/{sdgImage}', [SdgImageController::class, 'update'])->name('sdgImage.update');
+        Route::delete('/sdgImage/delete/{sdgImage}', [SdgImageController::class, 'destroy'])->name('sdgImage.delete');
 
         Route::get('/sustainability', [SustainabilityController::class, 'create'])->name('sustainability.create');
         Route::post('/sustainability/store', [SustainabilityController::class, 'store'])->name('sustainability.store');
@@ -76,6 +90,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/e-library/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
         Route::patch('/e-library/update/{article}', [ArticleController::class, 'update'])->name('article.update');
         Route::delete('/e-library/delete/{article}', [ArticleController::class, 'destroy'])->name('article.delete');
+
+        Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
     });
 });
 

@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>{{ config('app.name', 'Spa Factory Bali') }}</title>
+
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
@@ -27,7 +34,8 @@
             <div class="container grid lg:grid-cols-2 gap-8  items-center">
                 <div class="login__image relative " style="height: 50vw">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <img src="/images/logo-white.png" class="h-40 w-auto object-contain" alt="Spa Factory Bali">
+                        <img loading="lazy" src="/images/logo-white.png" class="h-40 w-auto object-contain"
+                            alt="Spa Factory Bali">
                     </div>
                 </div>
                 {{ $slot }}

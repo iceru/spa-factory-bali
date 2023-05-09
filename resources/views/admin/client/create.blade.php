@@ -11,9 +11,9 @@
     <form action="{{ route('client.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="name" :value="__('Name')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="name" :value="__('Name')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-text-input id="name" class="block w-full" type="name" name="name" required
                     autocomplete="current-name" />
 
@@ -21,9 +21,9 @@
             </div>
         </div>
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="link" :value="__('Link')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="link" :value="__('Link')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-text-input id="link" class="block w-full" type="link" name="link" required />
 
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -31,17 +31,17 @@
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="logo" :value="__('Logo')" class="mr-4 w-full lg:w-1/5 text-lg" />
-            <div class="w-full lg:w-3/5">
+            <x-input-label for="logo" :value="__('Logo')" class="w-full lg:w-1/5 text-lg pr-4" />
+            <div class="w-full lg:w-4/5">
                 <input type="file" name="logo" id="logo">
                 <x-input-error :messages="$errors->get('logo')" class="mt-2" />
             </div>
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="images" :value="__('Images')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="images" :value="__('Images')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <input type="file" name="images[]" id="images" multiple>
 
                 <x-input-error :messages="$errors->get('images')" class="mt-2" />
@@ -49,18 +49,18 @@
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="featured" :value="__('Featured')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="featured" :value="__('Featured')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-input-select name="featured" :options="$options" nameOption="name" valueOption="value" />
                 <x-input-error :messages="$errors->get('featured')" class="mt-2" />
             </div>
         </div>
 
         <div class="flex flex-wrap items-center mb-6">
-            <x-input-label for="products" :value="__('Product')" class="mr-4 w-full lg:w-1/5 text-lg" />
+            <x-input-label for="products" :value="__('Product')" class="w-full lg:w-1/5 text-lg pr-4" />
 
-            <div class="w-full lg:w-3/5">
+            <div class="w-full lg:w-4/5">
                 <x-input-select name="products" :options="$products" nameOption="title" valueOption="id" />
                 <x-input-error :messages="$errors->get('products')" class="mt-2" />
             </div>
@@ -79,9 +79,10 @@
             Clients Data
         </div>
         <div class="my-6 w-full border-b border-gray-200"></div>
-        <table class="table-auto border-collapse border">
+        <table class="table-auto border-collapse border" id="table">
             <thead>
                 <tr>
+                    <th class="p-3 border">No.</th>
                     <th class="p-3 border">Name</th>
                     <th class="p-3 border">Logo</th>
                     <th class="p-3 border">Images</th>
@@ -94,13 +95,19 @@
             <tbody>
                 @foreach ($clients as $client)
                     <tr>
+                        <td class="p-3 border">{{ $loop->iteration }}</td>
                         <td class="p-3 border">{{ $client->name }}</td>
                         <td class="p-3 border">
-                            <img src="{{ Storage::url($client->logo) }}" width="200" alt="{{ $client->name }}">
+                            @if ($client->logo)
+                                <img loading="lazy" src="{{ Storage::url($client->logo) }}" width="200"
+                                    alt="{{ $client->name }}">
+                            @else
+                                No Logo
+                            @endif
                         </td>
                         <td class="p-3 border">
                             @foreach (json_decode($client->images) as $image)
-                                <img src="{{ Storage::url('/client-images/' . $image) }}" width="200"
+                                <img loading="lazy" src="{{ Storage::url('/client-images/' . $image) }}" width="200"
                                     alt="{{ $client->name }}">
                             @endforeach
                         </td>
@@ -120,6 +127,7 @@
                                 @method('DELETE')
                                 <x-primary-button
                                     class="!bg-red-500 hover:!bg-red-700 focus:!bg-red:700 active:!bg-red-700 text-sm"
+                                    onclick="return confirm('Item and related data will be deleted. Are you sure?');"
                                     type="submit">Delete
                                 </x-primary-button>
                             </form>

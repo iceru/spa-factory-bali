@@ -1,5 +1,8 @@
 <x-guest-layout>
-    <div class="about__header flex flex-col p-4 lg:px-0 lg:py-8 justify-end" data-aos="fade-down">
+    @section('title')
+        About Us - Spa Factory Bali™
+    @endsection
+    <div class="about__header flex flex-col p-4 lg:px-0 md:py-8 justify-end" data-aos="fade-down">
         <div class="text-white container z-10 relative">
             <div class="lg:w-2/4">
                 <p class="lg:text-lg" data-aos="fade-right" data-aos-delay="400">Our Message is Simple:</p>
@@ -12,7 +15,8 @@
     <div class="section">
         <div class="container grid lg:grid-cols-2 gap-4">
             <div class="p-0 lg:p-6 lg:pl-0">
-                <img src="/images/about/about-1.jpg" alt="About Spa Factory Bali" data-aos="fade-right" />
+                <img loading="lazy" src="/images/about/about-1.jpg" alt="About Spa Factory Bali"
+                    data-aos="fade-right" />
             </div>
             <div class="bg-diamond text-white flex flex-col justify-center p-8 " data-aos="fade-left">
                 <div class="font-serif text-2xl mb-3" data-aos="fade-left" data-aos-delay="400">
@@ -30,8 +34,8 @@
         </div>
     </div>
     <div class="section">
-        <div class="container grid lg:grid-cols-2 gap-4">
-            <div class="flex flex-col justify-center p-0 lg:p-4 pl-0 order-2 lg:order-1">
+        <div class="container grid md:grid-cols-2 gap-4">
+            <div class="flex flex-col justify-center p-0 md:p-4 pl-0 order-2 md:order-1">
                 <div class="font-serif text-2xl mb-3 text-primary" data-aos="fade-right">
                     Empowering Women
                 </div>
@@ -42,15 +46,17 @@
                     living, hence, we facilitate them to bring their child with them to work.
                 </p>
             </div>
-            <div class="p-0 lg:p-6 lg:pr-0 order-1 lg:order-2">
-                <img src="/images/about/about-2.png" alt="Empowering Women" data-aos="fade-left" data-aos-delay="400" />
+            <div class="p-0 md:p-6 md:pr-0 order-1 md:order-2">
+                <img loading="lazy" src="/images/about/about-2.png" class="w-full" alt="Empowering Women"
+                    data-aos="fade-left" data-aos-delay="400" />
             </div>
         </div>
     </div>
     <div class="section">
-        <div class="container grid lg:grid-cols-2 gap-4">
-            <div class="p-0 lg:p-6 lg:pl-0">
-                <img src="/images/about/about-3.jpg" alt="About Spa Factory Bali" data-aos="fade-right" />
+        <div class="container grid md:grid-cols-2 gap-4">
+            <div class="p-0 md:p-6 md:pl-0">
+                <img loading="lazy" src="/images/about/about-3.jpg" alt="About Spa Factory Bali"
+                    data-aos="fade-right" />
             </div>
             <div class="bg-diamond text-white flex flex-col justify-center p-8 " data-aos="fade-left">
                 <div class="font-serif text-2xl mb-3" data-aos="fade-left" data-aos-delay="400">
@@ -66,78 +72,230 @@
         </div>
     </div>
     <div class="section bg-linear" data-aos="fade-down">
-        <div class="container">
+        <div class="container" x-data="{ open: 1, modal: false }">
             <div class="font-serif text-white mb-4 text-2xl text-center" data-aos="fade-down" data-aos-delay="300">
                 Transparent and Traceable Production Process
             </div>
             <div class="text-white text-center" data-aos="fade-down" data-aos-delay="600">
-                In line with the trend of ‘Farm to Beauty’, Spa Factory Bali Provides transparency – traceability of
+                In line with the trend of ‘Farm to Beauty’, Spa Factory Bali Provides transparency and traceability of
                 production process and supply chain to ensure the purity and quality of active ingredients used.
             </div>
-            <div class="flex my-8 justify-between about__traceWrapper" data-aos="fade-down" data-aos-delay="900">
-                <div class="z-10 about__process active" id="process-1">
-                    <div class="flex text-white mb-4 font-serif items-center justify-center">
-                        <div class="mr-3">
-                            <img src="/images/about/icon-leaf.png" alt="">
-                        </div>
-                        Process Name
+            <div class="grid grid-cols-2 lg:grid-cols-4 mt-8 justify-between about__traceWrapper" data-aos="fade-down"
+                data-aos-delay="900">
+
+                <i
+                    class="arrow right absolute left-[25%] top-[56%] -translate-x-1/2 -translate-y-1/2 hidden lg:block"></i>
+                <i
+                    class="arrow right absolute left-[50%] top-[56%] -translate-x-1/2 -translate-y-1/2 hidden lg:block"></i>
+                <i
+                    class="arrow right absolute left-[75%] top-[56%] -translate-x-1/2 -translate-y-1/2 hidden lg:block"></i>
+
+                <i
+                    class="arrow right absolute left-[50%] top-[28.5%] -translate-x-1/2 -translate-y-1/2 block lg:hidden"></i>
+                <i
+                    class="arrow left absolute left-[50%] top-[47.5%] -translate-x-1/2 -translate-y-1/2 block lg:hidden"></i>
+                <i
+                    class="arrow right absolute left-[50%] top-[86.25%] -translate-x-1/2 -translate-y-1/2 block lg:hidden"></i>
+                <div class="z-10 about__process mb-12 text-center lg:mb-0 cursor-pointer"
+                    :class="open == 1 ? 'active' : ''" @click="open = 1; modal = true">
+                    <div
+                        class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
+                        Sacha Inci Plantation
                     </div>
                     <div>
-                        <img src="/images/about/process-1.jpg" alt=""
-                            class="w-40 h-40 object-cover rounded-full about__process-image">
+                        <img loading="lazy" src="/images/about/Plantation1.jpg" alt=""
+                            class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto"
+                            :class="open == 1 ? 'pulsing' : ''">
                     </div>
                 </div>
-                <div class="z-10 about__process" id="process-2">
-                    <div class="flex text-white mb-4 font-serif items-center justify-center">
-                        <div class="mr-3">
-                            <img src="/images/about/icon-industry.png" alt="">
-                        </div>
-                        Process Name
+                <div class="z-10 about__process mb-12 lg:mb-0 cursor-pointer" id="process-2"
+                    :class="open == 2 ? 'active' : ''" @click="open = 2; modal = true">
+                    <div
+                        class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
+                        Oil Extraction
                     </div>
                     <div>
-                        <img src="/images/about/process-2.jpg" alt=""
-                            class="w-40 h-40 object-cover rounded-full about__process-image">
+                        <img loading="lazy" src="/images/about/oil-1.jpg" alt=""
+                            class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
-                <div class="z-10 about__process" id="process-3">
-                    <div class="flex text-white mb-4 font-serif items-center justify-center">
-                        <div class="mr-3">
-                            <img src="/images/about/icon-lotion.png" alt="">
-                        </div>
-                        Process Name
+                <div class="z-10 about__process process-3 cursor-pointer" :class="open == 3 ? 'active' : ''"
+                    @click="open = 3; modal = true">
+                    <div
+                        class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
+                        Cosmetic Manufacturing
                     </div>
                     <div>
-                        <img src="/images/about/about-1.jpg" alt=""
-                            class="w-40 h-40 object-cover rounded-full about__process-image">
+                        <img loading="lazy" src="/images/about/manufacture.jpg" alt=""
+                            class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
+                <div class="z-10 about__process cursor-pointer" :class="open == 4 ? 'active' : ''"
+                    @click="open = 4; modal = true">
+                    <div
+                        class="lg:flex text-center lg:text-left text-white mb-4 font-serif items-center justify-center block whitespace-nowrap">
+                        Finished Product
+                    </div>
+                    <div>
+                        <img loading="lazy" src="/images/about/finished.jpg" alt=""
+                            class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
+                    </div>
+                </div>
+                <div class="lastLine"></div>
+                <div class="topLine"></div>
             </div>
-            <div data-aos="fade-down">
-                <div class="process-1 about__process-large relative" style="height: 600px">
-                    <div class="absolute h-1/2 w-full bg-gradient-to-b from-black left-0 top-0" data-aos="fade"
-                        data-aos-delay="200">
+            <div class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 z-20" @click="modal = false"
+                x-cloak x-show="modal"></div>
+            <div x-cloak x-show="modal"
+                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] lg:w-[60vw] max-h-[90vh] overflow-auto h-auto bg-body p-6 lg:p-10 lg:px-20 rounded-xl z-20">
+                <div class="absolute top-7 right-4 lg:right-10 lg:top-10 cursor-pointer z-10 w-6 lg:w-auto"
+                    @click="modal = false">
+                    <img loading="lazy" src="/images/close-gri.png" alt="Close">
+                </div>
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-40 lg:opacity-100" x-cloak
+                    x-show="open != 1" @click="open -= 1">
+                    <img loading="lazy" src="/images/chevron-right.png" alt="Arrow Right" class="w-8 rotate-180">
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 1">
+                    <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
+                        Sacha Inci Plantation
                     </div>
-                    <div class="absolute top-8 left-8 z-10">
-                        <div class="font-serif text-2xl text-white" data-aos="fade-right" data-aos-delay="400">
-                            Process Name
+                    <div class="text-body mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Originated from the Amazon rainforest in Peru, Sacha Inchi (Plukenetia volubilis) was
+                                recently cultivated in Indonesia.
+                            </li>
+                            <li>
+                                The plant reaches a height of 2 metres with heart-shaped leaves. It is a vine that needs
+                                a support structure to produce seeds throughout the year.
+                            </li>
+                            <li>
+                                The seeds of inchi have a high protein and oil content. The oil is rich in the essential
+                                fatty acids omega-3 linolenic acid, omega-6 linolenic acid and omega-9. For cosmetics
+                                purpose, the oil is suitable for deep moisturising and anti-aging treatment.
+                            </li>
+                            <li>
+                                We work with a group of farmers in Tabanan, Bali who cultivate sacha inchi in their
+                                garden organically.
+                            </li>
+                            <li>
+                                The harvest of the ripen fruits are sun-dried and seeds are peeled from the pulp.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-4">
+                        <div class="about__image-square">
+                            <img loading="lazy" src="/images/about/Plantation1.jpg" alt="Sacha Inci Plantation">
                         </div>
-                        <div class="text-white" data-aos="fade-right" data-aos-delay="800">
-                            Lorem ipsum dolor sit amet consectetur. Volutpat lectus semper praesent sit viverra
-                            pellentesque augue maecenas blandit. At diam tellus ultricies dolor odio dictumst sem
-                            cursus. Rutrum ac neque sit quisque vitae ac arcu. Tristique mattis in vitae etiam feugiat
-                            vitae. Laoreet placerat facilisis fames egestas. Purus id aliquet id nec libero maecenas.
-                            Tempor dignissim at sit ac cursus vitae pharetra. Viverra et nisl nibh aliquam convallis
-                            vitae.
+                        <div class="grid gap-4">
+                            <div class="about__image-half">
+                                <img loading="lazy" src="/images/about/Plantation2.jpg" alt="Sacha Inci Plantation">
+                            </div>
+                            <div class="about__image-half">
+                                <img loading="lazy" src="/images/about/Plantation3.jpg" alt="Sacha Inci Plantation">
+                            </div>
                         </div>
                     </div>
-                    <img src="/images/about/process-1.jpg" class="h-full w-full object-cover" alt="">
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 2">
+                    <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
+                        Oil Extraction
+                    </div>
+                    <div class="text-body mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Dried sacha seeds need to be processed before the extraction by cracking open the
+                                shell.
+                            </li>
+                            <li>
+                                The nuts are then lightly roasted to reach approximately under 60° C before pressing.
+                            </li>
+                            <li>
+                                It is manually pressed using hydraulic pressing machines operated by Balinese ladies,
+                                thus resulting in crude oil.
+                            </li>
+                            <li>
+                                The oil needs to be rested and filtered to remove impurities.
+                            </li>
+                            <li>
+                                We work with UD Restu Bali in Tabanan for the oil extraction process not only for Sacha
+                                Inchi but also cold pressed Coconut oil (VCO), Moringa oil (Moringa oleifera), Candlenut
+                                (Aleurites moluccanus) oil and our local walnut, Kenari (Canarium ovatum) oil.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-4">
+                        <div class="about__image-square">
+                            <img loading="lazy" src="/images/about/oil-1.jpg" alt="Oil Extraction">
+                        </div>
+                        <div class="grid gap-4">
+                            <div class="about__image-half">
+                                <img loading="lazy" src="/images/about/oil-2.jpg" alt="Oil Extraction">
+                            </div>
+                            <div class="about__image-half">
+                                <img loading="lazy" src="/images/about/oil-3.jpg" alt="Oil Extraction">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 3">
+                    <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
+                        Cosmetic Manufacturing
+                    </div>
+                    <div class="text-body mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Sacha inchi oil is an essential active ingredient in many facial products such as Face
+                                Serum, Daily Moisturiser, Night Cream and Mask.
+                            </li>
+                            <li>
+                                Formulated with other rich vegetable oil, herbal extract and essential oil for deep
+                                moisturising and anti-aging benefits. It well absorbed to restores and improve skin
+                                texture without sticky feeling.
+                            </li>
+                            <li>
+                                Handcrafted in our production facility by local women with high GMP standard.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img loading="lazy" src="/images/about/manufacture.jpg" alt="Cosmetic Manufacturing">
+                    </div>
+                </div>
+                <div class="about__process-large relative" x-cloak x-show="open == 4">
+                    <div class="font-serif text-2xl mb-4 text-primary" data-aos="fade-right" data-aos-delay="400">
+                        Finished Product
+                    </div>
+                    <div class="text-body mb-4" data-aos="fade-right" data-aos-delay="800">
+                        <ul>
+                            <li>
+                                Sacha inchi is commonly used in facial products with regenerative benefit such as Face
+                                Moisturiser and Face Serum.
+
+                            </li>
+                            <li>
+                                Deep moisture the skin and well absorbed, without the heaviness and greasy feeling.
+                            </li>
+                            <li>
+                                Handcrafted in our production facility by local women with high GMP standard.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img loading="lazy" src="/images/about/finished.jpg" alt="Finished Product">
+                    </div>
+                </div>
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-40 lg:opacity-100" x-cloak
+                    x-show="open != 4" @click="open += 1">
+                    <img loading="lazy" src="/images/chevron-right.png" alt="Arrow Right" class="w-8">
                 </div>
             </div>
         </div>
     </div>
     <div class="section">
-        <div class="container grid lg:grid-cols-2 gap-4">
-            <div class="flex flex-col justify-center p-0 lg:p-4 pl-0 order-2 lg:order-1">
+        <div class="container grid md:grid-cols-2 gap-4">
+            <div class="flex flex-col justify-center p-0 md:p-4 pl-0 order-2 md:order-1">
                 <div class="font-serif text-2xl mb-3 text-primary " data-aos="fade-right">
                     Following European Cosmetic Safety Guidance
                 </div>
@@ -147,9 +305,9 @@
                     derivative ingredients.
                 </p>
             </div>
-            <div class="p-0 lg:p-6 lg:pr-0 order-1 lg:order-2">
-                <img src="/images/about/about-4.png" class="w-full" alt="Following European Cosmetic Safety Guidance"
-                    data-aos="fade-left" data-aos-delay="400" />
+            <div class="p-0 md:p-6 md:pr-0 order-1 md:order-2">
+                <img loading="lazy" src="/images/about/about-4.png" class="w-full"
+                    alt="Following European Cosmetic Safety Guidance" data-aos="fade-left" data-aos-delay="400" />
             </div>
         </div>
     </div>
