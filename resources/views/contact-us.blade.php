@@ -8,12 +8,12 @@
                 <div class="mb-4 font-serif text-4xl text-primary" data-aos="fade-right">
                     Contact Us
                 </div>
-                <div class="text-body text-justify" data-aos="fade-right" data-aos-delay="400">
+                <div class="text-body text-justify lg:w-[75%]" data-aos="fade-right" data-aos-delay="400">
                     Get in touch with us for any questions or concerns - we're here to help!
                 </div>
             </div>
-            <div data-aos="fade-left">
-                <img loading="lazy" src='/images/contact-us.png' alt="Contact Us" />
+            <div data-aos="fade-left" class="lg:w-[50%]">
+                <img loading="lazy" src='/images/contact/gedung.jpg' alt="Contact Us" />
             </div>
         </div>
     </div>

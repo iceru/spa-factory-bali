@@ -18,8 +18,7 @@
             <div class="home__cta-img w-full md:w-[55%] lg:pl-16 md:pl-4 flex justify-end">
                 <div id="home-sliders">
                     @foreach ($sliders as $slider)
-                        <img loading="lazy" src="{{ Storage::url($slider->image) }}" class="w-full"
-                            alt="Spa Factory Bali">
+                        <img src="{{ Storage::url($slider->image) }}" class="w-full" alt="Spa Factory Bali">
                     @endforeach
                 </div>
             </div>
