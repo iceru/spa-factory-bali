@@ -56,11 +56,27 @@ class ContactController extends Controller
 
             $contact->save();
 
-            Mail::to("sales@spafactorybali.biz")->send(new ContactMail($request));
+            $config = \SendinBlue\Client\Configuration::getDefaultConfiguration()
+                ->setApiKey('api-key', env('BREVO_KEY'));
+
+            $apiInstance = new \SendinBlue\Client\Api\TransactionalEmailsApi(
+                new \GuzzleHttp\Client(),
+                $config
+            );
+            $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
+            $sendSmtpEmail['to'] = array(array('email' => 'sales@spafactorybali.biz', 'name' => 'Spa Factory Bali'));
+            $sendSmtpEmail['templateId'] = 1;
+            $sendSmtpEmail['params'] = array(
+                'USER' => $contact->name, 'DATE' => \Carbon\Carbon::now(),
+                'USER_EMAIL' => $contact->email, 'PHONE_NUMBER' => $contact->number, 'MESSAGE' => $contact->message
+            );
+
+            $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
 
             $return = redirect()->route('contact.index')->with('success', 'Message sent!');
         } catch (Exception $e) {
-            $return = redirect()->route('contact.index')->with('error', 'Something is wrong, please try again' . $e->getMessage());
+            $return = redirect()->route('contact.index')->with('error', 'Something is wrong, please try again - '
+                . $e->getMessage());
         }
 
         return $return;

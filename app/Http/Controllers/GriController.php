@@ -58,7 +58,22 @@ class GriController extends Controller
 
             $gri->save();
 
-            Mail::to("sales@spafactorybali.biz")->send(new GriMail($request));
+            $config = \SendinBlue\Client\Configuration::getDefaultConfiguration()
+                ->setApiKey('api-key', env('BREVO_KEY'));
+
+            $apiInstance = new \SendinBlue\Client\Api\TransactionalEmailsApi(
+                new \GuzzleHttp\Client(),
+                $config
+            );
+            $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
+            $sendSmtpEmail['to'] = array(array('email' => 'sales@spafactorybali.biz', 'name' => 'Spa Factory Bali'));
+            $sendSmtpEmail['templateId'] = 1;
+            $sendSmtpEmail['params'] = array(
+                'USER' => $gri->name, 'DATE' => \Carbon\Carbon::now(), 'JOB_TITLE' => $gri->job_title,
+                'USER_EMAIL' => $gri->email, 'COMPANY' => $gri->company, 'USAGE_FOR' => $gri->usage_for
+            );
+
+            $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
 
             $return = response()->json(['success' => 'Message sent!']);
         } catch (Exception $e) {
