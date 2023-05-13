@@ -10,11 +10,12 @@
     </title>
     <meta name="description"
         content="Spa Factory Bali is a renowned, professional contract manufacturer in Bali with a production facility that complies with Good Manufacture Practice standards. ">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="keywords"
-        content="whats' new, spa bali, factory, asian spa, treatments, private label,
-        services, products, professional, hotels, gifts, amenities, aroma therapy,
-        supplies, wholesale, naturtal, setups, essential oils, retail, distribution">
+        content="Contract manufacturing, Private Label, Private label cosmetic, OEM natural products, Spa product,
+        Natural spa product, Bali spa product, Bali natural product, Premium spa product, Sustainable spa product,
+        Handmade spa product, Beauty spa product, Natural skincare, Natural cosmetics, Organic skincare, Botanical product,
+        Botanical cosmetics, Sustainable skincare, Sustainable body product, Sustainable cosmetics, Handmade cosmetics,
+        Hotel amenities, Luxury amenities, Natural hotel amenities, Sustainable hotel amenities, Refillable hotel amenities">
     <meta name="author" content="Spa Factory Bali">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
