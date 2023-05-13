@@ -56,22 +56,24 @@ class ContactController extends Controller
 
             $contact->save();
 
-            $config = \SendinBlue\Client\Configuration::getDefaultConfiguration()
-                ->setApiKey('api-key', env('BREVO_KEY'));
+            // $config = \SendinBlue\Client\Configuration::getDefaultConfiguration()
+            //     ->setApiKey('api-key', env('BREVO_KEY'));
 
-            $apiInstance = new \SendinBlue\Client\Api\TransactionalEmailsApi(
-                new \GuzzleHttp\Client(),
-                $config
-            );
-            $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
-            $sendSmtpEmail['to'] = array(array('email' => 'sales@spafactorybali.biz', 'name' => 'Spa Factory Bali'));
-            $sendSmtpEmail['templateId'] = 1;
-            $sendSmtpEmail['params'] = array(
-                'USER' => $contact->name, 'DATE' => \Carbon\Carbon::now(),
-                'USER_EMAIL' => $contact->email, 'PHONE_NUMBER' => $contact->number, 'MESSAGE' => $contact->message
-            );
+            // $apiInstance = new \SendinBlue\Client\Api\TransactionalEmailsApi(
+            //     new \GuzzleHttp\Client(),
+            //     $config
+            // );
+            // $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
+            // $sendSmtpEmail['to'] = array(array('email' => 'sales@spafactorybali.biz', 'name' => 'Spa Factory Bali'));
+            // $sendSmtpEmail['templateId'] = 1;
+            // $sendSmtpEmail['params'] = array(
+            //     'USER' => $contact->name, 'DATE' => \Carbon\Carbon::now(),
+            //     'USER_EMAIL' => $contact->email, 'PHONE_NUMBER' => $contact->number, 'MESSAGE' => $contact->message
+            // );
 
-            $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+            // $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+
+            Mail::to("sales@spafactorybali.biz")->send(new ContactMail($request));
 
             $return = redirect()->route('contact.index')->with('success', 'Message sent!');
         } catch (Exception $e) {
