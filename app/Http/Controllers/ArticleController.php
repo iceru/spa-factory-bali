@@ -163,4 +163,11 @@ class ArticleController extends Controller
 
         return redirect()->route('article.create')->with('success', 'Article deleted successfully');
     }
+
+    public function upload(Request $request)
+    {
+        $fileName = $request->file('file')->getClientOriginalName();
+        $path = $request->file('file')->storeAs('uploads', $fileName, 'public');
+        return response()->json(['location' => "/storage/$path"]);
+    }
 }

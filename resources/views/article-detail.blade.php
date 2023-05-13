@@ -17,14 +17,11 @@
         </div>
     </div>
 
-    <div class="container mb-12 flex flex-wrap px-4">
+    <div class="container mb-12 flex flex-wrap lg:flex-nowrap px-4">
         <div class="w-full lg:w-2/3">
-            <div class="mb-4">
-                <img loading="lazy" src="{{ Storage::url($article->image) }}" class="w-full" alt="{{ $article->title }}">
-            </div>
-            <div class="">
+            <article>
                 {!! $article->text !!}
-            </div>
+            </article>
         </div>
         <div class="w-full lg:w-1/3 mt-12 lg:mt-0 lg:pl-8">
             <div class="sticky top-4">
@@ -32,7 +29,7 @@
                     More to Read
                 </div>
                 @foreach ($more as $item)
-                    <div class="flex gap-4 mb-4 border-b border-gray-300 pb-4 ">
+                    <div class="flex gap-4 mb-4 border-b border-gray-300 pb-4 last:border-b-0">
                         <div class="w-1/5 mt-1.5">
                             <a href="/e-library/{{ $item->slug }}">
                                 <img loading="lazy" src="{{ Storage::url($item->image) }}"

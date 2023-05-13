@@ -116,7 +116,8 @@
             <div class="flex items-center flex-wrap mb-8">
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
                     <a href="{{ route('article.detail', $item->slug) }}">
-                        <img loading="lazy" src="{{ Storage::url($item->image) }}" alt="{{ $item->title }}">
+                        <img loading="lazy" class="w-full object-cover" src="{{ Storage::url($item->image) }}"
+                            alt="{{ $item->title }}">
                     </a>
 
                 </div>

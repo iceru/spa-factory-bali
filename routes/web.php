@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::post('/upload/image', [ArticleController::class, 'upload'])->name('admin.upload.image');
+
     Route::prefix('admin')->group(function () {
         Route::get('/client', [ClientController::class, 'create'])->name('client.create');
         Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
