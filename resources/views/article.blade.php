@@ -6,7 +6,7 @@
         <div class="relative h-[75vh] max-h-[750px]">
             <div class="h-full">
                 <img loading="lazy" src="{{ Storage::url($item->image) }}" class="w-full h-full object-cover"
-                    alt="">
+                    alt="{{ $item->title }}">
             </div>
 
             <div class="absolute bottom-0 w-full bg-gradient-to-t from-secondary h-1/2"></div>
@@ -109,7 +109,7 @@
 
     <div class="container pb-20 mb-10 px-4 lg:px-0 relative">
         <div class="absolute right-0 bottom-0 opacity-40">
-            <img loading="lazy" src="/images/bg-flower-green.png" class="w-[80%] ml-auto" alt="">
+            <img loading="lazy" src="/images/bg-flower-green.png" class="w-[80%] ml-auto" alt="Decoration Flower">
         </div>
         <div class="text-3xl font-serif text-primary mb-8">
             Latest Post

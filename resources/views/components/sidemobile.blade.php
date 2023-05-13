@@ -1,6 +1,6 @@
 <div class="sidemobile__wrapper bg-linear p-6 min-h-screen w-2/3">
     <div class="logo mb-10">
-        <img loading="lazy" src="/images/logo-white.png" alt="">
+        <img loading="lazy" src="/images/logo-white.png" alt="Spa Factory Bali Logo">
     </div>
     <nav class="sidemobile__menu text-white font-semibold mb-10 uppercase">
         <ul class="gap-8 grid">

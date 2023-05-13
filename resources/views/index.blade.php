@@ -8,9 +8,9 @@
                 <div class="font-serif text-4xl mb-2" data-aos="fade-right">
                     Spa Factory Bali™
                 </div>
-                <div class="text-xl mb-4 lg:w-[80%]" data-aos="fade-right" data-aos-duration="700">
+                <h1 class="text-xl mb-4 lg:w-[80%]" data-aos="fade-right" data-aos-duration="700">
                     A Pioneer in Bali's contract manufacturing for natural cosmetics.
-                </div>
+                </h1>
                 <x-button-link link="/contact-us" data-aos="fade-right" data-aos-duration="1000">
                     Contact Us
                 </x-button-link>
@@ -34,14 +34,14 @@
         <div class="text-center font-serif text-primary mb-6 text-4xl" data-aos="fade-down">
             Spa Factory Bali™
         </div>
-        <div class="text-justify text-body" data-aos="fade-down" data-aos-delay="400">
+        <p class="text-justify text-body m-0" data-aos="fade-down" data-aos-delay="400">
             Spa Factory Bali is a renowned, professional contract manufacturer in Bali with a production facility that
             complies with Good Manufacture Practice standards. As an established, constantly improving contract
             manufacturer, we develop unique, requested products for our clientele. We manufacture various products in
             the cosmetic category. This ranges from professional spa products, personal care, wellness products and
             beauty skincare. The service develops new formulas or modify pre-existing high-quality product base on each
             client’s requirements.
-        </div>
+        </p>
     </div>
     <div class="section container grid md:grid-cols-2 items-center">
         <div class="text-justify text-body  md:pr-16 order-2 md:order-1" data-aos="fade-right" data-aos-delay="400"
@@ -59,7 +59,7 @@
 
     <div class="section bg-radial text-white relative" data-aos="fade-down" data-aos-duration="800">
         <div class="absolute top-1/2 transform -translate-y-1/2 left-4">
-            <img loading="lazy" src="/images/bg-flower.png" class="w-[80%]" alt="">
+            <img loading="lazy" src="/images/bg-flower.png" class="w-[80%]" alt="Decoration Flower">
         </div>
         <div class="text-center mb-3 font-serif text-3xl" data-aos="fade-down" data-aos-delay="400">
             Our Products

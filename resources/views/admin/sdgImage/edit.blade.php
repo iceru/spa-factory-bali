@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="mb-2">
-            <img src="{{ Storage::url($sdgImage->image) }}" alt="">
+            <img src="{{ Storage::url($sdgImage->image) }}" alt="{{ $sdgImage->title }}">
         </div>
         <div class="flex items-center mb-6">
             <x-input-label for="image" :value="__('Image')" class="mr-4 w-1/5 text-lg" />

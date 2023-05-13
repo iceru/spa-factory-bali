@@ -150,7 +150,7 @@
             </div>
             <div class="mt-12" id="detail">
                 <div x-cloak x-show.important="open == 'all'">
-                    <img loading="lazy" src="/images/sustain-all.png" class="w-full" alt="">
+                    <img loading="lazy" src="/images/sustain-all.png" class="w-full" alt="Spa Factory Bali Team">
                 </div>
                 {{-- <div x-show="open == 12" class="mb-4">
                     <div id="map" class="h-[70vh]"></div>
@@ -162,7 +162,7 @@
                             <div class="sustain__image mb-1">
                                 <img loading="lazy"
                                     src="{{ Storage::url('sustainability-images/' . $image->image) }}"
-                                    alt="">
+                                    alt="{{ $image->title }}">
                             </div>
                             <div class="text-body">
                                 {{ $image->title }}
@@ -176,7 +176,7 @@
                             <div class="sustain__image mb-1">
                                 <img loading="lazy"
                                     src="{{ Storage::url('sustainability-images/' . $image->image) }}"
-                                    alt="">
+                                    alt="{{ $image->title }}">
                             </div>
                             <div class="text-body">
                                 {{ $image->title }}
@@ -190,7 +190,7 @@
                             <div class="sustain__image mb-1">
                                 <img loading="lazy"
                                     src="{{ Storage::url('sustainability-images/' . $image->image) }}"
-                                    alt="">
+                                    alt="{{ $image->title }}">
                             </div>
                             <div class="text-body">
                                 {{ $image->title }}
@@ -204,7 +204,7 @@
                             <div class="sustain__image mb-1">
                                 <img loading="lazy"
                                     src="{{ Storage::url('sustainability-images/' . $image->image) }}"
-                                    alt="">
+                                    alt="{{ $image->title }}">
                             </div>
                             <div class="text-body">
                                 {{ $image->title }}

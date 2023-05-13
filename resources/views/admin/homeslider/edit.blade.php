@@ -8,7 +8,7 @@
         @method('PATCH')
         <input type="hidden" name="id" value="{{ $homeslider->id }}">
         <div class="mb-2">
-            <img src="{{ Storage::url($homeslider->image) }}" class="max-w-[250px]" alt="">
+            <img src="{{ Storage::url($homeslider->image) }}" class="max-w-[250px]" alt="{{ $homeslider->id }}">
         </div>
         <div class="flex items-center mb-6">
             <x-input-label for="image" :value="__('Image')" class="mr-4 w-1/5 text-lg" />
