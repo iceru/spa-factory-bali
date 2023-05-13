@@ -22,11 +22,12 @@
                     {!! $item->subtext !!}
                 </div>
                 <a href="{{ route('article.detail', $item->slug) }}">
-                    <div class="flex items-center">
+                    <div class="flex items-center text-white font-semibold group">
                         <div>
                             Read More
                         </div>
-                        <img loading="lazy" src="/images/read-more.png" alt="Arrow Right" class="ml-2">
+                        <img loading="lazy" src="/images/read-more.png" alt="Arrow Right"
+                            class="pl-2 group-hover:translate-x-1 transition">
                     </div>
                 </a>
             </div>
@@ -38,8 +39,8 @@
                 @foreach ($featured->slice(0, 1) as $item)
                     <div class="text-white w-full lg:w-[55%] mb-8 lg:mb-0">
                         <a href="{{ route('article.detail', $item->slug) }}">
-                            <img loading="lazy" src="{{ Storage::url($item->image) }}" class="mb-6 w-full"
-                                alt="{{ $item->title }}">
+                            <img loading="lazy" src="{{ Storage::url($item->image) }}"
+                                class="mb-6 w-full hover:opacity-90 transition" alt="{{ $item->title }}">
                         </a>
 
                         <a href="{{ route('article.detail', $item->slug) }}">
@@ -56,11 +57,12 @@
                             {!! $item->subtext !!}
                         </div>
                         <a href="{{ route('article.detail', $item->slug) }}">
-                            <div class="flex items-center">
+                            <div class="flex items-center text-white font-semibold group">
                                 <div>
                                     Read More
                                 </div>
-                                <img loading="lazy" src="/images/read-more.png" alt="Arrow Right" class="ml-2">
+                                <img loading="lazy" src="/images/read-more.png" alt="Arrow Right"
+                                    class="pl-2 group-hover:translate-x-1 transition">
                             </div>
                         </a>
                     </div>
@@ -89,12 +91,12 @@
                                     {!! $item->subtext !!}
                                 </div>
                                 <a href="{{ route('article.detail', $item->slug) }}">
-                                    <div class="flex items-center">
+                                    <div class="flex items-center text-white font-semibold group">
                                         <div>
                                             Read More
                                         </div>
                                         <img loading="lazy" src="/images/read-more.png" alt="Arrow Right"
-                                            class="ml-2">
+                                            class="pl-2 group-hover:translate-x-1 transition">
                                     </div>
                                 </a>
                             </div>
@@ -116,14 +118,14 @@
             <div class="flex items-center flex-wrap mb-8">
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
                     <a href="{{ route('article.detail', $item->slug) }}">
-                        <img loading="lazy" class="w-full object-cover h-[250px]"
+                        <img loading="lazy" class="w-full object-cover h-[250px] hover:opacity-90 transition"
                             src="{{ Storage::url($item->image) }}" alt="{{ $item->title }}">
                     </a>
 
                 </div>
                 <div class="w-full md:w-2/3 md:pl-6">
                     <a href="{{ route('article.detail', $item->slug) }}">
-                        <div class="font-bold text-2xl mb-2">
+                        <div class="font-bold text-2xl mb-2 text-body hover:text-black transition">
                             {{ $item->title }}
                         </div>
                     </a>
@@ -136,11 +138,12 @@
                         {!! $item->subtext !!}
                     </div>
                     <a href="{{ route('article.detail', $item->slug) }}">
-                        <div class="flex items-center text-primary font-semibold">
+                        <div class="flex items-center text-primary font-semibold group">
                             <div>
                                 Read More
                             </div>
-                            <img loading="lazy" src="/images/arrow-green.png" alt="Arrow Right" class="ml-2">
+                            <img loading="lazy" src="/images/arrow-green.png" alt="Arrow Right"
+                                class="pl-2 group-hover:translate-x-1 transition">
                         </div>
                     </a>
                 </div>
