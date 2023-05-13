@@ -18,6 +18,19 @@
         Hotel amenities, Luxury amenities, Natural hotel amenities, Sustainable hotel amenities, Refillable hotel amenities">
     <meta name="author" content="Spa Factory Bali">
 
+    <meta property="og:title" content="Spa Factory Bali" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://spafactorybali.biz" />
+    <meta property="og:image" content="https://spafactorybali.biz/images/logo.png" />
+
+    <meta name="twitter:title" content="Spa Factory Bali">
+    <meta name="twitter:description"
+        content=" Spa Factory Bali is a renowned, professional contract manufacturer in Bali with a production facility that complies with Good Manufacture Practice standards. ">
+    <meta name="twitter:image" content=" https://spafactorybali.biz/images/logo.png">
+    <meta name="twitter:card" content="https://spafactorybali.biz/images/logo.png">
+
+    <meta property="og:site_name" content="Spa Factory Bali">
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
