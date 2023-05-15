@@ -103,7 +103,7 @@
                         Sacha Inci Plantation
                     </div>
                     <div>
-                        <img loading="lazy" src="/images/about/Plantation1.jpg" alt=""
+                        <img loading="lazy" src="/images/about/Plantation1.jpg" alt="Sacha Inci Plantation"
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto"
                             :class="open == 1 ? 'pulsing' : ''">
                     </div>
@@ -115,7 +115,7 @@
                         Oil Extraction
                     </div>
                     <div>
-                        <img loading="lazy" src="/images/about/oil-1.jpg" alt=""
+                        <img loading="lazy" src="/images/about/oil-1.jpg" alt="Oil Extraction"
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                         Cosmetic Manufacturing
                     </div>
                     <div>
-                        <img loading="lazy" src="/images/about/manufacture.jpg" alt=""
+                        <img loading="lazy" src="/images/about/manufacture.jpg" alt="Cosmetic Manufacturing"
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                         Finished Product
                     </div>
                     <div>
-                        <img loading="lazy" src="/images/about/finished.jpg" alt=""
+                        <img loading="lazy" src="/images/about/finished.jpg" alt="Finished Product"
                             class="w-28 h-28 lg:w-40 lg:h-40 object-cover rounded-full about__process-image mx-auto">
                     </div>
                 </div>
