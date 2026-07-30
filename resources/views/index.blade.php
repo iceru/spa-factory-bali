@@ -98,7 +98,9 @@
                 <div class="text-body" data-aos="fade-down" data-aos-delay="400">
                     Spa Factory Bali has earned a Fully Certified GMP (Cosmetics Good Manufacturing Practice) under BPOM
                     (Indonesian Agency of Drug & Food Control), Halal under MUI (Indonesian Ulema Council) and ISO
-                    9001:2015 for quality assurance. We are also a member of RSPO (Roundtable on Sustainable Palm Oil).
+                    9001:2015 for quality assurance. We are also a member of RSPO (Roundtable on Sustainable Palm Oil),
+                    supporting responsibly sourced palm-derived ingredients that protect forests, communities, and
+                    biodiversity.
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -122,8 +124,8 @@
                 <div class="flex flex-col items-center justify-center" data-aos="fade-left" data-aos-delay="800">
                     <img loading="lazy" src="/images/rspo.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
-                    <div class="text-body text-sm text-center mt-1 leading-tight">
-                        RSPO: 9-4991-23-000-00
+                    <div class="text-center mt-1 leading-tight">
+                        RSPO: 9-4991-23-100-00
                     </div>
                 </div>
 
@@ -171,15 +173,14 @@
                 and manufacturing process to bring your ideas to fruition.
             </div>
 
-            <x-button-link link="/clientele"
-                class="mt-4 border-primary text-primary hover:bg-primary hover:text-white" data-aos="fade-left"
-                data-aos-duration="800">
+            <x-button-link link="/clientele" class="mt-4 border-primary text-primary hover:bg-primary hover:text-white"
+                data-aos="fade-left" data-aos-duration="800">
                 Learn More
             </x-button-link>
         </div>
     </div>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#home-sliders').slick();
         });
     </script>

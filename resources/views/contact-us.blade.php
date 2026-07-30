@@ -42,11 +42,11 @@
                                     <img loading="lazy" src="/images/contact/icon-phone.png" alt="Icon Phone">
                                 </div>
                                 <div>
-                                    <a href="tel:+6281238003803" class="hover:text-primary">
+                                    <a href="tel:+623614480255" class="hover:text-primary">
                                         +62 361 4480255
                                     </a> <br>
-                                    <a href="tel:+6285100198213" class="hover:text-primary">
-                                        +62 81 238 003 803
+                                    <a href="tel:+6281238033803" class="hover:text-primary">
+                                        +62 81 238 033 803
                                     </a>
                                 </div>
                             </div>
@@ -86,8 +86,7 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                    <form action="{{ route('contact.store') }}" method="POST" data-aos="fade-down"
-                        data-aos-delay="800">
+                    <form action="{{ route('contact.store') }}" method="POST" data-aos="fade-down" data-aos-delay="800">
                         @csrf
                         <x-text-input
                             class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
@@ -98,8 +97,8 @@
                         <x-text-input
                             class="bg-transparent border-0 border-b mb-6 !border-primary rounded-none pl-0 w-full outline-none"
                             placeholder="Phone Number" name="number" type="tel" />
-                        <textarea class="bg-transparent border-0 border-b !border-primary w-full pl-0 outline-none mb-6" rows="6"
-                            placeholder="Messages" name="message"></textarea>
+                        <textarea class="bg-transparent border-0 border-b !border-primary w-full pl-0 outline-none mb-6"
+                            rows="6" placeholder="Messages" name="message"></textarea>
                         <x-button
                             class="text-primary !border-primary !border font-semibold hover:bg-primary hover:text-white"
                             type="submit">
