@@ -122,11 +122,8 @@
                 </div>
 
                 <div class="flex flex-col items-center justify-center" data-aos="fade-left" data-aos-delay="800">
-                    <img loading="lazy" src="/images/rspo.png" class="h-40 w-full object-contain"
+                    <img loading="lazy" src="/images/rspo-2.png" class="h-40 w-full object-contain"
                         alt="mutu certification international" />
-                    <div class="text-center mt-1 leading-tight">
-                        RSPO: 9-4991-23-100-00
-                    </div>
                 </div>
 
             </div>
